@@ -1305,9 +1305,12 @@
     reveals.forEach(el => el.classList.add('in'));
   }
 
-  // 숫자 카운트업 (핵심 지표)
+  // 숫자 카운트업 (핵심 지표) - 스크롤로 다시 들어올 때마다 재생
   const countEls = document.querySelectorAll('.stat-num .num');
+  const countFrames = new WeakMap();
   const runCount = (el) => {
+    const prevFrame = countFrames.get(el);
+    if (prevFrame) cancelAnimationFrame(prevFrame);
     const target = parseInt(el.dataset.target, 10);
     const duration = 1200;
     const start = performance.now();
@@ -1315,13 +1318,21 @@
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(target * eased);
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) countFrames.set(el, requestAnimationFrame(step));
     };
-    requestAnimationFrame(step);
+    countFrames.set(el, requestAnimationFrame(step));
   };
   if ('IntersectionObserver' in window) {
     const countIo = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { runCount(e.target); countIo.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          runCount(e.target);
+        } else {
+          const prevFrame = countFrames.get(e.target);
+          if (prevFrame) cancelAnimationFrame(prevFrame);
+          e.target.textContent = '0';
+        }
+      });
     }, { threshold: 0.4 });
     countEls.forEach(el => countIo.observe(el));
   } else {
