@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>학습 정보 | 더나은에듀</title>
+<meta name="description" content="2028 대입 개편, 학습법, 입시 정보 등 더나은에듀가 정리한 학습 정보 모음입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --ink:#14151A;--coral:#FF6B52;--coral-2:#FF8268;--cream:#F6F2E7;
+    --white:#FFFFFF;--text-dark:#1C1D21;--text-gray:#666A73;--line-light:#E4DFCE;
+    --radius:16px;--maxw:1180px;--sans:'PretendardVariable','Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  header.nav{background:var(--ink);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--white);}
+  .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex:none;}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a.active{color:var(--coral);}
+  .nav-cta{background:var(--coral);color:var(--white)!important;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;}
+  .nav-cta:hover{background:var(--coral-2);}
+
+  .page-head{background:var(--cream);padding:64px 0 48px;text-align:center;}
+  .page-head h1{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:0 0 12px;}
+  .page-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
+
+  .post-list{padding:56px 0 90px;}
+  .post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .post-card{border:1px solid var(--line-light);border-radius:var(--radius);padding:28px 26px;display:block;transition:border-color .2s ease,transform .2s ease;}
+  .post-card:hover{border-color:var(--coral);transform:translateY(-2px);}
+  .post-card .tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:#FFF0EC;padding:5px 11px;border-radius:999px;margin-bottom:14px;}
+  .post-card h2{font-size:19px;font-weight:800;margin:0 0 10px;line-height:1.4;}
+  .post-card p{font-size:13.6px;color:var(--text-gray);margin:0 0 14px;}
+  .post-card .date{font-size:12.5px;color:#A39E8C;}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+  footer a{color:rgba(255,255,255,0.78);}
+  footer a:hover{color:var(--white);}
+
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .post-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 8-4.2V15h2V8L12 3z" fill="#14151A"/><path d="M6 11.5V16c0 1.5 2.7 4 6 4s6-2.5 6-4v-4.5" stroke="#14151A" stroke-width="1.6" fill="none"/></svg></span>
+      더나은에듀
+    </a>
+    <nav class="nav-links">
+      <a href="/#change">2028 대입 분석</a>
+      <a href="/#teachers">선생님 소개</a>
+      <a href="/blog/" class="active">학습 정보</a>
+      <a href="/#apply" class="nav-cta">30분 무료 수업 신청</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>학습 정보</h1>
+    <p>2028 대입 개편부터 학습 노하우까지, 더나은에듀가 정리해드립니다.</p>
+  </div>
+</section>
+
+<section class="post-list">
+  <div class="wrap">
+    <div class="post-grid">
+      <a class="post-card" href="/blog/2028-daeip-gaepyeon.html">
+        <span class="tag">입시 정보</span>
+        <h2>2028 대입 개편, 무엇이 바뀌고 우리 아이는 어떻게 대비해야 할까</h2>
+        <p>선택과목 폐지, 9등급→5등급 내신, 고교학점제까지 — 학년별로 무엇을 준비해야 하는지 정리했습니다.</p>
+        <span class="date">2026.06.23</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 더나은에듀. All rights reserved.</span>
+    <a href="/">홈으로</a>
+  </div>
+</footer>
+
+</body>
+</html>
