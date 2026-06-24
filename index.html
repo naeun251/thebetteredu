@@ -180,6 +180,39 @@
   .fact mark{background:#FBE3B0;color:#5C3D00;padding:1px 4px;border-radius:3px;font-weight:700;}
 
   /* ---------- 핵심 지표 (Hero 하단 통계) ---------- */
+  /* 서비스 섹션 */
+  #services{padding:80px 0;}
+  .services-head{text-align:center;margin-bottom:48px;}
+  .services-head .label{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:0.08em;color:var(--coral);text-transform:uppercase;margin-bottom:14px;}
+  .services-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin:0 0 14px;line-height:1.35;}
+  .services-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .svc-card{border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:0;position:relative;overflow:hidden;}
+  .svc-card.general{background:var(--cream);border:1px solid var(--line-light);}
+  .svc-card.premium{background:var(--ink);color:var(--white);}
+  .svc-card.consult{background:var(--coral);color:var(--white);}
+  .svc-badge{display:inline-flex;align-items:center;font-size:11px;font-weight:800;letter-spacing:0.06em;padding:5px 12px;border-radius:999px;margin-bottom:20px;align-self:flex-start;}
+  .svc-card.general .svc-badge{background:rgba(255,107,82,0.12);color:var(--coral);}
+  .svc-card.premium .svc-badge{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);}
+  .svc-card.consult .svc-badge{background:rgba(255,255,255,0.22);color:var(--white);}
+  .svc-card h3{font-size:22px;font-weight:800;margin:0 0 6px;line-height:1.3;}
+  .svc-card.premium h3,.svc-card.consult h3{color:var(--white);}
+  .svc-card .svc-sub{font-size:13.5px;margin:0 0 24px;opacity:0.65;}
+  .svc-divider{height:1px;background:currentColor;opacity:0.12;margin:0 0 22px;}
+  .svc-items{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;flex:1;}
+  .svc-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;}
+  .svc-card.general .svc-item{color:var(--text-dark);}
+  .svc-card.premium .svc-item,.svc-card.consult .svc-item{color:rgba(255,255,255,0.88);}
+  .svc-dot{width:6px;height:6px;border-radius:50%;flex:none;margin-top:8px;}
+  .svc-card.general .svc-dot{background:var(--coral);}
+  .svc-card.premium .svc-dot,.svc-card.consult .svc-dot{background:rgba(255,255,255,0.7);}
+  .svc-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:14.5px;transition:opacity .2s;}
+  .svc-cta:hover{opacity:0.85;}
+  .svc-card.general .svc-cta{background:var(--ink);color:var(--white);}
+  .svc-card.premium .svc-cta{background:var(--white);color:var(--ink);}
+  .svc-card.consult .svc-cta{background:var(--white);color:var(--coral);}
+  @media(max-width:900px){.services-grid{grid-template-columns:1fr;}}
+
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   .stat-block{text-align:center;padding:0 12px;}
   .stat-block .stat-icon{width:56px;height:56px;margin:0 auto 20px;}
@@ -522,6 +555,65 @@
           <a href="#teachers" class="btn btn-outline-dark">선생님 알아보기 ↓</a>
         </div>
         <div class="hero-dots" id="heroDots"><button class="active" data-i="0" aria-label="배경 1"></button><button data-i="1" aria-label="배경 2"></button><button data-i="2" aria-label="배경 3"></button><button data-i="3" aria-label="배경 4"></button></div>
+      </div>
+    </div>
+  </section>
+
+<!-- 서비스 소개 -->
+  <section id="services">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <span class="label">SERVICES</span>
+        <h2>더나은에듀의 서비스를<br>선택해보세요</h2>
+        <p>1:1 과외부터 대입 컨설팅까지, 아이의 상황에 맞는 서비스를 제공합니다.</p>
+      </div>
+      <div class="services-grid">
+
+        <!-- 일반 과외 -->
+        <div class="svc-card general reveal">
+          <span class="svc-badge">방문 · 화상</span>
+          <h3>1:1 맞춤 과외</h3>
+          <p class="svc-sub">초·중·고 국영수사탐 전과목</p>
+          <div class="svc-divider"></div>
+          <ul class="svc-items">
+            <li class="svc-item"><span class="svc-dot"></span>학교 내신 · 수능 집중 대비</li>
+            <li class="svc-item"><span class="svc-dot"></span>학년·수준별 맞춤 커리큘럼</li>
+            <li class="svc-item"><span class="svc-dot"></span>방문 또는 화상 선택 가능</li>
+            <li class="svc-item"><span class="svc-dot"></span>평균 4일 내 첫 수업 시작</li>
+          </ul>
+          <a href="#apply" class="svc-cta">30분 무료 수업 신청 →</a>
+        </div>
+
+        <!-- 프리미엄 과외 -->
+        <div class="svc-card premium reveal">
+          <span class="svc-badge">화상 전용 · 프리미엄</span>
+          <h3>특목·자사·과고<br>1:1 과외</h3>
+          <p class="svc-sub">최상위권 심화 과외</p>
+          <div class="svc-divider"></div>
+          <ul class="svc-items">
+            <li class="svc-item"><span class="svc-dot"></span>특목고·자사고·과고 전문 대비</li>
+            <li class="svc-item"><span class="svc-dot"></span>심화 개념 · 경시 대회 대비</li>
+            <li class="svc-item"><span class="svc-dot"></span>최상위권 전문 선생님 매칭</li>
+            <li class="svc-item"><span class="svc-dot"></span>화상 수업 (전국 어디서나)</li>
+          </ul>
+          <a href="#apply" class="svc-cta">프리미엄 상담 신청 →</a>
+        </div>
+
+        <!-- 입시 컨설팅 -->
+        <div class="svc-card consult reveal">
+          <span class="svc-badge">화상 · 전략 컨설팅</span>
+          <h3>입시 컨설팅</h3>
+          <p class="svc-sub">방향 설정부터 생기부 관리까지</p>
+          <div class="svc-divider"></div>
+          <ul class="svc-items">
+            <li class="svc-item"><span class="svc-dot"></span>화상 입시 전략 상담 (1회 1시간)</li>
+            <li class="svc-item"><span class="svc-dot"></span>생활기록부 관리 · 세특 설계</li>
+            <li class="svc-item"><span class="svc-dot"></span>수시 · 정시 맞춤 전략 수립</li>
+            <li class="svc-item"><span class="svc-dot"></span>진로 방향 설정 · 프리미엄 컨설팅</li>
+          </ul>
+          <a href="#apply" class="svc-cta">컨설팅 상담 신청 →</a>
+        </div>
+
       </div>
     </div>
   </section>
