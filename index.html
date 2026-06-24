@@ -186,13 +186,13 @@
   .services-head .label{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:0.08em;color:var(--coral);text-transform:uppercase;margin-bottom:14px;}
   .services-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin:0 0 14px;line-height:1.35;}
   .services-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
   .svc-card{
     border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;
     cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;
     box-shadow:0 2px 12px rgba(0,0,0,0.07);
   }
-  .svc-card:hover{transform:scale(1.03);box-shadow:0 12px 36px rgba(0,0,0,0.15);}
+  .svc-card:hover{transform:scale(1.03) translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.2);}
   .svc-card.general{background:var(--cream);border:1px solid var(--line-light);}
   .svc-card.premium{background:var(--ink);color:var(--white);}
   .svc-card.consult{background:var(--coral);color:var(--white);}
@@ -229,7 +229,7 @@
   }
   .nav-dropdown a:hover{background:rgba(255,255,255,0.08);color:var(--white);}
   .nav-dropdown .drop-divider{height:1px;background:rgba(255,255,255,0.08);margin:6px 0;}
-  .svc-items{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+  .svc-items{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;}
   .svc-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;}
   .svc-card.general .svc-item{color:var(--text-dark);}
   .svc-card.premium .svc-item,.svc-card.consult .svc-item{color:rgba(255,255,255,0.88);}
@@ -559,17 +559,17 @@
         <a>1:1 맞춤 과외 <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
           <a href="#change">2028 대입 분석</a>
-          <a href="#teachers">선생님 소개</a>
-          <a href="#stories">후기 사례</a>
+          <a href="/teachers.html">선생님 소개</a>
+          <a href="/reviews.html">후기 사례</a>
           <div class="drop-divider"></div>
           <a href="#apply">무료 수업 신청</a>
         </div>
       </div>
       <div class="nav-item">
-        <a>특목·자사·과고 <span class="nav-chevron">▾</span></a>
+        <a style="white-space:normal;text-align:center;line-height:1.3;">특목·자사·과고<br>프리미엄 과외 <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#teachers">선생님 소개</a>
-          <a href="#stories">후기 사례</a>
+          <a href="/teachers.html">선생님 소개</a>
+          <a href="/reviews.html">후기 사례</a>
           <div class="drop-divider"></div>
           <a href="#apply">프리미엄 상담 신청</a>
         </div>
@@ -577,14 +577,16 @@
       <div class="nav-item">
         <a>입시컨설팅 <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="#services">서비스 안내</a>
-          <a href="#change">2028 대입 분석</a>
+          <a href="/blog/?tab=입시 정보">입시 정보</a>
+          <div class="drop-divider"></div>
+          <a href="/consulting/video.html">화상입시컨설팅</a>
+          <a href="/consulting/jinah.html">진학컨설팅</a>
+          <a href="/consulting/premium.html">프리미엄컨설팅</a>
           <div class="drop-divider"></div>
           <a href="#apply">컨설팅 상담 신청</a>
         </div>
       </div>
       <a href="/blog/">학습정보</a>
-      <a href="/blog/">학습 정보</a>
       <a href="#apply" class="nav-cta">30분 무료 수업 신청</a>
     </nav>
   </div>

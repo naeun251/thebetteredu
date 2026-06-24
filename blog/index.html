@@ -199,6 +199,9 @@
 </footer>
 
 <script>
+  // URL 파라미터로 탭 자동 선택
+  const urlTab = new URLSearchParams(location.search).get('tab');
+
   const tabs = document.querySelectorAll('.tab-btn');
   const sections = document.querySelectorAll('.post-section');
 
@@ -217,6 +220,11 @@
       });
     });
   });
+
+  if (urlTab) {
+    const target = [...tabs].find(t => t.dataset.tab === urlTab);
+    if (target) target.click();
+  }
 </script>
 
 </body>
