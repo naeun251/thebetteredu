@@ -15,7 +15,7 @@
     --radius:16px;--maxw:1180px;--sans:'PretendardVariable','Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:#F8F8F6;line-height:1.65;-webkit-font-smoothing:antialiased;}
   a{color:inherit;text-decoration:none;}
   ul{margin:0;padding:0;list-style:none;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
@@ -31,25 +31,63 @@
   .nav-cta{background:var(--coral);color:var(--white)!important;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;}
   .nav-cta:hover{background:var(--coral-2);}
 
-  .page-head{background:var(--cream);padding:64px 0 48px;text-align:center;}
-  .page-head h1{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:0 0 12px;}
-  .page-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
+  .page-head{background:var(--ink);padding:64px 0 52px;text-align:center;}
+  .page-head h1{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:0 0 12px;color:var(--white);}
+  .page-head p{font-size:15.5px;color:rgba(255,255,255,0.6);margin:0;}
 
-  .post-list{padding:56px 0 90px;}
-  .post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-  .post-card{border:1px solid var(--line-light);border-radius:var(--radius);padding:28px 26px;display:block;transition:border-color .2s ease,transform .2s ease;}
-  .post-card:hover{border-color:var(--coral);transform:translateY(-2px);}
-  .post-card .tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:#FFF0EC;padding:5px 11px;border-radius:999px;margin-bottom:14px;}
-  .post-card h2{font-size:19px;font-weight:800;margin:0 0 10px;line-height:1.4;}
-  .post-card p{font-size:13.6px;color:var(--text-gray);margin:0 0 14px;}
-  .post-card .date{font-size:12.5px;color:#A39E8C;}
+  .post-list{padding:52px 0 90px;}
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+
+  .post-card{
+    background:var(--white);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column;
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .post-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,0.12);}
+
+  /* 썸네일 영역 */
+  .post-thumb{
+    width:100%;height:200px;overflow:hidden;position:relative;flex:none;
+    background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 60%,#0f2952 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:20px 22px;
+  }
+  .post-thumb img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    display:block;
+  }
+  .post-thumb .thumb-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(10,20,50,0.75) 0%,rgba(10,20,50,0.1) 60%);
+  }
+  .post-thumb .thumb-text{position:relative;z-index:1;}
+  .post-thumb .thumb-issue{
+    font-size:11px;font-weight:800;letter-spacing:0.08em;
+    color:rgba(255,255,255,0.7);margin-bottom:6px;text-transform:uppercase;
+  }
+  .post-thumb .thumb-title{
+    font-size:17px;font-weight:800;color:var(--white);line-height:1.4;
+    word-break:keep-all;
+  }
+
+  /* 카드 본문 */
+  .post-body{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column;}
+  .post-body .tag{
+    display:inline-flex;font-size:11.5px;font-weight:800;
+    color:var(--coral);background:#FFF0EC;
+    padding:4px 10px;border-radius:999px;margin-bottom:12px;align-self:flex-start;
+  }
+  .post-body h2{font-size:16px;font-weight:800;margin:0 0 8px;line-height:1.45;word-break:keep-all;}
+  .post-body p{font-size:13px;color:var(--text-gray);margin:0 0 14px;line-height:1.6;flex:1;}
+  .post-body .date{font-size:12px;color:#B0AA98;margin-top:auto;}
 
   footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;}
   footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
   footer a{color:rgba(255,255,255,0.78);}
   footer a:hover{color:var(--white);}
 
-  @media (max-width:720px){
+  @media (max-width:900px){.post-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){
     .nav-links{display:none;}
     .post-grid{grid-template-columns:1fr;}
   }
@@ -84,12 +122,24 @@
 <section class="post-list">
   <div class="wrap">
     <div class="post-grid">
+
       <a class="post-card" href="/blog/2028-daeip-gaepyeon.html">
-        <span class="tag">입시 정보</span>
-        <h2>2028 대입 개편, 무엇이 바뀌고 우리 아이는 어떻게 대비해야 할까</h2>
-        <p>선택과목 폐지, 9등급→5등급 내신, 고교학점제까지 — 학년별로 무엇을 준비해야 하는지 정리했습니다.</p>
-        <span class="date">2026.06.23</span>
+        <div class="post-thumb">
+          <img src="/blog/images/2028-daeip-gaepyeon.jpg" alt="2028 대입 개편안" onerror="this.style.display='none'">
+          <div class="thumb-overlay"></div>
+          <div class="thumb-text">
+            <div class="thumb-issue">EDU ISSUE</div>
+            <div class="thumb-title">2028 대입 개편안<br>통합형 수능·내신 5등급제</div>
+          </div>
+        </div>
+        <div class="post-body">
+          <span class="tag">입시 정보</span>
+          <h2>2028 대입 개편, 무엇이 바뀌고 우리 아이는 어떻게 대비해야 할까</h2>
+          <p>선택과목 폐지, 9등급→5등급 내신, 고교학점제까지 — 학년별로 무엇을 준비해야 하는지 정리했습니다.</p>
+          <span class="date">2026.06.23</span>
+        </div>
       </a>
+
     </div>
   </div>
 </section>
