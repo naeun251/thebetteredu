@@ -189,10 +189,12 @@
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
   .svc-card{
     border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;
-    cursor:pointer;transition:transform .25s ease,box-shadow .25s ease;
+    cursor:pointer;
+    transition:transform .32s cubic-bezier(0.34,1.56,0.64,1), box-shadow .32s ease;
     box-shadow:0 2px 12px rgba(0,0,0,0.07);
+    will-change:transform;
   }
-  .svc-card:hover{transform:scale(1.03) translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.2);}
+  .svc-card:hover{transform:scale(1.05) translateY(-12px);box-shadow:0 28px 60px rgba(0,0,0,0.22);}
   .svc-card.general{background:var(--cream);border:1px solid var(--line-light);}
   .svc-card.premium{background:var(--ink);color:var(--white);}
   .svc-card.consult{background:var(--coral);color:var(--white);}
