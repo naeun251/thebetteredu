@@ -54,14 +54,29 @@
   .c-section{padding:76px 0;border-bottom:1px solid var(--line-light);}
   .c-section.bg-cream{background:var(--cream);}
 
-  /* PRODUCT HEADER */
+  /* PRODUCT HERO (split image + title) */
+  .prod-hero{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;margin-bottom:48px;min-height:300px;box-shadow:0 8px 32px rgba(0,0,0,0.10);}
+  .prod-hero-img{position:relative;overflow:hidden;}
+  .prod-hero-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+  .prod-hero:hover .prod-hero-img img{transform:scale(1.04);}
+  .prod-hero-text{background:var(--ink);padding:44px 40px;display:flex;flex-direction:column;justify-content:center;}
+  .prod-hero.light .prod-hero-text{background:var(--cream-2);}
+  .prod-hero-text .prod-label{display:inline-flex;align-items:center;font-size:12px;font-weight:800;color:var(--coral);background:rgba(255,107,82,0.18);padding:5px 12px;border-radius:999px;margin-bottom:16px;width:fit-content;}
+  .prod-hero.light .prod-hero-text .prod-label{background:rgba(255,107,82,0.12);}
+  .prod-hero-text h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;margin:0 0 10px;line-height:1.25;color:var(--white);}
+  .prod-hero.light .prod-hero-text h2{color:var(--text-dark);}
+  .prod-hero-text .prod-sub{font-size:14.5px;color:rgba(255,255,255,0.65);margin:0 0 20px;}
+  .prod-hero.light .prod-hero-text .prod-sub{color:var(--text-gray);}
+  .prod-badge-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .grade-badge{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);}
+  .prod-hero.light .grade-badge{background:var(--white);color:var(--text-dark);}
+  .grade-badge.on{background:var(--coral);color:var(--white);}
+
+  /* PRODUCT HEADER (fallback, non-hero) */
   .prod-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:40px;flex-wrap:wrap;}
   .prod-label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;color:var(--coral);background:rgba(255,107,82,0.1);padding:5px 12px;border-radius:999px;margin-bottom:12px;}
   .prod-title{font-size:clamp(24px,3vw,32px);font-weight:800;margin:0 0 8px;line-height:1.25;}
   .prod-sub{font-size:15px;color:var(--text-gray);margin:0;}
-  .prod-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
-  .grade-badge{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;background:var(--cream-2);color:var(--text-dark);}
-  .grade-badge.on{background:var(--coral);color:var(--white);}
 
   /* STATS ROW */
   .stat-row{display:flex;gap:16px;margin-bottom:40px;flex-wrap:wrap;}
@@ -177,6 +192,9 @@
     .apply-layout{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
     .prod-cta-bar{flex-direction:column;align-items:flex-start;}
+    .prod-hero{grid-template-columns:1fr;min-height:auto;}
+    .prod-hero-img{height:220px;}
+    .prod-hero-text{padding:28px 24px;}
   }
 </style>
 </head>
@@ -235,11 +253,16 @@
 <!-- ① 화상입시컨설팅 -->
 <section id="video" class="c-section">
   <div class="wrap">
-    <div class="prod-header">
-      <div>
+
+    <!-- 사진 + 제목 split -->
+    <div class="prod-hero">
+      <div class="prod-hero-img">
+        <img src="images/video.jpg.png" alt="화상입시컨설팅 — 선생님과 온라인 수업 중인 학생">
+      </div>
+      <div class="prod-hero-text">
         <div class="prod-label">No.01 · 화상입시컨설팅</div>
-        <h2 class="prod-title">화상입시컨설팅</h2>
-        <p class="prod-sub">데이터 기반 분석으로 수시·정시 전략을 한 번에 정리해드립니다.</p>
+        <h2>화상입시컨설팅</h2>
+        <p class="prod-sub">데이터 기반 분석으로 수시·정시 전략을<br>한 번에 정리해드립니다.</p>
         <div class="prod-badge-row">
           <span class="grade-badge on">고1</span>
           <span class="grade-badge on">고2</span>
@@ -335,13 +358,18 @@
 <!-- ② 진학컨설팅 -->
 <section id="jinah" class="c-section bg-cream">
   <div class="wrap">
-    <div class="prod-header">
-      <div>
+
+    <!-- 사진 + 제목 split (이미지 오른쪽) -->
+    <div class="prod-hero light" style="direction:rtl;">
+      <div class="prod-hero-img" style="direction:ltr;">
+        <img src="images/jinah.jpg.png" alt="진학컨설팅 — 온라인으로 컨설팅 받는 학생">
+      </div>
+      <div class="prod-hero-text" style="direction:ltr;">
         <div class="prod-label">No.02 · 진학컨설팅</div>
-        <h2 class="prod-title">진학컨설팅</h2>
-        <p class="prod-sub">학생부 종합전형 대비 맞춤형 솔루션 — 수시 집중·장기 관리</p>
+        <h2>진학컨설팅</h2>
+        <p class="prod-sub">학생부 종합전형 대비 맞춤형 솔루션<br>수시 집중·장기 관리</p>
         <div class="prod-badge-row">
-          <span class="grade-badge">중3 제외</span>
+          <span class="grade-badge" style="background:rgba(0,0,0,0.08);color:var(--text-dark);">중3 제외</span>
           <span class="grade-badge on">고1</span>
           <span class="grade-badge on">고2</span>
           <span class="grade-badge on">고3</span>
@@ -451,11 +479,22 @@
 <!-- ③ 대치동컨설팅 -->
 <section id="daechidong" class="c-section">
   <div class="wrap">
-    <div class="prod-header">
-      <div>
+
+    <!-- 사진 + 제목 split -->
+    <div class="prod-hero">
+      <div class="prod-hero-img">
+        <img src="images/daechidong.jpg.png" alt="대치동컨설팅 — 학부모와 전문 컨설턴트 상담">
+      </div>
+      <div class="prod-hero-text">
         <div class="prod-label">No.03 · 대치동컨설팅</div>
-        <h2 class="prod-title">대치동컨설팅</h2>
-        <p class="prod-sub">고육 전문 연구소 — 대치동 메이서맵 진학연구소와 함께합니다.</p>
+        <h2>대치동컨설팅</h2>
+        <p class="prod-sub">대치동 메이서맵 진학연구소와 함께<br>대입 전략 전체를 설계합니다.</p>
+        <div class="prod-badge-row">
+          <span class="grade-badge on">진로 설계</span>
+          <span class="grade-badge on">수시 전략</span>
+          <span class="grade-badge on">정시 전략</span>
+          <span class="grade-badge on">면접</span>
+        </div>
       </div>
     </div>
 
