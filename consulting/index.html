@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>입시컨설팅 | 더나은에듀</title>
+<meta name="description" content="더나은에듀 입시컨설팅 — 화상입시컨설팅, 진학컨설팅, 대치동컨설팅을 한 곳에서 확인하세요.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{--ink:#14151A;--coral:#FF6B52;--coral-2:#FF8268;--cream:#F6F2E7;--white:#FFFFFF;--text-dark:#1C1D21;--text-gray:#666A73;--line-light:#E4DFCE;--radius:16px;--maxw:1180px;--sans:'PretendardVariable','Pretendard',-apple-system,sans-serif;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .content-wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+  header.nav{background:var(--ink);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--white);}
+  .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex:none;}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-links>a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
+  .nav-links>a:hover{color:var(--white);}
+  .nav-item{position:relative;}
+  .nav-item>a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);cursor:pointer;}
+  .nav-item>a:hover{color:var(--white);}
+  .nav-chevron{font-size:10px;transition:transform .2s;display:inline-block;}
+  .nav-item.open .nav-chevron{transform:rotate(180deg);}
+  .nav-dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2028;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:8px;min-width:190px;z-index:300;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+  .nav-item.open .nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .nav-dropdown a{display:block;padding:10px 14px;border-radius:9px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.75);transition:background .15s,color .15s;white-space:nowrap;}
+  .nav-dropdown a:hover{background:rgba(255,255,255,0.08);color:var(--white);}
+  .nav-dropdown .drop-divider{height:1px;background:rgba(255,255,255,0.08);margin:6px 0;}
+  .nav-cta{background:var(--coral);color:var(--white)!important;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;}
+  .nav-cta:hover{background:var(--coral-2);}
+
+  .page-head{background:var(--ink);padding:64px 0 52px;color:var(--white);}
+  .page-head .tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:rgba(255,107,82,0.15);padding:5px 11px;border-radius:999px;margin-bottom:18px;}
+  .page-head h1{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.3;margin:0 0 14px;}
+  .page-head p{font-size:15.5px;color:rgba(255,255,255,0.6);margin:0;}
+
+  /* ANCHOR NAV */
+  .anchor-nav{background:var(--white);border-bottom:1px solid var(--line-light);position:sticky;top:0;z-index:90;}
+  .anchor-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;overflow-x:auto;scrollbar-width:none;}
+  .anchor-inner::-webkit-scrollbar{display:none;}
+  .anchor-btn{flex:none;padding:16px 22px;font-size:14px;font-weight:700;color:var(--text-gray);white-space:nowrap;border-bottom:2.5px solid transparent;transition:color .15s,border-color .15s;}
+  .anchor-btn:hover{color:var(--text-dark);}
+  .anchor-btn.active{color:var(--coral);border-bottom-color:var(--coral);}
+
+  /* CONSULTING SECTIONS */
+  .consulting-section{padding:72px 0;border-bottom:1px solid var(--line-light);}
+  .consulting-section:nth-child(even){background:#F8F8F6;}
+  .section-label{font-size:12px;font-weight:800;color:var(--coral);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;}
+  .section-title{font-size:clamp(22px,2.8vw,28px);font-weight:800;margin:0 0 10px;line-height:1.35;}
+  .section-desc{font-size:15.5px;color:var(--text-gray);margin:0 0 36px;}
+
+  /* INFO GRID (화상컨설팅) */
+  .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px;}
+  .info-card{background:var(--cream);border-radius:14px;padding:24px 20px;text-align:center;}
+  .info-card .val{font-size:22px;font-weight:800;color:var(--coral);margin-bottom:4px;}
+  .info-card .lab{font-size:13px;color:var(--text-gray);}
+
+  /* PROCESS GRID (진학컨설팅) */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:36px;}
+  .process-step{background:var(--cream);border-radius:12px;padding:20px 16px;text-align:center;}
+  .process-step .num{font-size:11px;font-weight:800;color:var(--coral);margin-bottom:8px;letter-spacing:0.05em;}
+  .process-step .label{font-size:14px;font-weight:700;line-height:1.4;}
+
+  /* CALLOUT (대치동컨설팅) */
+  .callout{background:var(--cream);border-radius:var(--radius);padding:24px 28px;margin-bottom:32px;font-size:15px;line-height:1.7;}
+  .callout b{color:var(--coral);}
+
+  /* ITEM LIST */
+  .sub-title{font-size:16px;font-weight:800;margin:32px 0 14px;}
+  .item-list{display:flex;flex-direction:column;gap:11px;margin-bottom:32px;}
+  .item-row{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.6;}
+  .item-row .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:none;margin-top:8px;}
+
+  /* CTA SECTION */
+  .cta-section{padding:80px 0;background:var(--cream);}
+  .cta-inner{background:var(--ink);border-radius:var(--radius);padding:52px 40px;text-align:center;max-width:720px;margin:0 auto;}
+  .cta-inner h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;color:var(--white);margin:0 0 14px;}
+  .cta-inner p{font-size:15.5px;color:rgba(255,255,255,0.7);margin:0 0 28px;}
+  .btn-coral{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;border-radius:999px;font-weight:700;font-size:15px;background:var(--coral);color:var(--white);}
+  .btn-coral:hover{background:var(--coral-2);}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;}
+  footer .inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+  footer a{color:rgba(255,255,255,0.78);}
+  @media(max-width:720px){
+    .nav-links{display:none;}
+    .info-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 8-4.2V15h2V8L12 3z" fill="#14151A"/><path d="M6 11.5V16c0 1.5 2.7 4 6 4s6-2.5 6-4v-4.5" stroke="#14151A" stroke-width="1.6" fill="none"/></svg></span>
+      더나은에듀
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <a>1:1 맞춤 과외 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/#change">2028 대입 분석</a>
+          <a href="/#teachers">선생님 소개</a>
+          <a href="/#stories">후기 사례</a>
+          <div class="drop-divider"></div>
+          <a href="/#apply">무료 수업 신청</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a style="white-space:normal;text-align:center;line-height:1.3;">특목·자사·과고<br>프리미엄 과외 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/premium-tutoring.html#teachers">선생님 소개</a>
+          <a href="/premium-tutoring.html#reviews">후기 사례</a>
+          <div class="drop-divider"></div>
+          <a href="/premium-tutoring.html#apply">프리미엄 상담 신청</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a>입시컨설팅 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/consulting/#video">화상입시컨설팅</a>
+          <a href="/consulting/#jinah">진학컨설팅</a>
+          <a href="/consulting/#daechidong">대치동컨설팅</a>
+          <div class="drop-divider"></div>
+          <a href="/consulting/#apply">컨설팅 상담 신청</a>
+        </div>
+      </div>
+      <a href="/blog/">학습정보</a>
+      <a href="/#apply" class="nav-cta">30분 무료 수업 신청</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <span class="tag">입시컨설팅</span>
+    <h1>입시컨설팅</h1>
+    <p>화상 상담부터 생기부 관리, 대입 전체 설계까지 — 목적에 맞는 컨설팅을 선택하세요.</p>
+  </div>
+</div>
+
+<div class="anchor-nav">
+  <div class="anchor-inner">
+    <a class="anchor-btn" href="#video">화상입시컨설팅</a>
+    <a class="anchor-btn" href="#jinah">진학컨설팅</a>
+    <a class="anchor-btn" href="#daechidong">대치동컨설팅</a>
+    <a class="anchor-btn" href="#apply">상담 신청</a>
+  </div>
+</div>
+
+<!-- 화상입시컨설팅 -->
+<section id="video" class="consulting-section">
+  <div class="content-wrap">
+    <div class="section-label">화상입시컨설팅</div>
+    <h2 class="section-title">화상 입시컨설팅</h2>
+    <p class="section-desc">1회 1시간, 수시·정시 전략을 한 번에 정리해드립니다.</p>
+    <div class="info-grid">
+      <div class="info-card"><div class="val">1회</div><div class="lab">회당 진행</div></div>
+      <div class="info-card"><div class="val">1시간</div><div class="lab">화상 상담</div></div>
+      <div class="info-card"><div class="val">수시·정시</div><div class="lab">전략 선택</div></div>
+    </div>
+    <div class="sub-title">이런 분께 추천합니다</div>
+    <div class="item-list">
+      <div class="item-row"><span class="dot"></span>수시·정시 중 어느 전형이 유리한지 모르겠는 경우</div>
+      <div class="item-row"><span class="dot"></span>지원 대학·학과를 어떻게 설정해야 할지 막막한 경우</div>
+      <div class="item-row"><span class="dot"></span>현재 성적으로 어느 대학까지 가능한지 빠르게 점검하고 싶은 경우</div>
+    </div>
+    <div class="sub-title">컨설팅 내용</div>
+    <div class="item-list">
+      <div class="item-row"><span class="dot"></span>현재 성적·생기부 분석 후 수시·정시 유불리 판단</div>
+      <div class="item-row"><span class="dot"></span>목표 대학·학과 입시 요강 분석 및 지원 전략 수립</div>
+      <div class="item-row"><span class="dot"></span>남은 기간 공부 방향 제시</div>
+    </div>
+  </div>
+</section>
+
+<!-- 진학컨설팅 -->
+<section id="jinah" class="consulting-section">
+  <div class="content-wrap">
+    <div class="section-label">진학컨설팅</div>
+    <h2 class="section-title">진학컨설팅</h2>
+    <p class="section-desc">생활기록부 관리부터 대입 전략까지, 체계적으로 설계해드립니다.</p>
+    <div class="sub-title">컨설팅 진행 과정</div>
+    <div class="process-grid">
+      <div class="process-step"><div class="num">STEP 01</div><div class="label">회원 분석<br>진로 탐색</div></div>
+      <div class="process-step"><div class="num">STEP 02</div><div class="label">학습·세특<br>컨설팅</div></div>
+      <div class="process-step"><div class="num">STEP 03</div><div class="label">생기부<br>컨설팅</div></div>
+      <div class="process-step"><div class="num">STEP 04</div><div class="label">입시 전략<br>수립</div></div>
+    </div>
+    <div class="sub-title">주요 컨설팅 내용</div>
+    <div class="item-list">
+      <div class="item-row"><span class="dot"></span>학교 생기부 및 학교 특성 분석</div>
+      <div class="item-row"><span class="dot"></span>과목별 수행평가 주제 및 세특 컨설팅</div>
+      <div class="item-row"><span class="dot"></span>창체 활동 선택 및 생기부 전체 컨설팅</div>
+      <div class="item-row"><span class="dot"></span>진로 탐색 및 희망 진로 맞춤 입시 전략</div>
+      <div class="item-row"><span class="dot"></span>내신 성적 관리 및 학습 동기부여</div>
+    </div>
+  </div>
+</section>
+
+<!-- 대치동컨설팅 -->
+<section id="daechidong" class="consulting-section">
+  <div class="content-wrap">
+    <div class="section-label">대치동컨설팅</div>
+    <h2 class="section-title">대치동컨설팅</h2>
+    <p class="section-desc">진로 방향이 아직 없어도 괜찮습니다. 처음부터 함께 설계해드립니다.</p>
+    <div class="callout">
+      <b>이런 분께 맞습니다:</b> "어느 학과를 가야 할지 모르겠어요. 그냥 좋은 대학 가고 싶어요."<br>
+      진로가 정해지지 않은 상태에서도 컨설팅을 통해 방향을 찾고, 그에 맞는 대입 전략을 전체적으로 설계해드립니다.
+    </div>
+    <div class="sub-title">대치동컨설팅이 하는 일</div>
+    <div class="item-list">
+      <div class="item-row"><span class="dot"></span>학생의 특성·강점·가치관 분석을 통한 진로 방향 설정</div>
+      <div class="item-row"><span class="dot"></span>진로에 맞는 학과·대학 탐색 및 입시 요강 분석</div>
+      <div class="item-row"><span class="dot"></span>생활기록부 전체 설계 (세특·창체·동아리)</div>
+      <div class="item-row"><span class="dot"></span>성장 스토리 기록 설계 및 자기소개서 방향 제시</div>
+      <div class="item-row"><span class="dot"></span>수시·정시 통합 입시 전략 수립</div>
+    </div>
+  </div>
+</section>
+
+<!-- 컨설팅 상담 신청 -->
+<section id="apply" class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>컨설팅 상담 신청</h2>
+      <p>어떤 컨설팅이 맞는지 모르겠다면 상담부터 시작하세요.<br>상담을 통해 상황에 맞는 컨설팅을 안내해드립니다.</p>
+      <a href="/#apply" class="btn-coral">상담 신청하기 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner"><span>© 2026 더나은에듀. All rights reserved.</span><a href="/">홈으로</a></div>
+</footer>
+<script>
+  document.querySelectorAll('.nav-item').forEach(item=>{item.addEventListener('click',e=>{e.stopPropagation();const o=item.classList.contains('open');document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open'));if(!o)item.classList.add('open');});});
+  document.addEventListener('click',()=>document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open')));
+</script>
+</body>
+</html>

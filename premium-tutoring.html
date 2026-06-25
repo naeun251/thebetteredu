@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>특목·자사·과고 프리미엄 과외 | 더나은에듀</title>
+<meta name="description" content="더나은에듀 프리미엄 과외 — 특목고·자사고·과고 입시에 특화된 선생님과 함께합니다.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{--ink:#14151A;--coral:#FF6B52;--coral-2:#FF8268;--cream:#F6F2E7;--white:#FFFFFF;--text-dark:#1C1D21;--text-gray:#666A73;--line-light:#E4DFCE;--radius:16px;--maxw:1180px;--sans:'PretendardVariable','Pretendard',-apple-system,sans-serif;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  header.nav{background:var(--ink);}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--white);}
+  .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex:none;}
+  .nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-links>a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
+  .nav-links>a:hover{color:var(--white);}
+  .nav-item{position:relative;}
+  .nav-item>a{display:flex;align-items:center;gap:5px;font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);cursor:pointer;}
+  .nav-item>a:hover{color:var(--white);}
+  .nav-chevron{font-size:10px;transition:transform .2s;display:inline-block;}
+  .nav-item.open .nav-chevron{transform:rotate(180deg);}
+  .nav-dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2028;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:8px;min-width:190px;z-index:300;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
+  .nav-item.open .nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .nav-dropdown a{display:block;padding:10px 14px;border-radius:9px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.75);transition:background .15s,color .15s;white-space:nowrap;}
+  .nav-dropdown a:hover{background:rgba(255,255,255,0.08);color:var(--white);}
+  .nav-dropdown .drop-divider{height:1px;background:rgba(255,255,255,0.08);margin:6px 0;}
+  .nav-cta{background:var(--coral);color:var(--white)!important;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;}
+  .nav-cta:hover{background:var(--coral-2);}
+
+  .page-head{background:var(--ink);padding:64px 0 52px;color:var(--white);}
+  .page-head .tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:rgba(255,107,82,0.15);padding:5px 11px;border-radius:999px;margin-bottom:18px;}
+  .page-head h1{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.3;margin:0 0 14px;}
+  .page-head p{font-size:15.5px;color:rgba(255,255,255,0.6);margin:0;}
+
+  /* ANCHOR NAV */
+  .anchor-nav{background:var(--white);border-bottom:1px solid var(--line-light);position:sticky;top:0;z-index:90;}
+  .anchor-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+  .anchor-inner::-webkit-scrollbar{display:none;}
+  .anchor-btn{flex:none;padding:16px 22px;font-size:14px;font-weight:700;color:var(--text-gray);white-space:nowrap;border-bottom:2.5px solid transparent;transition:color .15s,border-color .15s;}
+  .anchor-btn:hover{color:var(--text-dark);}
+  .anchor-btn.active{color:var(--coral);border-bottom-color:var(--coral);}
+
+  /* SECTIONS */
+  .page-section{padding:72px 0;border-bottom:1px solid var(--line-light);}
+  .section-label{font-size:12px;font-weight:800;color:var(--coral);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;}
+  .section-title{font-size:clamp(22px,2.8vw,30px);font-weight:800;margin:0 0 12px;line-height:1.35;}
+  .section-desc{font-size:15.5px;color:var(--text-gray);margin:0 0 40px;}
+
+  .coming-box{background:var(--cream);border-radius:20px;padding:56px 40px;text-align:center;max-width:640px;}
+  .coming-box .icon{font-size:44px;margin-bottom:18px;}
+  .coming-box h2{font-size:21px;font-weight:800;margin:0 0 12px;}
+  .coming-box p{font-size:15px;color:var(--text-gray);margin:0;line-height:1.7;}
+
+  /* CTA */
+  .cta-section{background:var(--cream);padding:80px 0;}
+  .cta-inner{background:var(--coral);border-radius:var(--radius);padding:52px 40px;text-align:center;max-width:720px;margin:0 auto;}
+  .cta-inner h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;color:var(--white);margin:0 0 14px;}
+  .cta-inner p{font-size:15.5px;color:rgba(255,255,255,0.85);margin:0 0 28px;}
+  .btn-white{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;border-radius:999px;font-weight:700;font-size:15px;background:var(--white);color:var(--coral);}
+  .btn-white:hover{opacity:0.9;}
+
+  footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;}
+  footer .inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+  footer a{color:rgba(255,255,255,0.78);}
+  @media(max-width:720px){.nav-links{display:none;}.coming-box{padding:40px 24px;}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 8-4.2V15h2V8L12 3z" fill="#14151A"/><path d="M6 11.5V16c0 1.5 2.7 4 6 4s6-2.5 6-4v-4.5" stroke="#14151A" stroke-width="1.6" fill="none"/></svg></span>
+      더나은에듀
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <a>1:1 맞춤 과외 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/#change">2028 대입 분석</a>
+          <a href="/#teachers">선생님 소개</a>
+          <a href="/#stories">후기 사례</a>
+          <div class="drop-divider"></div>
+          <a href="/#apply">무료 수업 신청</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a style="white-space:normal;text-align:center;line-height:1.3;">특목·자사·과고<br>프리미엄 과외 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/premium-tutoring.html#teachers">선생님 소개</a>
+          <a href="/premium-tutoring.html#reviews">후기 사례</a>
+          <div class="drop-divider"></div>
+          <a href="/premium-tutoring.html#apply">프리미엄 상담 신청</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a>입시컨설팅 <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="/consulting/#video">화상입시컨설팅</a>
+          <a href="/consulting/#jinah">진학컨설팅</a>
+          <a href="/consulting/#daechidong">대치동컨설팅</a>
+          <div class="drop-divider"></div>
+          <a href="/consulting/#apply">컨설팅 상담 신청</a>
+        </div>
+      </div>
+      <a href="/blog/">학습정보</a>
+      <a href="/#apply" class="nav-cta">30분 무료 수업 신청</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <span class="tag">프리미엄 과외</span>
+    <h1>특목·자사·과고<br>프리미엄 과외</h1>
+    <p>특목고·자사고·과고 입시에 특화된 검증된 선생님과 함께합니다.</p>
+  </div>
+</div>
+
+<div class="anchor-nav">
+  <div class="anchor-inner">
+    <a class="anchor-btn" href="#teachers">선생님 소개</a>
+    <a class="anchor-btn" href="#reviews">후기 사례</a>
+    <a class="anchor-btn" href="#apply">프리미엄 상담 신청</a>
+  </div>
+</div>
+
+<section id="teachers" class="page-section">
+  <div class="wrap">
+    <div class="section-label">선생님 소개</div>
+    <h2 class="section-title">프리미엄 선생님 소개</h2>
+    <p class="section-desc">특목고·과고 출신, 의대·서울대 상위권 선생님들을 연결해드립니다.</p>
+    <div class="coming-box">
+      <div class="icon">👨‍🏫</div>
+      <h2>선생님 프로필 준비 중입니다</h2>
+      <p>프리미엄 선생님 상세 프로필 페이지를 준비하고 있어요.<br>지금은 상담을 통해 아이에게 맞는 선생님을 매칭해드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="page-section" style="background:#F8F8F6;">
+  <div class="wrap">
+    <div class="section-label">후기 사례</div>
+    <h2 class="section-title">프리미엄 수강생 후기</h2>
+    <p class="section-desc">특목고·자사고에 합격한 학생들의 실제 이야기입니다.</p>
+    <div class="coming-box">
+      <div class="icon">⭐</div>
+      <h2>후기 페이지 준비 중입니다</h2>
+      <p>실제 수강생들의 생생한 후기를 준비하고 있어요.<br>지금은 상담을 통해 더 자세한 사례를 안내해드릴 수 있습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>프리미엄 과외 상담 신청</h2>
+      <p>특목고·자사고·과고를 목표로 하는 학생에게 맞는 선생님을 연결해드립니다.<br>먼저 30분 무료 수업으로 경험해보세요.</p>
+      <a href="/#apply" class="btn-white">30분 무료 상담 신청 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner"><span>© 2026 더나은에듀. All rights reserved.</span><a href="/">홈으로</a></div>
+</footer>
+<script>
+  document.querySelectorAll('.nav-item').forEach(item=>{item.addEventListener('click',e=>{e.stopPropagation();const o=item.classList.contains('open');document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open'));if(!o)item.classList.add('open');});});
+  document.addEventListener('click',()=>document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open')));
+</script>
+</body>
+</html>
