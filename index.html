@@ -186,15 +186,15 @@
   .services-head .label{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:0.08em;color:var(--coral);text-transform:uppercase;margin-bottom:14px;}
   .services-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin:0 0 14px;line-height:1.35;}
   .services-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,440px));gap:24px;justify-content:center;align-items:stretch;}
   .svc-card{
-    border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;
+    border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;
     cursor:pointer;
     transition:transform .32s cubic-bezier(0.34,1.56,0.64,1), box-shadow .32s ease;
     box-shadow:0 2px 12px rgba(0,0,0,0.07);
     will-change:transform;
   }
-  .svc-card:hover{transform:scale(1.05) translateY(-12px);box-shadow:0 28px 60px rgba(0,0,0,0.22);}
+  .svc-card:hover{transform:translateY(-10px);box-shadow:0 24px 52px rgba(0,0,0,0.18);}
   .svc-card.general{background:var(--cream);border:1px solid var(--line-light);}
   .svc-card.premium{background:var(--ink);color:var(--white);}
   .svc-card.consult{background:var(--coral);color:var(--white);}
