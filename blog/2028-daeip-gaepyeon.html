@@ -31,12 +31,9 @@
   .nav-item{position:relative;display:flex;align-items:center;}
   .nav-item>a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
   .nav-item>a:hover{color:var(--white);}
-  .nav-toggle{background:none;border:none;cursor:pointer;padding:0 0 0 5px;color:rgba(255,255,255,0.78);display:flex;align-items:center;line-height:1;}
-  .nav-toggle:hover{color:var(--white);}
-  .nav-chevron{font-size:10px;transition:transform .2s;display:inline-block;}
-  .nav-item.open .nav-chevron{transform:rotate(180deg);}
-  .nav-dropdown{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(-6px);background:#1e2028;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:8px;min-width:190px;z-index:300;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
-  .nav-item.open .nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+  .nav-item>a::after{content:"▾";font-size:9px;margin-left:5px;opacity:0.7;display:inline-block;}
+  .nav-dropdown{position:absolute;top:calc(100% + 14px);left:50%;background:#1e2028;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:8px;min-width:190px;z-index:300;opacity:0;pointer-events:none;transform:translateX(-50%) translateY(-6px);transition:opacity .2s ease .15s,transform .2s ease .15s;}
+  .nav-item:hover .nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);transition-delay:0s;}
   .nav-dropdown a{display:block;padding:10px 14px;border-radius:9px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,0.75);transition:background .15s,color .15s;white-space:nowrap;}
   .nav-dropdown a:hover{background:rgba(255,255,255,0.08);color:var(--white);}
   .nav-dropdown .drop-divider{height:1px;background:rgba(255,255,255,0.08);margin:6px 0;}
@@ -92,8 +89,7 @@
     </a>
     <nav class="nav-links">
       <div class="nav-item">
-        <a href="/#services">1:1 맞춤 과외</a><button class="nav-toggle"><span class="nav-chevron">▾</span></button>
-        <div class="nav-dropdown">
+        <a href="/#services">1:1 맞춤 과외</a>        <div class="nav-dropdown">
           <a href="/#change">2028 대입 분석</a>
           <a href="/#teachers">선생님 소개</a>
           <a href="/#stories">후기 사례</a>
@@ -102,8 +98,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="/premium-tutoring.html" style="white-space:normal;text-align:center;line-height:1.3;">특목·자사·과고<br>프리미엄 과외</a><button class="nav-toggle"><span class="nav-chevron">▾</span></button>
-        <div class="nav-dropdown">
+        <a href="/premium-tutoring.html" style="white-space:normal;text-align:center;line-height:1.3;">특목·자사·과고<br>프리미엄 과외</a>        <div class="nav-dropdown">
           <a href="/premium-tutoring.html#teachers">선생님 소개</a>
           <a href="/premium-tutoring.html#reviews">후기 사례</a>
           <div class="drop-divider"></div>
@@ -111,8 +106,7 @@
         </div>
       </div>
       <div class="nav-item">
-        <a href="/consulting/">입시컨설팅</a><button class="nav-toggle"><span class="nav-chevron">▾</span></button>
-        <div class="nav-dropdown">
+        <a href="/consulting/">입시컨설팅</a>        <div class="nav-dropdown">
           <a href="/consulting/#video">화상입시컨설팅</a>
           <a href="/consulting/#jinah">진학컨설팅</a>
           <a href="/consulting/#daechidong">대치동컨설팅</a>
@@ -188,8 +182,6 @@
   </div>
 </footer>
 <script>
-  document.querySelectorAll('.nav-toggle').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();const item=btn.closest('.nav-item');const o=item.classList.contains('open');document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open'));if(!o)item.classList.add('open');});});
-  document.addEventListener('click',()=>document.querySelectorAll('.nav-item.open').forEach(i=>i.classList.remove('open')));
 </script>
 </body>
 </html>
