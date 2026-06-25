@@ -133,6 +133,40 @@
   footer .inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
   footer a{color:rgba(255,255,255,0.78);}
 
+  /* PRODUCT CTA BAR */
+  .prod-cta-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--ink);border-radius:14px;padding:22px 28px;margin-top:36px;flex-wrap:wrap;}
+  .prod-cta-bar p{margin:0;font-size:15px;font-weight:600;color:rgba(255,255,255,0.82);}
+  .prod-cta-bar a{flex:none;background:var(--coral);color:var(--white);font-size:14px;font-weight:700;padding:12px 26px;border-radius:999px;white-space:nowrap;transition:background .15s;}
+  .prod-cta-bar a:hover{background:var(--coral-2);}
+
+  /* APPLY FORM SECTION */
+  .apply-section{padding:80px 0;background:var(--cream);}
+  .apply-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start;}
+  .apply-left .a-tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:rgba(255,107,82,0.12);padding:5px 12px;border-radius:999px;margin-bottom:18px;}
+  .apply-left h2{font-size:clamp(22px,2.8vw,30px);font-weight:800;line-height:1.3;margin:0 0 14px;}
+  .apply-left .desc{font-size:14.5px;color:var(--text-gray);margin:0 0 26px;line-height:1.75;}
+  .apply-bullets{display:flex;flex-direction:column;gap:12px;}
+  .apply-bullet{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-dark);}
+  .apply-bullet-dot{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:none;margin-top:6px;}
+  .apply-right{background:var(--white);border-radius:20px;padding:36px 32px;box-shadow:0 4px 28px rgba(0,0,0,0.08);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;}
+  .form-group label{font-size:13px;font-weight:700;color:var(--text-dark);}
+  .form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--line-light);border-radius:10px;padding:12px 14px;font-size:14px;font-family:var(--sans);color:var(--text-dark);background:var(--white);outline:none;transition:border-color .15s;width:100%;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--coral);}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:#BFC1C7;}
+  .form-group textarea{min-height:100px;resize:vertical;}
+  .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666A73' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+  .privacy-row{display:flex;align-items:flex-start;gap:10px;margin:16px 0 20px;}
+  .privacy-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--coral);flex:none;margin-top:3px;cursor:pointer;}
+  .privacy-row label{font-size:13px;color:var(--text-gray);line-height:1.55;cursor:pointer;}
+  .submit-btn{width:100%;padding:16px;border-radius:999px;border:none;background:var(--coral);color:var(--white);font-size:16px;font-weight:800;font-family:var(--sans);cursor:pointer;transition:background .15s;}
+  .submit-btn:hover{background:var(--coral-2);}
+  .submit-btn:disabled{background:#ccc;cursor:not-allowed;}
+  .form-msg{margin-top:14px;text-align:center;font-size:14px;font-weight:600;display:none;}
+  .form-msg.ok{color:var(--coral);display:block;}
+  .form-msg.err{color:#E55;display:block;}
+
   @media(max-width:760px){
     .nav-links{display:none;}
     .feat-grid,.two-col{grid-template-columns:1fr;}
@@ -140,6 +174,9 @@
     .stat-row{flex-direction:column;}
     .prod-header{flex-direction:column;}
     .time-box{flex-direction:column;align-items:flex-start;}
+    .apply-layout{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .prod-cta-bar{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
@@ -286,6 +323,12 @@
         </div>
       </div>
     </div>
+
+    <!-- 신청 바 -->
+    <div class="prod-cta-bar">
+      <p>화상입시컨설팅이 나에게 맞는지 먼저 상담해보세요.</p>
+      <a href="#apply" data-consult="화상입시컨설팅">화상입시컨설팅 신청하기 →</a>
+    </div>
   </div>
 </section>
 
@@ -396,6 +439,12 @@
       <div class="step-box"><div class="sn">STEP 03</div><div class="sl">생기부<br>컨설팅</div></div>
       <div class="step-box"><div class="sn">STEP 04</div><div class="sl">입시 전략<br>수립</div></div>
     </div>
+
+    <!-- 신청 바 -->
+    <div class="prod-cta-bar">
+      <p>진학컨설팅으로 학생부를 전략적으로 관리해보세요.</p>
+      <a href="#apply" data-consult="진학컨설팅">진학컨설팅 신청하기 →</a>
+    </div>
   </div>
 </section>
 
@@ -469,16 +518,98 @@
         </div>
       </div>
     </div>
+
+    <!-- 신청 바 -->
+    <div class="prod-cta-bar">
+      <p>대치동 전문 컨설팅, 지금 바로 시작하세요.</p>
+      <a href="#apply" data-consult="대치동컨설팅">대치동컨설팅 신청하기 →</a>
+    </div>
   </div>
 </section>
 
 <!-- 상담 신청 -->
-<section id="apply" class="cta-section">
+<section id="apply" class="apply-section">
   <div class="wrap">
-    <div class="cta-inner">
-      <h2>컨설팅 상담 신청</h2>
-      <p>어떤 컨설팅이 맞는지 모르겠다면 상담부터 시작하세요.<br>상황에 맞는 컨설팅을 안내해드립니다.</p>
-      <a href="/#apply" class="btn-coral">상담 신청하기 →</a>
+    <div class="apply-layout">
+
+      <!-- 왼쪽: 소개 -->
+      <div class="apply-left">
+        <span class="a-tag">지금 시작하기</span>
+        <h2>컨설팅 상담으로<br>먼저 확인해 보세요</h2>
+        <p class="desc">신청서를 남겨주시면 담당 컨설턴트가 빠르게 연락드립니다.<br>상담 후 결정하셔도 늦지 않습니다.</p>
+        <div class="apply-bullets">
+          <div class="apply-bullet">
+            <span class="apply-bullet-dot"></span>
+            상담 후 결제 없이 진행 여부를 직접 결정하실 수 있습니다
+          </div>
+          <div class="apply-bullet">
+            <span class="apply-bullet-dot"></span>
+            어떤 컨설팅이 맞는지 모르셔도 괜찮습니다 — 함께 찾아드립니다
+          </div>
+          <div class="apply-bullet">
+            <span class="apply-bullet-dot"></span>
+            화상입시컨설팅 · 진학컨설팅 · 대치동컨설팅 전체 안내 가능
+          </div>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 신청 폼 -->
+      <div class="apply-right">
+        <form id="consultForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c_name">학부모 성함 <span style="color:var(--coral)">*</span></label>
+              <input type="text" id="c_name" name="name" placeholder="홍길동" required>
+            </div>
+            <div class="form-group">
+              <label for="c_phone">연락처 <span style="color:var(--coral)">*</span></label>
+              <input type="tel" id="c_phone" name="phone" placeholder="010-0000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c_grade">자녀 학년</label>
+              <input type="text" id="c_grade" name="grade" placeholder="예: 고2">
+            </div>
+            <div class="form-group">
+              <label for="c_area">거주 지역</label>
+              <input type="text" id="c_area" name="area" placeholder="예: 인천 서구">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c_type">관심 컨설팅</label>
+              <select id="c_type" name="consultType">
+                <option value="">선택해주세요</option>
+                <option value="화상입시컨설팅">화상입시컨설팅</option>
+                <option value="진학컨설팅">진학컨설팅</option>
+                <option value="대치동컨설팅">대치동컨설팅</option>
+                <option value="아직 모르겠음">아직 모르겠어요</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c_time">상담 희망 시간</label>
+              <select id="c_time" name="preferTime">
+                <option value="평일 오전">평일 오전</option>
+                <option value="평일 오후">평일 오후</option>
+                <option value="평일 저녁">평일 저녁</option>
+                <option value="주말">주말</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c_msg">문의 내용 (선택)</label>
+            <textarea id="c_msg" name="message" placeholder="자녀의 현재 학습 상황이나 고민을 자유롭게 남겨주세요."></textarea>
+          </div>
+          <div class="privacy-row">
+            <input type="checkbox" id="c_privacy" name="privacy" required>
+            <label for="c_privacy">개인정보 수집·이용에 동의합니다. (상담 목적, 상담 완료 후 즉시 폐기, 필수)</label>
+          </div>
+          <button type="submit" class="submit-btn" id="cSubmitBtn">컨설팅 상담 신청하기</button>
+          <p class="form-msg" id="cFormMsg"></p>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
@@ -500,6 +631,53 @@
     });
   }, { threshold: 0.3 });
   sections.forEach(s => observer.observe(s));
+
+  // pre-select consulting type from data-consult attribute on CTA buttons
+  document.querySelectorAll('[data-consult]').forEach(link => {
+    link.addEventListener('click', function() {
+      const val = this.dataset.consult;
+      const sel = document.getElementById('c_type');
+      if (sel) sel.value = val;
+    });
+  });
+
+  // consulting form submission
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxv5QJ8IyP6QOgkUUqu8pGt4SDQWqin2VpeXsIlIC7vK-_oiYjuUM6TvBIFKuzO8EYIdA/exec';
+  const cForm = document.getElementById('consultForm');
+  const cBtn = document.getElementById('cSubmitBtn');
+  const cMsg = document.getElementById('cFormMsg');
+
+  if (cForm) {
+    cForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const privacy = document.getElementById('c_privacy');
+      if (!privacy.checked) {
+        cMsg.textContent = '개인정보 수집·이용에 동의해주세요.';
+        cMsg.className = 'form-msg err';
+        return;
+      }
+      cBtn.disabled = true;
+      cBtn.textContent = '신청 중...';
+      cMsg.className = 'form-msg';
+
+      const data = new FormData(cForm);
+      data.append('formType', '컨설팅상담신청');
+
+      fetch(SCRIPT_URL, { method: 'POST', body: data })
+        .then(() => {
+          cMsg.textContent = '신청이 완료됐습니다! 빠르게 연락드리겠습니다.';
+          cMsg.className = 'form-msg ok';
+          cForm.reset();
+          cBtn.textContent = '신청 완료';
+        })
+        .catch(() => {
+          cMsg.textContent = '오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+          cMsg.className = 'form-msg err';
+          cBtn.disabled = false;
+          cBtn.textContent = '컨설팅 상담 신청하기';
+        });
+    });
+  }
 </script>
 </body>
 </html>
