@@ -1402,13 +1402,14 @@
     btn.textContent = '전송 중…';
     btn.disabled = true;
     const data = {
-      학부모성함: document.getElementById('parentName').value,
-      연락처: document.getElementById('phone').value,
-      자녀학년: document.getElementById('grade').value,
-      거주지역: document.getElementById('region').value,
-      관심과목: document.getElementById('subject').value,
-      상담희망시간: document.getElementById('time').value,
-      문의내용: document.getElementById('msg').value,
+      name:    document.getElementById('parentName').value,
+      phone:   document.getElementById('phone').value,
+      grade:   document.getElementById('grade').value,
+      area:    document.getElementById('region').value,
+      subject: document.getElementById('subject').value,
+      time:    document.getElementById('time').value,
+      message: document.getElementById('msg').value,
+      formType: '무료수업신청',
     };
     try {
       const params = new URLSearchParams(data);
