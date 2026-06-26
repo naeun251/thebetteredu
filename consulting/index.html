@@ -9,8 +9,8 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
 <style>
   :root{--ink:#14151A;--coral:#FF6B52;--coral-2:#FF8268;--cream:#F6F2E7;--cream-2:#EDE8D8;--white:#FFFFFF;--text-dark:#1C1D21;--text-gray:#666A73;--line-light:#E4DFCE;--radius:16px;--maxw:1100px;--sans:'PretendardVariable','Pretendard',-apple-system,sans-serif;}
-  *{box-sizing:border-box;}
-  body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;}
+  *{box-sizing:border-box;max-width:100%;}
+  html{overflow-x:hidden;}body{margin:0;font-family:var(--sans);color:var(--text-dark);background:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden;width:100%;}
   a{color:inherit;text-decoration:none;}
   ul{margin:0;padding:0;list-style:none;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
@@ -182,8 +182,24 @@
   .form-msg.ok{color:var(--coral);display:block;}
   .form-msg.err{color:#E55;display:block;}
 
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex:none;}
+  .menu-toggle span{display:block;width:22px;height:2px;background:var(--white);margin:5px 0;border-radius:2px;transition:all .3s ease;}
   @media(max-width:760px){
-    .nav-links{display:none;}
+    .menu-toggle{display:block;}
+    .nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:26px 28px;gap:18px;overflow-y:auto;z-index:99;}
+    .nav-links.open{display:flex;animation:navFadeIn .25s ease both;}
+    @keyframes navFadeIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+    .nav-links .nav-item{flex-direction:column;align-items:flex-start;width:100%;}
+    .nav-links .nav-item>a{font-size:17px;padding:4px 0;}
+    .nav-links .nav-item>a::after{display:none;}
+    .nav-links .nav-dropdown{
+      position:static;opacity:1;pointer-events:auto;transform:none;
+      background:transparent;border:none;padding:8px 0 0 16px;min-width:auto;
+      display:flex;flex-direction:column;gap:4px;transition:none;
+    }
+    .nav-links .nav-dropdown a{font-size:14px;padding:6px 0;color:rgba(255,255,255,0.6);}
+    .nav-links>a{font-size:17px;}
+    .nav-cta{font-size:15px;padding:12px 22px;margin-top:4px;}
     .feat-grid,.two-col{grid-template-columns:1fr;}
     .step-row{grid-template-columns:repeat(2,1fr);}
     .stat-row{flex-direction:column;}
@@ -195,6 +211,8 @@
     .prod-hero{grid-template-columns:1fr;min-height:auto;}
     .prod-hero-img{height:220px;}
     .prod-hero-text{padding:28px 24px;}
+    .wrap{padding:0 20px;}
+    .c-section{padding:52px 0;}
   }
 </style>
 </head>
@@ -206,7 +224,8 @@
       <span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 8l10 5 8-4.2V15h2V8L12 3z" fill="#FFFFFF"/><path d="M6 11.5V16c0 1.5 2.7 4 6 4s6-2.5 6-4v-4.5" stroke="#FFFFFF" stroke-width="1.6" fill="none"/></svg></span>
       더나은에듀
     </a>
-    <nav class="nav-links">
+    <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
       <div class="nav-item">
         <a href="/#services">1:1 맞춤 과외</a>
         <div class="nav-dropdown">
@@ -717,6 +736,14 @@
         });
     });
   }
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinksEl = document.getElementById('navLinks');
+  if (menuToggle && navLinksEl) {
+    menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
+  }
+  history.pushState(null, '', location.href);
+  window.addEventListener('popstate', () => { location.href = '/'; });
 </script>
 </body>
 </html>
