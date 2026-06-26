@@ -75,7 +75,11 @@
     .nav-links .nav-item>a{font-size:17px;padding:4px 0;}
     .nav-links .nav-item>a::after{display:none;}
     .nav-links .nav-dropdown{position:static;opacity:1;pointer-events:auto;transform:none;background:transparent;border:none;padding:8px 0 0 16px;min-width:auto;display:flex;flex-direction:column;gap:4px;transition:none;}
-    .nav-links .nav-dropdown a{font-size:14px;padding:6px 0;color:rgba(255,255,255,0.6);}
+    .nav-links .nav-item:hover .nav-dropdown{
+      position:static;transform:none;transition:none;
+      opacity:1;pointer-events:auto;
+    }
+    .nav-links .nav-dropdown a{font-size:14px;padding:12px 0;color:rgba(255,255,255,0.6);}
     .nav-links>a{font-size:17px;}
     .nav-cta{font-size:15px;padding:12px 22px;margin-top:4px;}
     .wrap{padding:0 20px;}
