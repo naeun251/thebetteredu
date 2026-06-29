@@ -363,6 +363,8 @@
   .step h3{font-size:16.5px;font-weight:800;margin-bottom:8px;}
   .step p{font-size:13.6px;color:rgba(255,255,255,0.55);margin:0;}
 
+  .change-msg-mo{display:none;}
+  .mo-br{display:none;}
   /* 체크포인트 밴드 (매칭 과정 아래, 짧고 압축된 마무리 메시지) */
   .checkpoint-band{padding:44px 0;}
   .checkpoint-inner{
@@ -594,8 +596,12 @@
     .analysis-grid{grid-template-columns:1fr;}
     .marquee-track .teacher-card{flex:0 0 260px;}
     .marquee-track{max-width:none;}
-    .checkpoint-inner{gap:16px;}
+    .checkpoint-inner{gap:16px;flex-direction:column;align-items:flex-start;}
+    .checkpoint-lead{font-size:15px;word-break:keep-all;}
     .checkpoint-list{gap:16px;}
+    .change-msg-pc{display:none;}
+    .change-msg-mo{display:block;}
+    .mo-br{display:block;}
     .stat-block .stat-num{font-size:28px;}
     .tab-note{font-size:13px;}
     .subject-chips{gap:8px;}
@@ -781,7 +787,8 @@
         </div>
       </div>
       <div class="change-close reveal" style="margin-top:34px;text-align:center;display:block;">
-        <p style="margin:0 auto;max-width:700px;line-height:2;">많은 학생과 학부모님들이 같은 고민을 겪고 있습니다.<br>중요한 것은 <span class="hl">아이에게 맞는 방식</span>으로 공부하게 하는 것입니다.<br><span class="hl">더나은에듀 1:1 맞춤 과외</span>는 아이에게 가장 필요한 학습 방향을 찾아가는 과정입니다.</p>
+        <p class="change-msg-pc" style="margin:0 auto;max-width:700px;line-height:2;">많은 학생과 학부모님들이 같은 고민을 겪고 있습니다.<br>중요한 것은 <span class="hl">아이에게 맞는 방식</span>으로 공부하게 하는 것입니다.<br><span class="hl">더나은에듀 1:1 맞춤 과외</span>는 아이에게 가장 필요한 학습 방향을 찾아가는 과정입니다.</p>
+        <p class="change-msg-mo" style="margin:0 auto;line-height:2;word-break:keep-all;">많은 학생과 학부모님들이<br>같은 고민을 겪고 있습니다.<br><br><span class="hl">더나은에듀 1:1 맞춤 과외</span>는<br>고민 해결을 위해 아이에게 필요한<br>학습 방향을 찾아가는 과정입니다.</p>
       </div>
     </div>
   </section>
@@ -792,7 +799,7 @@
       <div class="services-head reveal">
         <span class="label">SERVICES</span>
         <h2>더나은에듀가 해결해드립니다.</h2>
-        <p>내신부터 생기부·대입 컨설팅까지, 아이의 상황에 맞는 1:1 서비스를 제공합니다.</p>
+        <p>내신부터 생기부·대입 컨설팅까지,<br class="mo-br"> 아이의 상황에 맞는 1:1 서비스를 제공합니다.</p>
       </div>
       <div class="services-grid">
 
