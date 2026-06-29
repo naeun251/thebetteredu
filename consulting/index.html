@@ -218,7 +218,12 @@
     .wrap{padding:0 20px;}
     .c-section{padding:52px 0;}
   }
+  .addr-row{display:flex;gap:8px;}
+  .addr-row input{flex:1;}
+  .btn-addr{flex:none;padding:0 16px;height:46px;border-radius:10px;border:1.5px solid var(--coral);background:var(--white);color:var(--coral);font-size:13px;font-weight:700;font-family:var(--sans);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s;}
+  .btn-addr:hover{background:var(--coral);color:var(--white);}
 </style>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
 
@@ -620,44 +625,24 @@
         <form id="consultForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="c_name">학부모 성함 <span style="color:var(--coral)">*</span></label>
-              <input type="text" id="c_name" name="name" placeholder="홍길동" required>
+              <label for="c_name">학생 이름 <span style="color:var(--coral)">*</span></label>
+              <input type="text" id="c_name" name="name" placeholder="이름" required>
             </div>
             <div class="form-group">
-              <label for="c_phone">연락처 <span style="color:var(--coral)">*</span></label>
+              <label for="c_phone">상담받으실 연락처 <span style="color:var(--coral)">*</span></label>
               <input type="tel" id="c_phone" name="phone" placeholder="010-0000-0000" required>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c_grade">자녀 학년</label>
-              <input type="text" id="c_grade" name="grade" placeholder="예: 고2">
-            </div>
-            <div class="form-group">
-              <label for="c_area">거주 지역</label>
-              <input type="text" id="c_area" name="area" placeholder="예: 인천 서구">
+          <div class="form-group">
+            <label for="c_addr">주소 <span style="color:var(--coral)">*</span></label>
+            <div class="addr-row">
+              <input type="text" id="c_addr" name="addr" placeholder="주소 검색을 눌러 입력하세요" readonly required onclick="openConsultPostcode()">
+              <button type="button" class="btn-addr" onclick="openConsultPostcode()">주소 검색</button>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c_type">관심 컨설팅</label>
-              <select id="c_type" name="subject">
-                <option value="">선택해주세요</option>
-                <option value="화상입시컨설팅">화상입시컨설팅</option>
-                <option value="진학컨설팅">진학컨설팅</option>
-                <option value="대치동컨설팅">대치동컨설팅</option>
-                <option value="아직 모르겠음">아직 모르겠어요</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="c_time">상담 희망 시간</label>
-              <select id="c_time" name="time">
-                <option value="평일 오전">평일 오전</option>
-                <option value="평일 오후">평일 오후</option>
-                <option value="평일 저녁">평일 저녁</option>
-                <option value="주말">주말</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="c_addrDetail">상세주소</label>
+            <input type="text" id="c_addrDetail" name="addrDetail" placeholder="동·호수 등 상세주소 (선택)">
           </div>
           <div class="form-group">
             <label for="c_msg">문의 내용 (선택)</label>
@@ -702,6 +687,15 @@
       if (sel) sel.value = val;
     });
   });
+
+  function openConsultPostcode() {
+    new daum.Postcode({
+      oncomplete: function(data) {
+        document.getElementById('c_addr').value = data.roadAddress || data.jibunAddress;
+        document.getElementById('c_addrDetail').focus();
+      }
+    }).open();
+  }
 
   // consulting form submission
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxv5QJ8IyP6QOgkUUqu8pGt4SDQWqin2VpeXsIlIC7vK-_oiYjuUM6TvBIFKuzO8EYIdA/exec';
