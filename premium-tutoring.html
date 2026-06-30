@@ -193,8 +193,6 @@
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
   }
-  history.pushState(null, '', location.href);
-  window.addEventListener('popstate', () => { location.href = '/'; });
 </script>
 </body>
 </html>

@@ -598,8 +598,6 @@
     menuToggle.addEventListener('click', () => navLinksEl.classList.toggle('open'));
     navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinksEl.classList.remove('open')));
   }
-  history.pushState(null, '', location.href);
-  window.addEventListener('popstate', () => { location.href = '/'; });
 
   // 학년별 필터 (학습법 탭)
   const gfBtns = document.querySelectorAll('.gf-btn');
