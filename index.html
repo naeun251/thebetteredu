@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -678,8 +678,8 @@
         <div class="nav-dropdown">
           <a href="/blog/?tab=입시 정보">입시정보</a>
           <a href="/blog/?tab=학습법">학습법</a>
-          <a href="/blog/?tab=학년별/지역별 가이드">학년별 가이드</a>
-          <a href="/blog/?tab=학년별/지역별 가이드">지역별 가이드</a>
+          <a href="/blog/guide-grade.html">학년별 가이드</a>
+          <a href="/blog/guide-region.html">지역별 가이드</a>
         </div>
       </div>
       <a href="#apply" class="nav-cta">30분 무료 수업 신청</a>
@@ -1640,6 +1640,30 @@
   document.querySelectorAll('input[name="subject"]').forEach(cb => {
     cb.addEventListener('change', () => updateCselDisplay('subjectWrap', 'subjectDisplay', 'subject'));
   });
+
+  // 학년별/지역별 가이드 페이지에서 넘어온 경우 폼 자동 채우기
+  (function prefillFromGuide() {
+    const qs = new URLSearchParams(location.search);
+    const grade = qs.get('grade');
+    const school = qs.get('school');
+    const region = qs.get('region');
+    if (!grade && !school && !region) return;
+    if (grade) {
+      const cb = document.querySelector(`input[name="grade"][value="${CSS.escape(grade)}"]`);
+      if (cb) { cb.checked = true; updateCselDisplay('gradeWrap', 'gradeDisplay', 'grade'); }
+    }
+    const msgEl = document.getElementById('msg');
+    if (msgEl) {
+      const lines = [];
+      if (school) lines.push(`관심 학교: ${school}`);
+      if (region) lines.push(`거주 지역: ${region}`);
+      if (lines.length) msgEl.value = lines.join('\n');
+    }
+    window.addEventListener('load', () => {
+      const apply = document.getElementById('apply');
+      if (apply) apply.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  })();
 
   // 카카오 주소 검색
   function openPostcode() {
