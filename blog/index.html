@@ -552,74 +552,6 @@
         </div>
       </div>
 
-      <a class="post-card" href="/blog/gangbuk-math-gwaoe.html" data-category="지역별 가이드">
-        <div class="post-thumb">
-          <img src="/blog/images/blog-03.png" alt="강북구 수학 과외" onerror="this.style.display='none'">
-          <div class="thumb-overlay"></div>
-          <div class="thumb-text">
-            <div class="thumb-issue">지역별 가이드</div>
-            <div class="thumb-title">강북구 수학 과외</div>
-          </div>
-        </div>
-        <div class="post-body">
-          <span class="tag">지역별 가이드</span>
-          <h2>강북구 수학 과외 추천 — 강북구 내 중학교 중심</h2>
-          <p>강북중·미아중·번동중·삼각산중 등 강북구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.</p>
-          <span class="date">2026.06.26</span>
-        </div>
-      </a>
-
-      <a class="post-card" href="/blog/nowon-math-gwaoe.html" data-category="지역별 가이드">
-        <div class="post-thumb">
-          <img src="/blog/images/blog-06.png" alt="노원구 수학 과외" onerror="this.style.display='none'">
-          <div class="thumb-overlay"></div>
-          <div class="thumb-text">
-            <div class="thumb-issue">지역별 가이드</div>
-            <div class="thumb-title">노원구 수학 과외</div>
-          </div>
-        </div>
-        <div class="post-body">
-          <span class="tag">지역별 가이드</span>
-          <h2>노원구 수학 과외 추천 — 노원구 내 중학교 중심</h2>
-          <p>불암중·상계중·중계중 등 노원구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.</p>
-          <span class="date">2026.06.27</span>
-        </div>
-      </a>
-
-      <a class="post-card" href="/blog/seodaemun-math-gwaoe.html" data-category="지역별 가이드">
-        <div class="post-thumb">
-          <img src="/blog/images/seodaemun-math-gwaoe.png" alt="서대문구 수학 과외" onerror="this.style.display='none'">
-          <div class="thumb-overlay"></div>
-          <div class="thumb-text">
-            <div class="thumb-issue">지역별 가이드</div>
-            <div class="thumb-title">서대문구 수학 과외</div>
-          </div>
-        </div>
-        <div class="post-body">
-          <span class="tag">지역별 가이드</span>
-          <h2>서대문구 중학생 수학 과외 추천 — 중등 수학 핵심 내용과 지역 학교 안내</h2>
-          <p>연희중·홍제중·가좌중 등 서대문구 중학교 특성, 학년별 중등 수학 내용, 1:1 과외 효과를 정리했습니다.</p>
-          <span class="date">2026.06.25</span>
-        </div>
-      </a>
-
-      <a class="post-card" href="/blog/mapo-math-gwaoe.html" data-category="지역별 가이드">
-        <div class="post-thumb">
-          <img src="/blog/images/blog-09.png" alt="마포구 수학 과외" onerror="this.style.display='none'">
-          <div class="thumb-overlay"></div>
-          <div class="thumb-text">
-            <div class="thumb-issue">지역별 가이드</div>
-            <div class="thumb-title">마포구 수학 과외</div>
-          </div>
-        </div>
-        <div class="post-body">
-          <span class="tag">지역별 가이드</span>
-          <h2>마포구 수학 과외 추천 — 마포구 내 중학교 중심</h2>
-          <p>신수중·성산중·서강중·아현중 등 마포구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.</p>
-          <span class="date">2026.06.29</span>
-        </div>
-      </a>
-
     </div>
 
   </div>
@@ -698,16 +630,55 @@
     '인천광역시': '인천광역시 군·구별 1:1 과외 가이드',
   };
   const districtPosts = {
-    '강북구': { 중학교: [{ title: '강북구 수학 과외 추천 — 강북구 내 중학교 중심', url: '/blog/gangbuk-math-gwaoe.html' }] },
-    '노원구': { 중학교: [{ title: '노원구 수학 과외 추천 — 노원구 내 중학교 중심', url: '/blog/nowon-math-gwaoe.html' }] },
-    '서대문구': { 중학교: [{ title: '서대문구 중학생 수학 과외 추천', url: '/blog/seodaemun-math-gwaoe.html' }] },
-    '마포구': { 중학교: [{ title: '마포구 수학 과외 추천 — 마포구 내 중학교 중심', url: '/blog/mapo-math-gwaoe.html' }] },
+    '강북구': { 중학교: [{
+      url: '/blog/gangbuk-math-gwaoe.html', thumb: '/blog/images/blog-03.png', alt: '강북구 수학 과외', thumbTitle: '강북구 수학 과외',
+      title: '강북구 수학 과외 추천 — 강북구 내 중학교 중심',
+      excerpt: '강북중·미아중·번동중·삼각산중 등 강북구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+      date: '2026.06.26'
+    }] },
+    '노원구': { 중학교: [{
+      url: '/blog/nowon-math-gwaoe.html', thumb: '/blog/images/blog-06.png', alt: '노원구 수학 과외', thumbTitle: '노원구 수학 과외',
+      title: '노원구 수학 과외 추천 — 노원구 내 중학교 중심',
+      excerpt: '불암중·상계중·중계중 등 노원구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+      date: '2026.06.27'
+    }] },
+    '서대문구': { 중학교: [{
+      url: '/blog/seodaemun-math-gwaoe.html', thumb: '/blog/images/seodaemun-math-gwaoe.png', alt: '서대문구 수학 과외', thumbTitle: '서대문구 수학 과외',
+      title: '서대문구 중학생 수학 과외 추천 — 중등 수학 핵심 내용과 지역 학교 안내',
+      excerpt: '연희중·홍제중·가좌중 등 서대문구 중학교 특성, 학년별 중등 수학 내용, 1:1 과외 효과를 정리했습니다.',
+      date: '2026.06.25'
+    }] },
+    '마포구': { 중학교: [{
+      url: '/blog/mapo-math-gwaoe.html', thumb: '/blog/images/blog-09.png', alt: '마포구 수학 과외', thumbTitle: '마포구 수학 과외',
+      title: '마포구 수학 과외 추천 — 마포구 내 중학교 중심',
+      excerpt: '신수중·성산중·서강중·아현중 등 마포구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+      date: '2026.06.29'
+    }] },
   };
   const schoolLevels = ['초등학교', '중학교', '고등학교'];
 
   const regionMapTitle = document.getElementById('regionMapTitle');
   const seoulMapGrid = document.getElementById('seoulMapGrid');
   const districtPanel = document.getElementById('districtPanel');
+
+  function renderPostCard(p) {
+    return `<a class="post-card" href="${p.url}">
+      <div class="post-thumb">
+        <img src="${p.thumb}" alt="${p.alt}" onerror="this.style.display='none'">
+        <div class="thumb-overlay"></div>
+        <div class="thumb-text">
+          <div class="thumb-issue">지역별 가이드</div>
+          <div class="thumb-title">${p.thumbTitle}</div>
+        </div>
+      </div>
+      <div class="post-body">
+        <span class="tag">지역별 가이드</span>
+        <h2>${p.title}</h2>
+        <p>${p.excerpt}</p>
+        <span class="date">${p.date}</span>
+      </div>
+    </a>`;
+  }
 
   function renderDistrictPanel(gu) {
     const data = districtPosts[gu] || {};
@@ -716,7 +687,7 @@
       const posts = data[level];
       html += `<div class="district-level"><div class="dl-label">${level}</div>`;
       if (posts && posts.length) {
-        posts.forEach(p => { html += `<a class="dl-post" href="${p.url}">${p.title} →</a>`; });
+        posts.forEach(p => { html += renderPostCard(p); });
       } else {
         html += `<div class="dl-empty">아직 등록된 글이 없어요. <a href="/#apply">무료 상담 신청하기 →</a></div>`;
       }
