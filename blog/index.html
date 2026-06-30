@@ -27,6 +27,7 @@
   .nav-links>a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
   .nav-links>a:hover{color:var(--white);}
   .nav-links>a.active{color:var(--coral);}
+  .nav-item>a.active{color:var(--coral);}
   .nav-item{position:relative;display:flex;align-items:center;}
   .nav-item::before{content:"";position:absolute;top:100%;left:-20px;right:-20px;height:18px;}
   .nav-item>a{font-size:14.5px;font-weight:600;color:rgba(255,255,255,0.78);}
@@ -129,7 +130,15 @@
           <a href="/consulting/#apply">컨설팅 상담 신청</a>
         </div>
       </div>
-      <a href="/blog/" class="active">학습정보</a>
+      <div class="nav-item">
+        <a href="/blog/" class="active">학습정보</a>
+        <div class="nav-dropdown">
+          <a href="/blog/?tab=입시 정보">입시정보</a>
+          <a href="/blog/?tab=학습법">학습법</a>
+          <a href="/blog/?tab=학년별/지역별 가이드">학년별 가이드</a>
+          <a href="/blog/?tab=학년별/지역별 가이드">지역별 가이드</a>
+        </div>
+      </div>
       <a href="/#apply" class="nav-cta">30분 무료 수업 신청</a>
     </nav>
   </div>

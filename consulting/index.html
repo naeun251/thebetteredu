@@ -255,7 +255,15 @@
           <a href="/consulting/#apply">컨설팅 상담 신청</a>
         </div>
       </div>
-      <a href="/blog/">학습정보</a>
+      <div class="nav-item">
+        <a href="/blog/">학습정보</a>
+        <div class="nav-dropdown">
+          <a href="/blog/?tab=입시 정보">입시정보</a>
+          <a href="/blog/?tab=학습법">학습법</a>
+          <a href="/blog/?tab=학년별/지역별 가이드">학년별 가이드</a>
+          <a href="/blog/?tab=학년별/지역별 가이드">지역별 가이드</a>
+        </div>
+      </div>
       <a href="/#apply" class="nav-cta">30분 무료 수업 신청</a>
     </nav>
   </div>
@@ -632,6 +640,16 @@
               <label for="c_phone">상담받으실 연락처 <span style="color:var(--coral)">*</span></label>
               <input type="tel" id="c_phone" name="phone" placeholder="010-0000-0000" required>
             </div>
+          </div>
+          <div class="form-group">
+            <label for="c_type">희망 수업 <span style="color:var(--coral)">*</span></label>
+            <select id="c_type" name="type" required>
+              <option value="" disabled selected>희망하시는 수업을 선택해주세요</option>
+              <option value="화상">화상</option>
+              <option value="진학">진학</option>
+              <option value="대치동">대치동</option>
+              <option value="잘 모르겠어요">잘 모르겠어요</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="c_addr">주소 <span style="color:var(--coral)">*</span></label>
