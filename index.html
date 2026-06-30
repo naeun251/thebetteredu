@@ -507,7 +507,7 @@
   .post-card:last-child{margin-bottom:0;}
   .post-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1);}
   .post-thumb{width:220px;min-height:140px;flex:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 60%,#0f2952 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;}
-  .post-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .post-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;}
   .post-thumb .thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,50,0.72) 0%,rgba(10,20,50,0.08) 55%);}
   .post-thumb .thumb-text{position:relative;z-index:1;}
   .post-thumb .thumb-issue{font-size:10px;font-weight:800;letter-spacing:0.08em;color:rgba(255,255,255,0.65);margin-bottom:4px;}
@@ -1527,7 +1527,7 @@
       '강북구': { 중학교: [{
         url: '/blog/gangbuk-math-gwaoe.html', thumb: '/blog/images/blog-03.png', alt: '강북구 수학 과외', thumbTitle: '강북구 수학 과외',
         title: '강북구 수학 과외 추천 — 강북구 내 중학교 중심',
-        excerpt: '강북중·미아중·번동중·삼각산중 등 강북구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+        excerpt: '강북중·수유중·삼각산중·번동중 등 강북구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
         date: '2026.06.26'
       }] },
       '노원구': { 중학교: [{
@@ -1539,13 +1539,13 @@
       '서대문구': { 중학교: [{
         url: '/blog/seodaemun-math-gwaoe.html', thumb: '/blog/images/seodaemun-math-gwaoe.png', alt: '서대문구 수학 과외', thumbTitle: '서대문구 수학 과외',
         title: '서대문구 중학생 수학 과외 추천 — 중등 수학 핵심 내용과 지역 학교 안내',
-        excerpt: '연희중·홍제중·가좌중 등 서대문구 중학교 특성, 학년별 중등 수학 내용, 1:1 과외 효과를 정리했습니다.',
+        excerpt: '연희중·홍은중·인왕중 등 서대문구 중학교 특성, 학년별 중등 수학 내용, 1:1 과외 효과를 정리했습니다.',
         date: '2026.06.25'
       }] },
       '마포구': { 중학교: [{
         url: '/blog/mapo-math-gwaoe.html', thumb: '/blog/images/blog-09.png', alt: '마포구 수학 과외', thumbTitle: '마포구 수학 과외',
         title: '마포구 수학 과외 추천 — 마포구 내 중학교 중심',
-        excerpt: '신수중·성산중·서강중·아현중 등 마포구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+        excerpt: '신수중·성산중·숭문중·아현중 등 마포구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
         date: '2026.06.29'
       }] },
     };
@@ -1623,38 +1623,78 @@
 
     // 학교명으로 검색해보기 — 블로그 글 안에 등장하는 학교명 매칭
     const schoolPostMap = {
+      // 강북구 (수유동·번동·미아동·우이동)
       '강북중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
-      '미아중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '수유중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '인수중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '화계중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
       '번동중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '수송중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
       '삼각산중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
-      '송중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
-      '영훈중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
-      '아현중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '대흥중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '마포중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '서강중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '성서중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '성산중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '망원중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '성암여자중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '솔샘중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '미양중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '신일중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '영훈국제중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '창문여자중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '서라벌중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      // 마포구 (연남동·신수동·염리동·상암동·성산동·합정동·대흥동·아현동·중동·노고산동)
+      '경성중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '광성중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
       '신수중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '동도중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '서울여자중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
       '상암중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '수색중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
-      '상계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '불암중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '노원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '을지중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '중계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '광운중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '월계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '염광중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '태릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '성사중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '성서중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '홍익사대부속여중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '성산중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '숭문중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '아현중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '중암중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '창천중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      // 노원구 (공릉동·월계동·상계동·중계동·하계동)
       '공릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '태릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '한천중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '광운중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '녹천중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '신창중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '염광중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '월계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '노원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '노일중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '상경중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '상계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '상계제일중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '상원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '수락중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '신상중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '온곡중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '청원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '불암중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '상명중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '을지중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '재현중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '중계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '중원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '중평중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
       '하계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
-      '홍제중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
-      '연희중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
-      '홍은중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
-      '가좌중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      // 서대문구 (북가좌동·천연동·홍은동·연희동·남가좌동·대신동·홍제동·충정로2가·북아현동)
+      '가재울중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '동명여자중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
       '명지중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '정원여자중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '홍은중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '서연중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '신연중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '연북중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '연희중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '이화금란중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '인왕중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '인창중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '중앙여자중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '한성중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
     };
 
     window.searchSchool = function() {
