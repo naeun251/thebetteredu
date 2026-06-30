@@ -659,7 +659,7 @@
           </div>
           <div class="form-group">
             <label for="c_addrDetail">상세주소</label>
-            <input type="text" id="c_addrDetail" name="addrDetail" placeholder="동·호수 등 상세주소 (선택)">
+            <input type="text" id="c_addrDetail" name="addrDetail" placeholder="동·호수 등 상세주소">
           </div>
           <div class="form-group">
             <label for="c_msg">문의 내용 (선택)</label>
@@ -733,10 +733,17 @@
       cBtn.textContent = '신청 중...';
       cMsg.className = 'form-msg';
 
-      const data = new FormData(cForm);
-      data.append('formType', '컨설팅상담신청');
+      const data = {
+        name:    document.getElementById('c_name').value,
+        phone:   document.getElementById('c_phone').value,
+        area:    document.getElementById('c_addr').value + ' ' + document.getElementById('c_addrDetail').value,
+        subject: document.getElementById('c_type').value,
+        message: document.getElementById('c_msg').value,
+        formType: '컨설팅상담신청',
+      };
+      const params = new URLSearchParams(data);
 
-      fetch(SCRIPT_URL, { method: 'POST', body: data })
+      fetch(SCRIPT_URL, { method: 'POST', body: params })
         .then(() => {
           cMsg.textContent = '신청이 완료됐습니다! 빠르게 연락드리겠습니다.';
           cMsg.className = 'form-msg ok';
