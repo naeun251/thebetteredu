@@ -75,8 +75,6 @@
   .gf-btn{background:var(--white);border:1.5px solid var(--line-light);border-radius:999px;padding:9px 16px;font-size:13.5px;font-weight:700;color:var(--text-dark);cursor:pointer;font-family:var(--sans);transition:border-color .15s,background .15s,color .15s;}
   .gf-btn:hover{border-color:var(--coral);}
   .gf-btn.active{background:var(--coral);border-color:var(--coral);color:var(--white);}
-  .gf-more{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--coral);}
-  .gf-more:hover{text-decoration:underline;}
   .grade-empty{display:none;background:var(--cream);border-radius:var(--radius);padding:30px 28px;text-align:center;margin-bottom:24px;}
   .grade-empty.show{display:block;}
   .grade-empty p{font-size:14px;color:var(--text-gray);margin:0 0 16px;}
@@ -85,25 +83,49 @@
   .region-map-box{background:var(--white);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px;margin-bottom:24px;}
   .region-map-title{font-size:15.5px;font-weight:800;margin:0 0 4px;}
   .region-map-sub{font-size:13px;color:var(--text-gray);margin:0 0 18px;}
-  .region-map-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
-  .region-cell{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 6px;border-radius:10px;font-size:13px;font-weight:700;background:#F8F8F6;color:var(--text-dark);border:1.5px solid transparent;transition:border-color .15s,background .15s;}
+  .metro-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+  .metro-btn{background:var(--white);border:1.5px solid var(--line-light);border-radius:999px;padding:8px 18px;font-size:13.5px;font-weight:700;color:var(--text-dark);cursor:pointer;font-family:var(--sans);transition:border-color .15s,background .15s,color .15s;}
+  .metro-btn:hover{border-color:var(--coral);}
+  .metro-btn.active{background:var(--ink);border-color:var(--ink);color:var(--white);}
+  .region-map-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:6px;}
+  .region-cell{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 6px;border-radius:10px;font-size:13px;font-weight:700;background:#F8F8F6;color:var(--text-dark);border:1.5px solid transparent;cursor:pointer;font-family:var(--sans);transition:border-color .15s,background .15s,color .15s;}
   .region-cell:hover{border-color:var(--coral);}
-  .region-cell.covered{background:#FFF0EC;color:var(--coral);font-weight:800;border-color:#FFD9CC;}
-  .region-more{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;color:var(--coral);}
-  .region-more:hover{text-decoration:underline;}
+  .region-cell.active{background:var(--coral);border-color:var(--coral);color:var(--white);}
+  .district-panel{display:none;background:#F8F8F6;border-radius:var(--radius);padding:24px 22px;margin-top:18px;}
+  .district-panel.show{display:block;}
+  .district-panel-title{font-size:15px;font-weight:800;margin:0 0 14px;}
+  .district-level{margin-bottom:14px;}
+  .district-level:last-child{margin-bottom:0;}
+  .dl-label{font-size:12px;font-weight:800;color:var(--text-gray);letter-spacing:0.04em;margin-bottom:8px;}
+  .dl-post{display:block;background:var(--white);border:1px solid var(--line-light);border-radius:10px;padding:13px 16px;font-size:13.5px;font-weight:700;color:var(--text-dark);margin-bottom:8px;transition:border-color .15s,color .15s;}
+  .dl-post:hover{border-color:var(--coral);color:var(--coral);}
+  .dl-post:last-child{margin-bottom:0;}
+  .dl-empty{font-size:13px;color:var(--text-gray);background:var(--white);border:1px dashed var(--line-light);border-radius:10px;padding:13px 16px;}
+  .dl-empty a{color:var(--coral);font-weight:700;}
+  .school-search-box{border-top:1px solid var(--line-light);margin-top:22px;padding-top:20px;}
+  .ss-label{font-size:13px;font-weight:800;color:var(--text-gray);margin-bottom:10px;}
+  .ss-row{display:flex;gap:8px;}
+  .ss-row input{flex:1;padding:13px 14px;border-radius:9px;border:1.5px solid #DCD5BE;background:#FAF8F2;color:var(--text-dark);font-size:14.5px;font-family:var(--sans);}
+  .ss-row input:focus{outline:none;border-color:var(--coral);background:var(--white);}
+  .ss-result{margin-top:12px;}
 
   /* 인라인 상담 신청 폼 */
-  .inline-apply-card{background:var(--cream);border:1px solid var(--line-light);border-radius:18px;padding:34px 32px;margin-top:30px;}
+  .inline-apply-section{background:var(--cream);border-radius:20px;padding:44px 40px;margin-top:30px;}
+  .inline-apply-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;}
   .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-light);border-radius:999px;padding:8px 18px;font-size:13.5px;font-weight:700;color:var(--text-gray);background:var(--white);}
   .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);}
-  .inline-apply-card h3{font-size:20px;font-weight:800;margin:14px 0 8px;}
-  .inline-apply-card>p{font-size:14px;color:var(--text-gray);margin:0 0 22px;}
+  .inline-apply-left h3{font-size:22px;font-weight:800;margin:14px 0 10px;line-height:1.35;}
+  .inline-apply-left>p{font-size:14px;color:var(--text-gray);margin:0 0 22px;line-height:1.7;}
+  .inline-apply-bullets{display:flex;flex-direction:column;gap:11px;}
+  .inline-apply-bullet{display:flex;gap:9px;font-size:13.5px;color:var(--text-dark);align-items:flex-start;}
+  .bullet-dot{width:7px;height:7px;border-radius:50%;background:var(--coral);flex:none;margin-top:6px;}
+  .inline-apply-right{background:var(--white);border-radius:18px;padding:32px 30px;box-shadow:0 4px 26px rgba(0,0,0,0.08);}
   form.apply-form{display:flex;flex-direction:column;gap:16px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .apply-form label{font-size:13px;color:var(--text-gray);font-weight:700;display:block;margin-bottom:7px;}
-  .apply-form input,.apply-form select,.apply-form textarea{width:100%;padding:13px 14px;border-radius:8px;border:1px solid var(--line-light);background:var(--white);color:var(--text-dark);font-size:14.5px;font-family:var(--sans);}
+  .apply-form input,.apply-form select,.apply-form textarea{width:100%;padding:13px 14px;border-radius:9px;border:1.5px solid #DCD5BE;background:#FAF8F2;color:var(--text-dark);font-size:14.5px;font-family:var(--sans);transition:border-color .15s,background .15s;}
   .apply-form textarea{resize:vertical;min-height:90px;}
-  .apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{outline:2px solid var(--coral);outline-offset:1px;}
+  .apply-form input:focus,.apply-form select:focus,.apply-form textarea:focus{outline:none;border-color:var(--coral);background:var(--white);}
   .consent{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-gray);}
   .consent input{width:16px;height:16px;margin-top:2px;flex:none;}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;transition:all .2s ease;font-family:var(--sans);}
@@ -113,7 +135,7 @@
   .form-note{font-size:12.3px;color:#A39E8C;text-align:center;}
   .addr-row{display:flex;gap:8px;}
   .addr-row input{flex:1;}
-  .btn-addr{flex:none;padding:0 18px;background:var(--coral);color:var(--white);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--sans);white-space:nowrap;}
+  .btn-addr{flex:none;padding:0 18px;background:var(--coral);color:var(--white);border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--sans);white-space:nowrap;}
   .btn-addr:hover{background:var(--coral-2);}
   .csel-wrap{position:relative;}
   .csel-display{width:100%;padding:13px 14px;border-radius:8px;border:1px solid var(--line-light);background:var(--white);color:var(--text-dark);font-size:14.5px;font-family:var(--sans);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
@@ -158,7 +180,10 @@
     .wrap{padding:0 20px;}
     .region-map-grid{grid-template-columns:repeat(3,1fr);}
     .form-row{grid-template-columns:1fr;}
-    .inline-apply-card{padding:26px 20px;}
+    .inline-apply-section{padding:30px 22px;}
+    .inline-apply-layout{grid-template-columns:1fr;gap:28px;}
+    .metro-tabs{gap:6px;}
+    .ss-row{flex-direction:column;}
   }
   @media(max-width:480px){.post-card{flex-direction:column;}.post-thumb{width:100%;min-height:160px;}}
 </style>
@@ -297,76 +322,90 @@
         </div>
       </a>
 
-      <div class="inline-apply-card">
-        <span class="badge"><span class="dot"></span>지금 바로 상담</span>
-        <h3>30분 무료 수업으로 먼저 확인해 보세요</h3>
-        <p>신청서를 남겨주시면 담당 선생님이 빠르게 연락드립니다. 무료 수업 전까지 비용은 발생하지 않습니다.</p>
-        <form class="apply-form" id="applyForm">
-          <div class="form-row">
-            <div>
-              <label for="studentName">학생 이름 *</label>
-              <input id="studentName" type="text" placeholder="이름" required>
-            </div>
-            <div>
-              <label for="phone">상담받으실 연락처 *</label>
-              <input id="phone" type="tel" placeholder="010-0000-0000" required>
+      <div class="inline-apply-section">
+        <div class="inline-apply-layout">
+
+          <div class="inline-apply-left">
+            <span class="badge"><span class="dot"></span>지금 바로 상담</span>
+            <h3>30분 무료 수업으로<br>먼저 확인해 보세요</h3>
+            <p>신청서를 남겨주시면 담당 선생님이 빠르게 연락드립니다.<br>무료 수업 전까지 비용은 발생하지 않습니다.</p>
+            <div class="inline-apply-bullets">
+              <div class="inline-apply-bullet"><span class="bullet-dot"></span>무료 수업 전까지 비용이 발생하지 않습니다</div>
+              <div class="inline-apply-bullet"><span class="bullet-dot"></span>학년·과목에 맞춰 선생님을 매칭해드립니다</div>
+              <div class="inline-apply-bullet"><span class="bullet-dot"></span>입시 정보가 궁금하면 함께 상담해드립니다</div>
             </div>
           </div>
-          <div>
-            <label>학년 * <span style="font-weight:400;color:#B0AA98;">(중복 선택 가능)</span></label>
-            <div class="csel-wrap" id="gradeWrap">
-              <div class="csel-display placeholder" id="gradeDisplay" onclick="toggleCsel('gradeWrap')">학년을 선택해주세요 <span class="csel-chevron">▾</span></div>
-              <div class="csel-options" id="gradeOptions">
-                <label><input type="checkbox" name="grade" value="초등 1학년"> 초등 1학년</label>
-                <label><input type="checkbox" name="grade" value="초등 2학년"> 초등 2학년</label>
-                <label><input type="checkbox" name="grade" value="초등 3학년"> 초등 3학년</label>
-                <label><input type="checkbox" name="grade" value="초등 4학년"> 초등 4학년</label>
-                <label><input type="checkbox" name="grade" value="초등 5학년"> 초등 5학년</label>
-                <label><input type="checkbox" name="grade" value="초등 6학년"> 초등 6학년</label>
-                <label><input type="checkbox" name="grade" value="중학교 1학년"> 중학교 1학년</label>
-                <label><input type="checkbox" name="grade" value="중학교 2학년"> 중학교 2학년</label>
-                <label><input type="checkbox" name="grade" value="중학교 3학년"> 중학교 3학년</label>
-                <label><input type="checkbox" name="grade" value="고등학교 1학년"> 고등학교 1학년</label>
-                <label><input type="checkbox" name="grade" value="고등학교 2학년"> 고등학교 2학년</label>
-                <label><input type="checkbox" name="grade" value="고등학교 3학년"> 고등학교 3학년</label>
+
+          <div class="inline-apply-right">
+            <form class="apply-form" id="applyForm">
+              <div class="form-row">
+                <div>
+                  <label for="studentName">학생 이름 <span style="color:var(--coral)">*</span></label>
+                  <input id="studentName" type="text" placeholder="이름" required>
+                </div>
+                <div>
+                  <label for="phone">상담받으실 연락처 <span style="color:var(--coral)">*</span></label>
+                  <input id="phone" type="tel" placeholder="010-0000-0000" required>
+                </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <label>희망 과목 * <span style="font-weight:400;color:#B0AA98;">(중복 선택 가능)</span></label>
-            <div class="csel-wrap" id="subjectWrap">
-              <div class="csel-display placeholder" id="subjectDisplay" onclick="toggleCsel('subjectWrap')">과목을 선택해주세요 <span class="csel-chevron">▾</span></div>
-              <div class="csel-options" id="subjectOptions">
-                <label><input type="checkbox" name="subject" value="국어"> 국어</label>
-                <label><input type="checkbox" name="subject" value="영어"> 영어</label>
-                <label><input type="checkbox" name="subject" value="수학"> 수학</label>
-                <label><input type="checkbox" name="subject" value="사회"> 사회</label>
-                <label><input type="checkbox" name="subject" value="과학"> 과학</label>
-                <label><input type="checkbox" name="subject" value="한국사"> 한국사</label>
-                <label><input type="checkbox" name="subject" value="사회탐구"> 사회탐구</label>
-                <label><input type="checkbox" name="subject" value="과학탐구"> 과학탐구</label>
+              <div>
+                <label>학년 <span style="color:var(--coral)">*</span> <span style="font-weight:400;color:#B0AA98;">(중복 선택 가능)</span></label>
+                <div class="csel-wrap" id="gradeWrap">
+                  <div class="csel-display placeholder" id="gradeDisplay" onclick="toggleCsel('gradeWrap')">학년을 선택해주세요 <span class="csel-chevron">▾</span></div>
+                  <div class="csel-options" id="gradeOptions">
+                    <label><input type="checkbox" name="grade" value="초등 1학년"> 초등 1학년</label>
+                    <label><input type="checkbox" name="grade" value="초등 2학년"> 초등 2학년</label>
+                    <label><input type="checkbox" name="grade" value="초등 3학년"> 초등 3학년</label>
+                    <label><input type="checkbox" name="grade" value="초등 4학년"> 초등 4학년</label>
+                    <label><input type="checkbox" name="grade" value="초등 5학년"> 초등 5학년</label>
+                    <label><input type="checkbox" name="grade" value="초등 6학년"> 초등 6학년</label>
+                    <label><input type="checkbox" name="grade" value="중학교 1학년"> 중학교 1학년</label>
+                    <label><input type="checkbox" name="grade" value="중학교 2학년"> 중학교 2학년</label>
+                    <label><input type="checkbox" name="grade" value="중학교 3학년"> 중학교 3학년</label>
+                    <label><input type="checkbox" name="grade" value="고등학교 1학년"> 고등학교 1학년</label>
+                    <label><input type="checkbox" name="grade" value="고등학교 2학년"> 고등학교 2학년</label>
+                    <label><input type="checkbox" name="grade" value="고등학교 3학년"> 고등학교 3학년</label>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div>
+                <label>희망 과목 <span style="color:var(--coral)">*</span> <span style="font-weight:400;color:#B0AA98;">(중복 선택 가능)</span></label>
+                <div class="csel-wrap" id="subjectWrap">
+                  <div class="csel-display placeholder" id="subjectDisplay" onclick="toggleCsel('subjectWrap')">과목을 선택해주세요 <span class="csel-chevron">▾</span></div>
+                  <div class="csel-options" id="subjectOptions">
+                    <label><input type="checkbox" name="subject" value="국어"> 국어</label>
+                    <label><input type="checkbox" name="subject" value="영어"> 영어</label>
+                    <label><input type="checkbox" name="subject" value="수학"> 수학</label>
+                    <label><input type="checkbox" name="subject" value="사회"> 사회</label>
+                    <label><input type="checkbox" name="subject" value="과학"> 과학</label>
+                    <label><input type="checkbox" name="subject" value="한국사"> 한국사</label>
+                    <label><input type="checkbox" name="subject" value="사회탐구"> 사회탐구</label>
+                    <label><input type="checkbox" name="subject" value="과학탐구"> 과학탐구</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="addr">주소 <span style="color:var(--coral)">*</span></label>
+                <div class="addr-row">
+                  <input id="addr" type="text" placeholder="주소 검색을 눌러 입력하세요" readonly required onclick="openPostcode()">
+                  <button type="button" class="btn-addr" onclick="openPostcode()">주소 검색</button>
+                </div>
+              </div>
+              <div>
+                <label for="addrDetail">상세주소</label>
+                <input id="addrDetail" type="text" placeholder="동·호수 등 상세주소 (선택)">
+              </div>
+              <div>
+                <label for="msg">문의사항 <span style="font-weight:400;color:#B0AA98;">(선택)</span></label>
+                <textarea id="msg" placeholder="궁금한 점을 자유롭게 적어주세요."></textarea>
+              </div>
+              <label class="consent"><input type="checkbox" required>개인정보 수집·이용에 동의합니다. (상담 목적, 상담 완료 후 즉시 폐기, 필수)</label>
+              <button type="submit" class="btn btn-coral" style="width:100%;">무료 상담 신청하기</button>
+              <div class="form-note">신청 즉시 결제가 진행되지 않으며, 담당자가 먼저 연락드립니다.</div>
+            </form>
           </div>
-          <div>
-            <label for="addr">주소 *</label>
-            <div class="addr-row">
-              <input id="addr" type="text" placeholder="주소 검색을 눌러 입력하세요" readonly required onclick="openPostcode()">
-              <button type="button" class="btn-addr" onclick="openPostcode()">주소 검색</button>
-            </div>
-          </div>
-          <div>
-            <label for="addrDetail">상세주소</label>
-            <input id="addrDetail" type="text" placeholder="동·호수 등 상세주소 (선택)">
-          </div>
-          <div>
-            <label for="msg">문의사항 <span style="font-weight:400;color:#B0AA98;">(선택)</span></label>
-            <textarea id="msg" placeholder="궁금한 점을 자유롭게 적어주세요."></textarea>
-          </div>
-          <label class="consent"><input type="checkbox" required>개인정보 수집·이용에 동의합니다. (상담 목적, 상담 완료 후 즉시 폐기, 필수)</label>
-          <button type="submit" class="btn btn-coral" style="width:100%;">무료 상담 신청하기</button>
-          <div class="form-note">신청 즉시 결제가 진행되지 않으며, 담당자가 먼저 연락드립니다.</div>
-        </form>
+
+        </div>
       </div>
 
     </div>
@@ -392,7 +431,6 @@
           <button type="button" class="gf-btn" data-grade="고등학교 2학년">고2</button>
           <button type="button" class="gf-btn" data-grade="고등학교 3학년">고3</button>
         </div>
-        <a href="/blog/guide-grade.html" class="gf-more">학교명으로 검색하기 →</a>
       </div>
 
       <div class="grade-empty" id="gradeEmpty">
@@ -492,10 +530,26 @@
       <div class="section-title">지역별 가이드</div>
 
       <div class="region-map-box">
-        <div class="region-map-title">서울특별시 구별 1:1 과외 가이드</div>
-        <div class="region-map-sub">구를 클릭하면 해당 지역 가이드 글로 이동합니다. 아직 글이 없는 지역은 무료 상담 신청으로 연결됩니다.</div>
+        <div class="region-map-title" id="regionMapTitle">서울특별시 구별 1:1 과외 가이드</div>
+        <div class="region-map-sub">지역을 선택하고 구를 클릭하면 초·중·고 가이드 글을 볼 수 있습니다.</div>
+
+        <div class="metro-tabs" id="metroTabs">
+          <button type="button" class="metro-btn active" data-metro="서울특별시">서울특별시</button>
+          <button type="button" class="metro-btn" data-metro="인천광역시">인천광역시</button>
+        </div>
+
         <div class="region-map-grid" id="seoulMapGrid"></div>
-        <a href="/blog/guide-region.html" class="region-more">서울 외 다른 지역도 찾아보기 →</a>
+
+        <div class="district-panel" id="districtPanel"></div>
+
+        <div class="school-search-box">
+          <div class="ss-label">학교명으로 검색해보기</div>
+          <div class="ss-row">
+            <input type="text" id="schoolSearchInput" placeholder="예: 강북중, 신수중, 연희중...">
+            <button type="button" class="btn-addr" onclick="searchSchool()">검색</button>
+          </div>
+          <div class="ss-result" id="schoolSearchResult"></div>
+        </div>
       </div>
 
       <a class="post-card" href="/blog/gangbuk-math-gwaoe.html" data-category="지역별 가이드">
@@ -634,33 +688,129 @@
     });
   });
 
-  // 서울 구별 지도형 그리드
-  const seoulDistricts = [
-    '도봉구','노원구','강북구','은평구','종로구','성북구','중랑구',
-    '서대문구','마포구','중구','동대문구','성동구','광진구',
-    '강서구','양천구','영등포구','용산구','강남구','송파구',
-    '구로구','동작구','서초구','강동구','금천구','관악구'
-  ];
-  const coveredDistricts = {
-    '강북구': '/blog/gangbuk-math-gwaoe.html',
-    '노원구': '/blog/nowon-math-gwaoe.html',
-    '서대문구': '/blog/seodaemun-math-gwaoe.html',
-    '마포구': '/blog/mapo-math-gwaoe.html',
+  // 지역별 가이드: 광역시 → 구/군 그리드 → 학교급별 글 패널
+  const metroDistricts = {
+    '서울특별시': ['도봉구','노원구','강북구','은평구','종로구','성북구','중랑구','서대문구','마포구','중구','동대문구','성동구','광진구','강서구','양천구','영등포구','용산구','강남구','송파구','구로구','동작구','서초구','강동구','금천구','관악구'],
+    '인천광역시': ['중구','동구','미추홀구','연수구','남동구','부평구','계양구','서구','강화군','옹진군'],
   };
+  const metroTitles = {
+    '서울특별시': '서울특별시 구별 1:1 과외 가이드',
+    '인천광역시': '인천광역시 군·구별 1:1 과외 가이드',
+  };
+  const districtPosts = {
+    '강북구': { 중학교: [{ title: '강북구 수학 과외 추천 — 강북구 내 중학교 중심', url: '/blog/gangbuk-math-gwaoe.html' }] },
+    '노원구': { 중학교: [{ title: '노원구 수학 과외 추천 — 노원구 내 중학교 중심', url: '/blog/nowon-math-gwaoe.html' }] },
+    '서대문구': { 중학교: [{ title: '서대문구 중학생 수학 과외 추천', url: '/blog/seodaemun-math-gwaoe.html' }] },
+    '마포구': { 중학교: [{ title: '마포구 수학 과외 추천 — 마포구 내 중학교 중심', url: '/blog/mapo-math-gwaoe.html' }] },
+  };
+  const schoolLevels = ['초등학교', '중학교', '고등학교'];
+
+  const regionMapTitle = document.getElementById('regionMapTitle');
   const seoulMapGrid = document.getElementById('seoulMapGrid');
-  if (seoulMapGrid) {
-    seoulDistricts.forEach(gu => {
-      const a = document.createElement('a');
-      a.textContent = gu;
-      a.className = 'region-cell';
-      if (coveredDistricts[gu]) {
-        a.classList.add('covered');
-        a.href = coveredDistricts[gu];
+  const districtPanel = document.getElementById('districtPanel');
+
+  function renderDistrictPanel(gu) {
+    const data = districtPosts[gu] || {};
+    let html = `<div class="district-panel-title">${gu} 1:1 과외 가이드</div>`;
+    schoolLevels.forEach(level => {
+      const posts = data[level];
+      html += `<div class="district-level"><div class="dl-label">${level}</div>`;
+      if (posts && posts.length) {
+        posts.forEach(p => { html += `<a class="dl-post" href="${p.url}">${p.title} →</a>`; });
       } else {
-        a.href = '/?region=' + encodeURIComponent('서울특별시 ' + gu) + '#apply';
+        html += `<div class="dl-empty">아직 등록된 글이 없어요. <a href="/#apply">무료 상담 신청하기 →</a></div>`;
       }
-      seoulMapGrid.appendChild(a);
+      html += `</div>`;
     });
+    districtPanel.innerHTML = html;
+    districtPanel.classList.add('show');
+  }
+
+  function renderMetro(metro) {
+    if (regionMapTitle) regionMapTitle.textContent = metroTitles[metro];
+    if (!seoulMapGrid) return;
+    seoulMapGrid.innerHTML = '';
+    districtPanel.classList.remove('show');
+    districtPanel.innerHTML = '';
+    metroDistricts[metro].forEach(gu => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = gu;
+      btn.className = 'region-cell';
+      btn.addEventListener('click', () => {
+        seoulMapGrid.querySelectorAll('.region-cell').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        renderDistrictPanel(gu);
+      });
+      seoulMapGrid.appendChild(btn);
+    });
+  }
+
+  document.querySelectorAll('.metro-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.metro-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      renderMetro(b.dataset.metro);
+    });
+  });
+  if (seoulMapGrid) renderMetro('서울특별시');
+
+  // 학교명으로 검색해보기 — 블로그 글 안에 등장하는 학교명 매칭
+  const schoolPostMap = {
+    '강북중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '미아중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '번동중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '삼각산중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '송중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '영훈중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+    '아현중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '대흥중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '마포중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '서강중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '성서중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '성산중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '망원중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '신수중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '상암중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '수색중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+    '상계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '불암중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '노원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '을지중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '중계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '광운중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '월계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '염광중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '태릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '공릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '하계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+    '홍제중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+    '연희중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+    '홍은중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+    '가좌중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+    '명지중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+  };
+
+  function searchSchool() {
+    const input = document.getElementById('schoolSearchInput');
+    const resultBox = document.getElementById('schoolSearchResult');
+    const raw = input.value.trim();
+    if (!raw) { resultBox.innerHTML = ''; return; }
+    const norm = raw.replace(/학교$/, '').trim();
+    let match = schoolPostMap[norm] || schoolPostMap[raw];
+    if (!match) {
+      const key = Object.keys(schoolPostMap).find(k => k.startsWith(norm) || norm.startsWith(k));
+      if (key) match = schoolPostMap[key];
+    }
+    if (match) {
+      resultBox.innerHTML = `<a class="dl-post" href="${match.post}">"${raw}" 관련 글 보기 — ${match.district} →</a>`;
+    } else {
+      resultBox.innerHTML = `<div class="dl-empty">아직 등록된 학교 정보가 없어요. <a href="/#apply">무료 상담 신청하기 →</a></div>`;
+    }
+  }
+  const schoolSearchInput = document.getElementById('schoolSearchInput');
+  if (schoolSearchInput) {
+    schoolSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); searchSchool(); } });
   }
 
   // 커스텀 멀티셀렉트
