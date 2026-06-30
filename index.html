@@ -192,35 +192,6 @@
   .fact mark{background:#FBE3B0;color:#5C3D00;padding:1px 4px;border-radius:3px;font-weight:700;}
 
   /* ---------- 핵심 지표 (Hero 하단 통계) ---------- */
-  /* 서비스 섹션 */
-  #services{padding:80px 0;}
-  .services-head{text-align:center;margin-bottom:48px;}
-  .services-head .label{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:0.08em;color:var(--coral);text-transform:uppercase;margin-bottom:14px;}
-  .services-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin:0 0 14px;line-height:1.35;}
-  .services-head p{font-size:15.5px;color:var(--text-gray);margin:0;}
-  .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,440px));gap:24px;justify-content:center;align-items:stretch;}
-  .svc-card{
-    border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;
-    cursor:pointer;
-    transition:transform .32s cubic-bezier(0.34,1.56,0.64,1), box-shadow .32s ease;
-    box-shadow:0 2px 12px rgba(0,0,0,0.07);
-    will-change:transform;
-  }
-  .svc-card:hover{transform:translateY(-10px);box-shadow:0 24px 52px rgba(0,0,0,0.18);}
-  .svc-card.general{background:var(--cream);border:1px solid var(--line-light);}
-  .svc-card.premium{background:var(--ink);color:var(--white);}
-  .svc-card.consult{background:var(--coral);color:var(--white);}
-  /* 카드 헤더 (항상 보임) */
-  .svc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
-  .svc-header-left{flex:1;}
-  .svc-badge{display:inline-flex;align-items:center;font-size:11px;font-weight:800;letter-spacing:0.06em;padding:5px 12px;border-radius:999px;margin-bottom:16px;align-self:flex-start;}
-  .svc-card.general .svc-badge{background:rgba(255,107,82,0.12);color:var(--coral);}
-  .svc-card.premium .svc-badge{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);}
-  .svc-card.consult .svc-badge{background:rgba(255,255,255,0.22);color:var(--white);}
-  .svc-card h3{font-size:21px;font-weight:800;margin:0 0 6px;line-height:1.3;}
-  .svc-card.premium h3,.svc-card.consult h3{color:var(--white);}
-  .svc-card .svc-sub{font-size:13px;margin:0 0 22px;opacity:0.6;}
-  .svc-divider{height:1px;background:currentColor;opacity:0.12;margin-bottom:20px;}
 
   /* 네비 드롭다운 */
   .nav-item{position:relative;display:flex;align-items:center;}
@@ -244,19 +215,6 @@
   }
   .nav-dropdown a:hover{background:rgba(255,255,255,0.08);color:var(--white);}
   .nav-dropdown .drop-divider{height:1px;background:rgba(255,255,255,0.08);margin:6px 0;}
-  .svc-items{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;}
-  .svc-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;}
-  .svc-card.general .svc-item{color:var(--text-dark);}
-  .svc-card.premium .svc-item,.svc-card.consult .svc-item{color:rgba(255,255,255,0.88);}
-  .svc-dot{width:6px;height:6px;border-radius:50%;flex:none;margin-top:8px;}
-  .svc-card.general .svc-dot{background:var(--coral);}
-  .svc-card.premium .svc-dot,.svc-card.consult .svc-dot{background:rgba(255,255,255,0.7);}
-  .svc-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:14.5px;transition:opacity .2s;width:100%;}
-  .svc-cta:hover{opacity:0.85;}
-  .svc-card.general .svc-cta{background:var(--ink);color:var(--white);}
-  .svc-card.premium .svc-cta{background:var(--white);color:var(--ink);}
-  .svc-card.consult .svc-cta{background:var(--white);color:var(--coral);}
-  @media(max-width:900px){.services-grid{grid-template-columns:1fr;}}
 
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   .stat-block{text-align:center;padding:0 12px;}
@@ -552,6 +510,62 @@
   .reveal.in{opacity:1;transform:none;}
   @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;}}
 
+  /* ---------- 2028 분석 요약 배너 ---------- */
+  .change-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .change-banner .btn{flex:none;}
+
+  /* ---------- 지역별 가이드 위젯 ---------- */
+  .region-widget-mobile{display:none;}
+  .post-card{background:var(--white);border-radius:var(--radius);overflow:hidden;display:flex;align-items:stretch;box-shadow:0 1px 6px rgba(0,0,0,0.05);transition:transform .2s ease,box-shadow .2s ease;margin-bottom:16px;}
+  .post-card:last-child{margin-bottom:0;}
+  .post-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+  .post-thumb{width:220px;min-height:140px;flex:none;position:relative;overflow:hidden;background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 60%,#0f2952 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;}
+  .post-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .post-thumb .thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,50,0.72) 0%,rgba(10,20,50,0.08) 55%);}
+  .post-thumb .thumb-text{position:relative;z-index:1;}
+  .post-thumb .thumb-issue{font-size:10px;font-weight:800;letter-spacing:0.08em;color:rgba(255,255,255,0.65);margin-bottom:4px;}
+  .post-thumb .thumb-title{font-size:13.5px;font-weight:800;color:var(--white);line-height:1.4;word-break:keep-all;}
+  .post-body{padding:22px 24px;flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .post-body .tag{display:inline-flex;font-size:11px;font-weight:800;color:var(--coral);background:#FFF0EC;padding:3px 9px;border-radius:999px;margin-bottom:10px;align-self:flex-start;}
+  .post-body h2{font-size:17px;font-weight:800;margin:0 0 8px;line-height:1.45;word-break:keep-all;}
+  .post-body p{font-size:13.5px;color:var(--text-gray);margin:0 0 14px;line-height:1.6;}
+  .post-body .date{font-size:12px;color:#B0AA98;}
+  .region-map-box{background:var(--white);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px;}
+  .region-map-title{font-size:15.5px;font-weight:800;margin:0 0 4px;}
+  .region-map-sub{font-size:13px;color:var(--text-gray);margin:0 0 18px;}
+  .metro-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+  .metro-btn{background:var(--white);border:1.5px solid var(--line-light);border-radius:999px;padding:8px 18px;font-size:13.5px;font-weight:700;color:var(--text-dark);cursor:pointer;font-family:var(--sans);transition:border-color .15s,background .15s,color .15s;}
+  .metro-btn:hover{border-color:var(--coral);}
+  .metro-btn.active{background:var(--ink);border-color:var(--ink);color:var(--white);}
+  .region-map-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:6px;}
+  .region-cell{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 6px;border-radius:10px;font-size:13px;font-weight:700;background:#F8F8F6;color:var(--text-dark);border:1.5px solid transparent;cursor:pointer;font-family:var(--sans);transition:border-color .15s,background .15s,color .15s;}
+  .region-cell:hover{border-color:var(--coral);}
+  .region-cell.active{background:var(--coral);border-color:var(--coral);color:var(--white);}
+  .district-panel{display:none;background:#F8F8F6;border-radius:var(--radius);padding:24px 22px;margin-top:18px;}
+  .district-panel.show{display:block;}
+  .district-panel-title{font-size:15px;font-weight:800;margin:0 0 14px;}
+  .district-level{margin-bottom:14px;}
+  .district-level:last-child{margin-bottom:0;}
+  .dl-label{font-size:12px;font-weight:800;color:var(--text-gray);letter-spacing:0.04em;margin-bottom:8px;}
+  .dl-post{display:block;background:var(--white);border:1px solid var(--line-light);border-radius:10px;padding:13px 16px;font-size:13.5px;font-weight:700;color:var(--text-dark);margin-bottom:8px;transition:border-color .15s,color .15s;}
+  .dl-post:hover{border-color:var(--coral);color:var(--coral);}
+  .dl-post:last-child{margin-bottom:0;}
+  .dl-empty{font-size:13px;color:var(--text-gray);background:var(--white);border:1px dashed var(--line-light);border-radius:10px;padding:13px 16px;}
+  .dl-empty a{color:var(--coral);font-weight:700;}
+  .school-search-box{border-top:1px solid var(--line-light);margin-top:22px;padding-top:20px;}
+  .ss-label{font-size:13px;font-weight:800;color:var(--text-gray);margin-bottom:10px;}
+  .ss-row{display:flex;gap:8px;}
+  .ss-row input{flex:1;padding:13px 14px;border-radius:9px;border:1.5px solid #DCD5BE;background:#FAF8F2;color:var(--text-dark);font-size:14.5px;font-family:var(--sans);}
+  .ss-row input:focus{outline:none;border-color:var(--coral);background:var(--white);}
+  .ss-result{margin-top:12px;}
+  .btn-addr{flex:none;padding:0 18px;background:var(--coral);color:var(--white);border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--sans);white-space:nowrap;}
+  .btn-addr:hover{background:var(--coral-2);}
+  .region-preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px;}
+  .region-preview-card{position:relative;border-radius:14px;overflow:hidden;min-height:120px;display:flex;align-items:flex-end;padding:14px;background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 60%,#0f2952 100%);}
+  .region-preview-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .region-preview-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,50,0.75) 0%,rgba(10,20,50,0.1) 60%);}
+  .region-preview-card span{position:relative;z-index:1;color:var(--white);font-weight:800;font-size:14.5px;}
+
   /* ---------- Responsive ---------- */
   @media (max-width:980px){
     .hero{min-height:560px;padding:170px 0 96px;}
@@ -637,6 +651,11 @@
     .tab-note{font-size:13px;}
     .subject-chips{gap:8px;}
     .chip{padding:11px 16px;font-size:13.5px;}
+    .change-banner{flex-direction:column;align-items:flex-start;}
+    .change-banner .btn{width:100%;justify-content:center;}
+    .region-widget-full{display:none;}
+    .region-widget-mobile{display:block;}
+    .region-preview-grid{grid-template-columns:repeat(2,1fr);}
   }
 </style>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -654,10 +673,10 @@
     <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks">
       <div class="nav-item">
-        <a href="#services">1:1 맞춤 과외</a>
+        <a href="#why">1:1 맞춤 과외</a>
         <div class="nav-dropdown">
           <a href="#change">2028 대입 분석</a>
-          <a href="#teachers">선생님 소개</a>
+          <a href="#teachers">선생님 안내</a>
           <a href="#stories">후기 사례</a>
           <div class="drop-divider"></div>
           <a href="#apply">무료 수업 신청</a>
@@ -709,177 +728,15 @@
     </div>
   </section>
 
-<!-- 2028 대입 분석 (섹션 0 서포트) -->
-  <section id="change">
+<!-- 2028 대입 분석 (요약 배너) -->
+  <section id="change" style="padding:48px 0 0;">
     <div class="wrap">
-      <div class="section-head reveal">
-        <h2>2028 대학입시제도 개편,<br>우리 아이는 어떻게 대비해야 할까요?</h2>
-        <p>선택과목이 사라지고 내신 평가 방식이 바뀝니다. 달라진 기준에 맞춘 대비가 필요한 시점입니다.</p>
-      </div>
-
-      <div class="tabbar">
-        <button class="tab-btn active" data-tab="t1">수능 체제 개편</button>
-        <button class="tab-btn" data-tab="t2">내신 평가 변화</button>
-        <button class="tab-btn" data-tab="t3">고교학점제</button>
-      </div>
-
-      <div class="tab-panel active reveal" id="t1">
-        <div class="analysis-grid">
-          <div class="analysis-card">
-            <div class="meta"><span class="sec">2028 대입 개편 리포트</span><span>2026.06 업데이트</span></div>
-            <div class="kicker">SPECIAL REPORT · 수능 체제</div>
-            <h3 class="title">선택과목이 사라진다,<br>통합형 수능의 시대</h3>
-            <div class="rule"></div>
-            <div class="rule thin"></div>
-            <div class="fact-grid">
-              <div class="fact"><span class="fn">1</span><h4>수능 체제</h4><p>국·수·사·과 모두 <mark>선택과목 없는 통합형</mark>. 기초 이해력이 곧 등급.</p></div>
-              <div class="fact"><span class="fn">2</span><h4>내신 등급</h4><p><mark>9등급 → 5등급제</mark>. 한두 문제가 등급을 가른다.</p></div>
-              <div class="fact"><span class="fn">3</span><h4>고교학점제</h4><p>2025년 전면 시행. <mark>과목 선택</mark>의 책임이 커진다.</p></div>
-              <div class="fact"><span class="fn">4</span><h4>평가 방식</h4><p>암기보다 <mark>통합 사고력·서논술형</mark>이 관건.</p></div>
-            </div>
-          </div>
-          <div class="point-card">
-            <div class="bar">더나은에듀 매칭 포인트</div>
-            <h3>학습량보다 학습 밀도를 채우는 1:1 전략이 필요합니다</h3>
-            <div class="point-block"><div class="lab">⚠ 학습 공백 포인트</div><p>유불리 과목이 사라지면, 약한 기초가 그대로 등급에 드러납니다.</p></div>
-            <div class="point-block"><div class="lab">🔑 선생님의 솔루션</div><p>문제풀이가 아니라, 개념을 구조화해 채우는 1:1 학습.</p></div>
-          </div>
+      <div class="change-close change-banner reveal">
+        <div>
+          <span class="badge on-dark" style="margin-bottom:12px;">2028 대입 개편</span>
+          <p style="margin:0;">선택과목 폐지, 9등급→5등급제, 고교학점제까지.<br class="mo-br"> 달라진 기준에 맞춘 1:1 대비가 필요합니다.</p>
         </div>
-      </div>
-
-      <div class="tab-panel" id="t2">
-        <div class="analysis-grid">
-          <div class="analysis-card">
-            <div class="meta"><span class="sec">2028 대입 개편 리포트</span><span>2026.06 업데이트</span></div>
-            <div class="kicker">SPECIAL REPORT · 내신 평가</div>
-            <h3 class="title">9등급에서 5등급,<br>한 문제의 무게가 달라진다</h3>
-            <div class="rule"></div>
-            <div class="rule thin"></div>
-            <div class="fact-grid">
-              <div class="fact"><span class="fn">1</span><h4>등급 비율</h4><p>1등급 10%·2등급 24%…<mark>등급 간 점수 폭</mark>이 커진다.</p></div>
-              <div class="fact"><span class="fn">2</span><h4>평가 병기</h4><p>절대평가에 <mark>상대평가도 함께 기재</mark>, 변별력 확보.</p></div>
-              <div class="fact"><span class="fn">3</span><h4>학년별 적용</h4><p>고1 상대·고2~3 절대. <mark>학년별 전략</mark>이 갈린다.</p></div>
-              <div class="fact"><span class="fn">4</span><h4>과목별 영향</h4><p>융합 선택 일부는 <mark>성취도(A~E)</mark>만 적용.</p></div>
-            </div>
-          </div>
-          <div class="point-card">
-            <div class="bar">더나은에듀 매칭 포인트</div>
-            <h3>등급 폭이 커질수록, 한 번의 시험을 놓치지 않는 관리가 필요합니다</h3>
-            <div class="point-block"><div class="lab">⚠ 학습 공백 포인트</div><p>내신 비중이 커진 만큼, 관리가 없으면 등급이 쉽게 흔들립니다.</p></div>
-            <div class="point-block"><div class="lab">🔑 선생님의 솔루션</div><p>학교별 기출·서술형 기준까지 분석해 시험 직전까지 점검.</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="t3">
-        <div class="analysis-grid">
-          <div class="analysis-card">
-            <div class="meta"><span class="sec">2028 대입 개편 리포트</span><span>2026.06 업데이트</span></div>
-            <div class="kicker">SPECIAL REPORT · 고교학점제</div>
-            <h3 class="title">과목을 직접 설계하는 시대,<br>선택의 무게가 커진다</h3>
-            <div class="rule"></div>
-            <div class="rule thin"></div>
-            <div class="fact-grid">
-              <div class="fact"><span class="fn">1</span><h4>학점 이수</h4><p>3년간 <mark>192학점</mark> 이수. 과목 선택이 곧 전략.</p></div>
-              <div class="fact"><span class="fn">2</span><h4>진로 연계</h4><p>진로에 맞춰 <mark>스스로 선택</mark>. 탐색이 늦으면 불리.</p></div>
-              <div class="fact"><span class="fn">3</span><h4>최소 성취</h4><p>기준 미달 시 <mark>미이수</mark>, 보충 학습 필요.</p></div>
-              <div class="fact"><span class="fn">4</span><h4>평가 부담</h4><p>과목마다 다른 기준, <mark>관리 범위</mark>가 넓어진다.</p></div>
-            </div>
-          </div>
-          <div class="point-card">
-            <div class="bar">더나은에듀 매칭 포인트</div>
-            <h3>과목 선택부터 학습 설계까지, 한 명의 코디네이터가 필요합니다</h3>
-            <div class="point-block"><div class="lab">⚠ 학습 공백 포인트</div><p>막막한 채 시간이 흐르면, 중요한 과목의 기초를 놓칩니다.</p></div>
-            <div class="point-block"><div class="lab">🔑 선생님의 솔루션</div><p>진로·수준에 맞춰 과목별 매칭과 학습 설계를 함께.</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="center" style="margin-top:34px;">
         <a href="/blog/2028-daeip-gaepyeon.html" class="btn btn-outline-light">2028 대입 개편 자세히 보기 →</a>
-      </div>
-    </div>
-  </section>
-
-<!-- 1. 학부모 고민 공감 -->
-  <section id="pain" style="background:var(--cream);">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="badge">학부모 고민 공감</div>
-        <h2>혹시, 이런 고민 하고 계신가요?</h2>
-      </div>
-      <div class="why-grid why-grid-2">
-        <div class="why-card reveal" style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#FBE3D6;display:flex;align-items:center;justify-content:center;flex:none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4.5 4.5L19 7" stroke="var(--coral)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p style="margin:0;font-size:15px;color:var(--text-dark);font-weight:600;line-height:1.6;padding-top:9px;"><span style="color:var(--coral);font-weight:800;">면학분위기 제각각인 학원</span> 수업으로 부족한 부분이 느껴지시나요?</p>
-        </div>
-        <div class="why-card reveal" style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#FBE3D6;display:flex;align-items:center;justify-content:center;flex:none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4.5 4.5L19 7" stroke="var(--coral)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p style="margin:0;font-size:15px;color:var(--text-dark);font-weight:600;line-height:1.6;padding-top:9px;"><span style="color:var(--coral);font-weight:800;">아이에게 잘 맞는 선생님</span>을 찾기가 어려우셨나요?</p>
-        </div>
-        <div class="why-card reveal" style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#FBE3D6;display:flex;align-items:center;justify-content:center;flex:none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4.5 4.5L19 7" stroke="var(--coral)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p style="margin:0;font-size:15px;color:var(--text-dark);font-weight:600;line-height:1.6;padding-top:9px;">공부는 하는 거 같은데 <span style="color:var(--coral);font-weight:800;">성적 변화가 더디게</span> 느껴지시나요?</p>
-        </div>
-        <div class="why-card reveal" style="display:flex;gap:16px;align-items:flex-start;">
-          <div style="width:40px;height:40px;border-radius:50%;background:#FBE3D6;display:flex;align-items:center;justify-content:center;flex:none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4.5 4.5L19 7" stroke="var(--coral)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p style="margin:0;font-size:15px;color:var(--text-dark);font-weight:600;line-height:1.6;padding-top:9px;"><span style="color:var(--coral);font-weight:800;">내신과 생기부까지 함께</span> 챙길 수 있을지 고민되시나요?</p>
-        </div>
-      </div>
-      <div class="change-close reveal" style="margin-top:34px;text-align:center;display:block;">
-        <p class="change-msg-pc" style="margin:0 auto;max-width:700px;line-height:2;">많은 학생과 학부모님들이 같은 고민을 겪고 있습니다.<br>중요한 것은 <span class="hl">아이에게 맞는 방식</span>으로 공부하게 하는 것입니다.<br><span class="hl">더나은에듀 1:1 맞춤 과외</span>는 아이에게 가장 필요한 학습 방향을 찾아가는 과정입니다.</p>
-        <p class="change-msg-mo" style="margin:0 auto;line-height:2;word-break:keep-all;">많은 학생과 학부모님들이<br>같은 고민을 겪고 있습니다.<br><br><span class="hl">더나은에듀 1:1 맞춤 과외</span>는<br>고민 해결을 위해 아이에게 필요한<br>학습 방향을 찾아가는 과정입니다.</p>
-      </div>
-    </div>
-  </section>
-
-<!-- 2. 더나은에듀 서비스 소개 -->
-  <section id="services">
-    <div class="wrap">
-      <div class="services-head reveal">
-        <span class="label">SERVICES</span>
-        <h2>더나은에듀가 해결해드립니다.</h2>
-        <p>내신부터 생기부·대입 컨설팅까지,<br class="mo-br"> 아이의 상황에 맞는 1:1 서비스를 제공합니다.</p>
-      </div>
-      <div class="services-grid">
-
-        <!-- 1:1 맞춤 과외 -->
-        <div class="svc-card general reveal">
-          <span class="svc-badge">방문 · 화상</span>
-          <h3>1:1 맞춤 과외</h3>
-          <p class="svc-sub">초·중·고 국영수사탐 전과목</p>
-          <div class="svc-divider"></div>
-          <ul class="svc-items">
-            <li class="svc-item"><span class="svc-dot"></span>학교 내신 · 수능 집중 대비</li>
-            <li class="svc-item"><span class="svc-dot"></span>학년·수준별 맞춤 커리큘럼</li>
-            <li class="svc-item"><span class="svc-dot"></span>방문 또는 화상 선택 가능</li>
-            <li class="svc-item"><span class="svc-dot"></span>평균 4일 내 첫 수업 시작</li>
-          </ul>
-          <a href="#apply" class="svc-cta">30분 무료 수업 신청 →</a>
-        </div>
-
-        <!-- 대입 컨설팅 -->
-        <div class="svc-card consult reveal">
-          <span class="svc-badge">화상 · 전략 컨설팅</span>
-          <h3>대입컨설팅</h3>
-          <p class="svc-sub">방향 설정부터 생기부 관리까지</p>
-          <div class="svc-divider"></div>
-          <ul class="svc-items">
-            <li class="svc-item"><span class="svc-dot"></span>화상 대입 전략 상담 (1회 1시간)</li>
-            <li class="svc-item"><span class="svc-dot"></span>생활기록부 관리 · 세특 설계</li>
-            <li class="svc-item"><span class="svc-dot"></span>수시 · 정시 맞춤 전략 수립</li>
-            <li class="svc-item"><span class="svc-dot"></span>진로 방향 설정 · 대입 전략 수립</li>
-          </ul>
-          <a href="/consulting/" class="svc-cta">컨설팅 상담 신청 →</a>
-        </div>
-
       </div>
     </div>
   </section>
@@ -994,6 +851,75 @@
     </div>
   </section>
 
+<!-- 지역별 가이드 -->
+  <section id="region" style="background:var(--cream);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="badge">지역별 가이드</div>
+        <h2>우리 동네 학생들은<br>어떻게 공부하고 있을까요?</h2>
+        <p>지역을 선택하면 그 지역 학생들을 위한 학습 가이드를 확인할 수 있습니다.</p>
+      </div>
+
+      <!-- 데스크탑: 전체 인터랙티브 위젯 -->
+      <div class="region-widget-full reveal">
+        <div class="region-map-box">
+          <div class="region-map-title" id="regionMapTitle">서울특별시 구별 1:1 과외 가이드</div>
+          <div class="region-map-sub">지역을 선택하고 구를 클릭하면 초·중·고 가이드 글을 볼 수 있습니다.</div>
+
+          <div class="metro-tabs" id="metroTabs">
+            <button type="button" class="metro-btn active" data-metro="서울특별시">서울특별시</button>
+            <button type="button" class="metro-btn" data-metro="인천광역시">인천광역시</button>
+            <button type="button" class="metro-btn" data-metro="경기도">경기도</button>
+            <button type="button" class="metro-btn" data-metro="강원특별자치도">강원특별자치도</button>
+            <button type="button" class="metro-btn" data-metro="충청북도">충청북도</button>
+            <button type="button" class="metro-btn" data-metro="충청남도">충청남도</button>
+            <button type="button" class="metro-btn" data-metro="전북특별자치도">전북특별자치도</button>
+            <button type="button" class="metro-btn" data-metro="전라남도">전라남도</button>
+            <button type="button" class="metro-btn" data-metro="경상북도">경상북도</button>
+            <button type="button" class="metro-btn" data-metro="경상남도">경상남도</button>
+          </div>
+
+          <div class="region-map-grid" id="seoulMapGrid"></div>
+
+          <div class="district-panel" id="districtPanel"></div>
+
+          <div class="school-search-box">
+            <div class="ss-label">학교명으로 검색해보기</div>
+            <div class="ss-row">
+              <input type="text" id="schoolSearchInput" placeholder="예: 강북중, 신수중, 연희중...">
+              <button type="button" class="btn-addr" onclick="searchSchool()">검색</button>
+            </div>
+            <div class="ss-result" id="schoolSearchResult"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 모바일: 간단 미리보기 카드 -->
+      <div class="region-widget-mobile reveal">
+        <div class="region-preview-grid">
+          <a class="region-preview-card" href="/blog/gangbuk-math-gwaoe.html">
+            <img src="/blog/images/blog-03.png" alt="강북구 수학 과외" onerror="this.style.display='none'">
+            <span>강북구</span>
+          </a>
+          <a class="region-preview-card" href="/blog/nowon-math-gwaoe.html">
+            <img src="/blog/images/blog-06.png" alt="노원구 수학 과외" onerror="this.style.display='none'">
+            <span>노원구</span>
+          </a>
+          <a class="region-preview-card" href="/blog/seodaemun-math-gwaoe.html">
+            <img src="/blog/images/seodaemun-math-gwaoe.png" alt="서대문구 수학 과외" onerror="this.style.display='none'">
+            <span>서대문구</span>
+          </a>
+          <a class="region-preview-card" href="/blog/mapo-math-gwaoe.html">
+            <img src="/blog/images/blog-09.png" alt="마포구 수학 과외" onerror="this.style.display='none'">
+            <span>마포구</span>
+          </a>
+        </div>
+        <a href="/blog/?tab=지역별 가이드" class="btn btn-outline-light" style="width:100%;justify-content:center;">전체 지역 가이드 보기 →</a>
+      </div>
+
+    </div>
+  </section>
+
 <!-- 4. 매칭 과정 -->
   <section class="section-dark" id="process">
     <div class="wrap">
@@ -1033,7 +959,7 @@
   <section id="teachers" style="background:var(--cream);">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="badge">선생님 소개</div>
+        <div class="badge">선생님 안내</div>
         <h2>검증을 통과한 선생님들<br>맞춤 선생님을 소개해드립니다.</h2>
       </div>
       <p class="marquee-hint">마우스를 올리면 잠시 멈춰요</p>
@@ -1456,7 +1382,7 @@
         <ul>
           <li><a href="#change">2028 대입 분석</a></li>
           <li><a href="#why">선택의 이유</a></li>
-          <li><a href="#teachers">선생님 소개</a></li>
+          <li><a href="#teachers">선생님 안내</a></li>
           <li><a href="#stories">후기 사례</a></li>
           <li><a href="/blog/">학습 정보</a></li>
         </ul>
@@ -1494,6 +1420,188 @@
     function stop(){ if(timer) clearInterval(timer); }
     dots.forEach(d=>d.addEventListener('click', ()=>{ show(+d.dataset.i); start(); }));
     show(0); start();
+  })();
+
+  // 지역별 가이드: 광역시 → 구/군 그리드 → 학교급별 글 패널
+  (function(){
+    const metroDistricts = {
+      '서울특별시': ['도봉구','노원구','강북구','은평구','종로구','성북구','중랑구','서대문구','마포구','중구','동대문구','성동구','광진구','강서구','양천구','영등포구','용산구','강남구','송파구','구로구','동작구','서초구','강동구','금천구','관악구'],
+      '인천광역시': ['중구','동구','미추홀구','연수구','남동구','부평구','계양구','서구','강화군','옹진군'],
+      '경기도': ['수원시','성남시','의정부시','안양시','부천시','광명시','평택시','동두천시','안산시','고양시','과천시','구리시','남양주시','오산시','시흥시','군포시','의왕시','하남시','용인시','파주시','이천시','안성시','김포시','화성시','광주시','양주시','포천시','여주시','연천군','가평군','양평군'],
+      '강원특별자치도': ['춘천시','원주시','강릉시','동해시','태백시','속초시','삼척시','홍천군','횡성군','영월군','평창군','정선군','철원군','화천군','양구군','인제군','고성군','양양군'],
+      '충청북도': ['청주시','충주시','제천시','보은군','옥천군','영동군','증평군','진천군','괴산군','음성군','단양군'],
+      '충청남도': ['천안시','공주시','보령시','아산시','서산시','논산시','계룡시','당진시','금산군','부여군','서천군','청양군','홍성군','예산군','태안군'],
+      '전북특별자치도': ['전주시','군산시','익산시','정읍시','남원시','김제시','완주군','진안군','무주군','장수군','임실군','순창군','고창군','부안군'],
+      '전라남도': ['목포시','여수시','순천시','나주시','광양시','담양군','곡성군','구례군','고흥군','보성군','화순군','장흥군','강진군','해남군','영암군','무안군','함평군','영광군','장성군','완도군','진도군','신안군'],
+      '경상북도': ['포항시','경주시','김천시','안동시','구미시','영주시','영천시','상주시','문경시','경산시','군위군','의성군','청송군','영양군','영덕군','청도군','고령군','성주군','칠곡군','예천군','봉화군','울진군','울릉군'],
+      '경상남도': ['창원시','진주시','통영시','사천시','김해시','밀양시','거제시','양산시','의령군','함안군','창녕군','고성군','남해군','하동군','산청군','함양군','거창군','합천군'],
+    };
+    const metroTitles = {
+      '서울특별시': '서울특별시 구별 1:1 과외 가이드',
+      '인천광역시': '인천광역시 군·구별 1:1 과외 가이드',
+      '경기도': '경기도 시·군별 1:1 과외 가이드',
+      '강원특별자치도': '강원특별자치도 시·군별 1:1 과외 가이드',
+      '충청북도': '충청북도 시·군별 1:1 과외 가이드',
+      '충청남도': '충청남도 시·군별 1:1 과외 가이드',
+      '전북특별자치도': '전북특별자치도 시·군별 1:1 과외 가이드',
+      '전라남도': '전라남도 시·군별 1:1 과외 가이드',
+      '경상북도': '경상북도 시·군별 1:1 과외 가이드',
+      '경상남도': '경상남도 시·군별 1:1 과외 가이드',
+    };
+    const districtPosts = {
+      '강북구': { 중학교: [{
+        url: '/blog/gangbuk-math-gwaoe.html', thumb: '/blog/images/blog-03.png', alt: '강북구 수학 과외', thumbTitle: '강북구 수학 과외',
+        title: '강북구 수학 과외 추천 — 강북구 내 중학교 중심',
+        excerpt: '강북중·미아중·번동중·삼각산중 등 강북구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+        date: '2026.06.26'
+      }] },
+      '노원구': { 중학교: [{
+        url: '/blog/nowon-math-gwaoe.html', thumb: '/blog/images/blog-06.png', alt: '노원구 수학 과외', thumbTitle: '노원구 수학 과외',
+        title: '노원구 수학 과외 추천 — 노원구 내 중학교 중심',
+        excerpt: '불암중·상계중·중계중 등 노원구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+        date: '2026.06.27'
+      }] },
+      '서대문구': { 중학교: [{
+        url: '/blog/seodaemun-math-gwaoe.html', thumb: '/blog/images/seodaemun-math-gwaoe.png', alt: '서대문구 수학 과외', thumbTitle: '서대문구 수학 과외',
+        title: '서대문구 중학생 수학 과외 추천 — 중등 수학 핵심 내용과 지역 학교 안내',
+        excerpt: '연희중·홍제중·가좌중 등 서대문구 중학교 특성, 학년별 중등 수학 내용, 1:1 과외 효과를 정리했습니다.',
+        date: '2026.06.25'
+      }] },
+      '마포구': { 중학교: [{
+        url: '/blog/mapo-math-gwaoe.html', thumb: '/blog/images/blog-09.png', alt: '마포구 수학 과외', thumbTitle: '마포구 수학 과외',
+        title: '마포구 수학 과외 추천 — 마포구 내 중학교 중심',
+        excerpt: '신수중·성산중·서강중·아현중 등 마포구 주요 중학교 현황과 중등 수학 학습 포인트를 정리했습니다.',
+        date: '2026.06.29'
+      }] },
+    };
+    const schoolLevels = ['초등학교', '중학교', '고등학교'];
+
+    const regionMapTitle = document.getElementById('regionMapTitle');
+    const seoulMapGrid = document.getElementById('seoulMapGrid');
+    const districtPanel = document.getElementById('districtPanel');
+
+    function renderPostCard(p) {
+      return `<a class="post-card" href="${p.url}">
+        <div class="post-thumb">
+          <img src="${p.thumb}" alt="${p.alt}" onerror="this.style.display='none'">
+          <div class="thumb-overlay"></div>
+          <div class="thumb-text">
+            <div class="thumb-issue">지역별 가이드</div>
+            <div class="thumb-title">${p.thumbTitle}</div>
+          </div>
+        </div>
+        <div class="post-body">
+          <span class="tag">지역별 가이드</span>
+          <h2>${p.title}</h2>
+          <p>${p.excerpt}</p>
+          <span class="date">${p.date}</span>
+        </div>
+      </a>`;
+    }
+
+    function renderDistrictPanel(gu) {
+      const data = districtPosts[gu] || {};
+      let html = `<div class="district-panel-title">${gu} 1:1 과외 가이드</div>`;
+      schoolLevels.forEach(level => {
+        const posts = data[level];
+        html += `<div class="district-level"><div class="dl-label">${level}</div>`;
+        if (posts && posts.length) {
+          posts.forEach(p => { html += renderPostCard(p); });
+        } else {
+          html += `<div class="dl-empty">아직 등록된 글이 없어요. <a href="#apply">무료 상담 신청하기 →</a></div>`;
+        }
+        html += `</div>`;
+      });
+      districtPanel.innerHTML = html;
+      districtPanel.classList.add('show');
+    }
+
+    function renderMetro(metro) {
+      if (regionMapTitle) regionMapTitle.textContent = metroTitles[metro];
+      if (!seoulMapGrid) return;
+      seoulMapGrid.innerHTML = '';
+      districtPanel.classList.remove('show');
+      districtPanel.innerHTML = '';
+      metroDistricts[metro].forEach(gu => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = gu;
+        btn.className = 'region-cell';
+        btn.addEventListener('click', () => {
+          seoulMapGrid.querySelectorAll('.region-cell').forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          renderDistrictPanel(gu);
+        });
+        seoulMapGrid.appendChild(btn);
+      });
+    }
+
+    document.querySelectorAll('.metro-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.metro-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        renderMetro(b.dataset.metro);
+      });
+    });
+    if (seoulMapGrid) renderMetro('서울특별시');
+
+    // 학교명으로 검색해보기 — 블로그 글 안에 등장하는 학교명 매칭
+    const schoolPostMap = {
+      '강북중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '미아중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '번동중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '삼각산중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '송중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '영훈중': { post: '/blog/gangbuk-math-gwaoe.html', district: '강북구' },
+      '아현중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '대흥중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '마포중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '서강중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '성서중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '성산중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '망원중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '신수중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '상암중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '수색중': { post: '/blog/mapo-math-gwaoe.html', district: '마포구' },
+      '상계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '불암중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '노원중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '을지중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '중계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '광운중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '월계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '염광중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '태릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '공릉중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '하계중': { post: '/blog/nowon-math-gwaoe.html', district: '노원구' },
+      '홍제중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '연희중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '홍은중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '가좌중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+      '명지중': { post: '/blog/seodaemun-math-gwaoe.html', district: '서대문구' },
+    };
+
+    window.searchSchool = function() {
+      const input = document.getElementById('schoolSearchInput');
+      const resultBox = document.getElementById('schoolSearchResult');
+      const raw = input.value.trim();
+      if (!raw) { resultBox.innerHTML = ''; return; }
+      const norm = raw.replace(/학교$/, '').trim();
+      let match = schoolPostMap[norm] || schoolPostMap[raw];
+      if (!match) {
+        const key = Object.keys(schoolPostMap).find(k => k.startsWith(norm) || norm.startsWith(k));
+        if (key) match = schoolPostMap[key];
+      }
+      if (match) {
+        resultBox.innerHTML = `<a class="dl-post" href="${match.post}">"${raw}" 관련 글 보기 — ${match.district} →</a>`;
+      } else {
+        resultBox.innerHTML = `<div class="dl-empty">아직 등록된 학교 정보가 없어요. <a href="#apply">무료 상담 신청하기 →</a></div>`;
+      }
+    };
+    const schoolSearchInput = document.getElementById('schoolSearchInput');
+    if (schoolSearchInput) {
+      schoolSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); window.searchSchool(); } });
+    }
   })();
 
   // story carousel (화살표 클릭으로만 카드 단위 이동)
