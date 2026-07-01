@@ -549,6 +549,16 @@
   .btn-addr:hover{background:var(--coral-2);}
   .region-preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px;}
   .region-preview-card{position:relative;border-radius:14px;overflow:hidden;min-height:120px;display:flex;align-items:flex-end;padding:14px;background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 60%,#0f2952 100%);}
+  /* SVG 한국 지도 */
+  .korea-map-wrap{display:none;margin:0 0 18px;}
+  .korea-map-wrap svg{width:100%;height:auto;display:block;}
+  .k-region{fill:#F0EBE1;stroke:#C8C0AE;stroke-width:0.7;transition:fill .2s;}
+  .k-region.k-clickable{cursor:pointer;}
+  .k-region.k-clickable:hover{fill:#FFD5CC;}
+  .k-region.k-active{fill:var(--coral);}
+  .k-label{font-family:var(--sans);font-size:8.5px;font-weight:800;fill:#5a5548;text-anchor:middle;dominant-baseline:middle;pointer-events:none;}
+  .k-label.k-active-lbl{fill:#ffffff;}
+  .region-mobile-cta{display:none;}
   .region-preview-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .region-preview-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,50,0.75) 0%,rgba(10,20,50,0.1) 60%);}
   .region-preview-card span{position:relative;z-index:1;color:var(--white);font-weight:800;font-size:14.5px;}
@@ -646,9 +656,16 @@
     .tab-note{font-size:13px;}
     .subject-chips{gap:8px;}
     .chip{padding:11px 16px;font-size:13.5px;}
-    .region-widget-full{display:none;}
-    .region-widget-mobile{display:block;}
-    .region-preview-grid{grid-template-columns:repeat(2,1fr);}
+    .region-widget-full{display:block;}
+    .region-widget-mobile{display:none;}
+    .korea-map-wrap{display:block;}
+    .region-map-grid{grid-template-columns:repeat(4,1fr);gap:6px;}
+    .region-cell{padding:10px 4px;font-size:12px;}
+    .metro-btn{font-size:12px;padding:7px 12px;}
+    .post-card{flex-direction:column;}
+    .post-thumb{width:100%;min-height:160px;}
+    .district-panel{padding:16px 14px;}
+    .region-mobile-cta{display:inline-flex;width:100%;justify-content:center;margin-top:14px;}
     #change{display:none;}
     a[href="#change"]{display:none;}
     .nav-dropdown a.nav-link-mobile{display:block;}
@@ -845,6 +862,46 @@
 
       <!-- 데스크탑: 전체 인터랙티브 위젯 -->
       <div class="region-widget-full reveal">
+        <!-- 한국 지도 (모바일 전용) -->
+        <div class="korea-map-wrap">
+          <svg id="koreaMap" viewBox="0 0 280 378" xmlns="http://www.w3.org/2000/svg" aria-label="대한민국 지역 지도">
+            <!-- 경기도 -->
+            <polygon class="k-region k-clickable" data-metro="경기도" points="65,10 198,10 210,36 210,82 192,102 170,114 147,122 120,122 90,114 66,99 50,74 53,42"/>
+            <!-- 서울특별시 (경기 위에 표시) -->
+            <polygon class="k-region k-clickable" data-metro="서울특별시" points="102,52 127,44 150,50 157,62 150,77 130,85 108,81 99,69"/>
+            <!-- 인천광역시 -->
+            <polygon class="k-region k-clickable" data-metro="인천광역시" points="50,74 66,67 90,77 88,114 70,127 52,117 37,100 37,82"/>
+            <!-- 강원특별자치도 -->
+            <polygon class="k-region k-clickable" data-metro="강원특별자치도" points="198,10 262,12 268,46 264,120 243,143 217,153 194,147 170,132 167,114 192,102 210,82 210,36"/>
+            <!-- 충청남도 -->
+            <polygon class="k-region k-clickable" data-metro="충청남도" points="37,127 66,117 90,120 120,124 132,128 143,148 138,187 114,204 82,207 56,196 36,175 34,148"/>
+            <!-- 충청북도 -->
+            <polygon class="k-region k-clickable" data-metro="충청북도" points="132,125 168,120 194,150 190,186 170,206 144,210 137,189 140,150"/>
+            <!-- 전북특별자치도 -->
+            <polygon class="k-region k-clickable" data-metro="전북특별자치도" points="34,208 83,208 116,206 144,212 152,235 147,270 124,282 91,282 63,271 33,249"/>
+            <!-- 전라남도 -->
+            <polygon class="k-region k-clickable" data-metro="전라남도" points="30,252 65,274 94,284 127,284 150,273 158,300 144,330 117,340 79,336 49,318 27,291"/>
+            <!-- 경상북도 -->
+            <polygon class="k-region k-clickable" data-metro="경상북도" points="192,150 224,147 252,158 265,188 257,240 237,260 217,266 203,253 194,225 194,188"/>
+            <!-- 경상남도 -->
+            <polygon class="k-region k-clickable" data-metro="경상남도" points="150,244 194,228 218,270 244,279 261,308 251,330 224,339 197,335 170,318 147,299"/>
+            <!-- 제주도 -->
+            <ellipse class="k-region" cx="147" cy="360" rx="50" ry="15"/>
+            <!-- 레이블 -->
+            <text class="k-label" data-metro="서울특별시" x="128" y="64">서울</text>
+            <text class="k-label" data-metro="인천광역시" x="58" y="97">인천</text>
+            <text class="k-label" data-metro="경기도" x="175" y="47">경기</text>
+            <text class="k-label" data-metro="강원특별자치도" x="224" y="82">강원</text>
+            <text class="k-label" data-metro="충청남도" x="88" y="162">충남</text>
+            <text class="k-label" data-metro="충청북도" x="164" y="166">충북</text>
+            <text class="k-label" data-metro="전북특별자치도" x="97" y="246">전북</text>
+            <text class="k-label" data-metro="전라남도" x="95" y="309">전남</text>
+            <text class="k-label" data-metro="경상북도" x="228" y="203">경북</text>
+            <text class="k-label" data-metro="경상남도" x="205" y="300">경남</text>
+            <text class="k-label" x="147" y="361">제주</text>
+          </svg>
+        </div>
+
         <div class="region-map-box">
           <div class="region-map-title" id="regionMapTitle">서울특별시 구별 1:1 과외 가이드</div>
           <div class="region-map-sub">지역을 선택하고 구를 클릭하면 초·중·고 가이드 글을 볼 수 있습니다.</div>
@@ -875,30 +932,7 @@
             <div class="ss-result" id="schoolSearchResult"></div>
           </div>
         </div>
-      </div>
-
-      <!-- 모바일: 간단 미리보기 카드 -->
-      <div class="region-widget-mobile reveal">
-        <div class="region-preview-grid">
-          <a class="region-preview-card" href="/blog/gangbuk-math-gwaoe.html">
-            <img src="/blog/images/blog-03.png" alt="강북구 수학 과외" onerror="this.style.display='none'">
-            <span>강북구</span>
-          </a>
-          <a class="region-preview-card" href="/blog/nowon-math-gwaoe.html">
-            <img src="/blog/images/blog-06.png" alt="노원구 수학 과외" onerror="this.style.display='none'">
-            <span>노원구</span>
-          </a>
-          <a class="region-preview-card" href="/blog/seodaemun-math-gwaoe.html">
-            <img src="/blog/images/seodaemun-math-gwaoe.png" alt="서대문구 수학 과외" onerror="this.style.display='none'">
-            <span>서대문구</span>
-          </a>
-          <a class="region-preview-card" href="/blog/mapo-math-gwaoe.html">
-            <img src="/blog/images/blog-09.png" alt="마포구 수학 과외" onerror="this.style.display='none'">
-            <span>마포구</span>
-          </a>
-        </div>
-        <a href="/blog/?tab=지역별 가이드" class="btn btn-outline-light" style="width:100%;justify-content:center;">전체 지역 가이드 보기 →</a>
-        <a href="#apply" class="btn btn-coral" style="width:100%;justify-content:center;margin-top:10px;">30분 무료 수업 신청하기 →</a>
+        <a href="#apply" class="btn btn-coral region-mobile-cta">30분 무료 수업 신청하기 →</a>
       </div>
 
     </div>
@@ -1630,14 +1664,41 @@
       });
     }
 
+    function updateMapActive(metro) {
+      const map = document.getElementById('koreaMap');
+      if (!map) return;
+      map.querySelectorAll('.k-region').forEach(r => r.classList.remove('k-active'));
+      map.querySelectorAll('.k-label').forEach(l => l.classList.remove('k-active-lbl'));
+      map.querySelectorAll(`[data-metro="${metro}"]`).forEach(el => {
+        if (el.classList.contains('k-region')) el.classList.add('k-active');
+        if (el.classList.contains('k-label')) el.classList.add('k-active-lbl');
+      });
+    }
+
     document.querySelectorAll('.metro-btn').forEach(b => {
       b.addEventListener('click', () => {
         document.querySelectorAll('.metro-btn').forEach(x => x.classList.remove('active'));
         b.classList.add('active');
         renderMetro(b.dataset.metro);
+        updateMapActive(b.dataset.metro);
       });
     });
     if (seoulMapGrid) renderMetro('서울특별시');
+    updateMapActive('서울특별시');
+
+    // SVG 지도 클릭 핸들러
+    const koreaMapEl = document.getElementById('koreaMap');
+    if (koreaMapEl) {
+      koreaMapEl.querySelectorAll('.k-region.k-clickable').forEach(region => {
+        region.addEventListener('click', function() {
+          const metro = this.dataset.metro;
+          const btn = document.querySelector(`.metro-btn[data-metro="${metro}"]`);
+          if (btn) btn.click();
+          const mapBox = document.querySelector('.region-map-box');
+          if (mapBox) mapBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
 
     // 학교명으로 검색해보기 — 블로그 글 안에 등장하는 학교명 매칭
     const schoolPostMap = {
