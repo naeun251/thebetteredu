@@ -39,7 +39,7 @@
   .article-head h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.45;margin:0 0 14px;word-break:keep-all;}
   .article-head .meta{font-size:13px;color:var(--text-gray);}
   .article-cover{width:100%;background:var(--cream);}
-  .article-cover img{width:100%;max-height:420px;object-fit:cover;object-position:center top;display:block;}
+  .article-cover img{width:100%;max-height:420px;object-fit:cover;object-position:center 40%;display:block;}
   article{padding:48px 0 30px;}
   article h2{font-size:21px;font-weight:800;margin:42px 0 16px;line-height:1.4;}
   article h2:first-child{margin-top:0;}
@@ -209,5 +209,6 @@
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
   }
 </script>
+<script src="/floating-cta.js"></script>
 </body>
 </html>
