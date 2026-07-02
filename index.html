@@ -436,6 +436,8 @@
   .story-col:nth-child(2) .story-col-inner{animation-duration:19s;}
   .story-col:nth-child(3) .story-col-inner{animation-duration:17s;}
   .story-col:hover .story-col-inner{animation-play-state:paused;}
+  .story-col-mobile{display:none;flex:0 0 100%;max-width:100%;}
+  .story-col-mobile .story-col-inner{animation-duration:22s;}
   @keyframes storyScrollUp{from{transform:translateY(0);}to{transform:translateY(-50%);}}
   @media(prefers-reduced-motion:reduce){.story-col-inner{animation:none;}}
 
@@ -637,8 +639,8 @@
     .steps{grid-template-columns:1fr;gap:24px;}
     .carousel-item{flex:0 0 82%;}
     .carousel-arrows{justify-content:center;}
-    .story-col:nth-child(2),.story-col:nth-child(3){display:none;}
-    .story-col{flex:0 0 100%;max-width:100%;}
+    .story-col:nth-child(1),.story-col:nth-child(2),.story-col:nth-child(3){display:none;}
+    .story-col-mobile{display:flex !important;flex:0 0 100%;max-width:100%;}
     .stories-columns{max-height:500px;}
     .fact-grid{grid-template-columns:1fr;}
     .fact-grid .fact:nth-child(odd){padding-right:0;border-right:none;}
@@ -678,7 +680,7 @@
     .chip{padding:11px 16px;font-size:13.5px;}
     .region-widget-full{display:block;}
     .region-widget-mobile{display:none;}
-    .korea-map-wrap{display:block;}
+    .korea-map-wrap{display:none;}
     .region-map-grid{grid-template-columns:repeat(4,1fr);gap:6px;}
     .region-cell{padding:10px 4px;font-size:12px;}
     .metro-btn{font-size:12px;padding:7px 12px;}
@@ -1431,6 +1433,102 @@
               <p class="story-title">성균관대학교 합격</p>
               <p class="story-quote">"영어 독해가 약점이었는데 화상 수업만으로도 충분히 보완할 수 있었습니다."</p>
               <div class="review-foot"><span>이*수 회원</span></div>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">고려대학교 합격</p>
+              <p class="story-quote">"국어·수학을 함께 관리해주셔서 내신과 수능을 동시에 잡을 수 있었습니다."</p>
+              <div class="review-foot"><span>최*영 회원</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- 모바일 전용 혼합 컬럼 (성적향상 + 학부모후기 + 합격사례 교차) -->
+        <div class="story-col story-col-mobile">
+          <div class="story-col-inner">
+            <div class="story-card">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">고1 때 5등급이었던 수학을 1:1로 차근차근 다시 잡아, 목표했던 등급까지 끌어올렸습니다.</p>
+            </div>
+            <div class="story-card">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">2028 개편 이야기를 듣고 막막했는데, 상담 선생님이 차근차근 짚어주셔서 무엇부터 채워야 할지 감이 잡혔어요.</p>
+              <div class="review-foot"><span>중2 학부모 김**</span><b>서울 강남구</b></div>
+            </div>
+            <div class="story-card">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">서울대학교 합격</p>
+              <p class="story-quote">"막연했던 생기부 관리를 체계적으로 잡아주셔서 수시 준비에 자신감이 생겼습니다."</p>
+              <div class="review-foot"><span>김*진 회원</span></div>
+            </div>
+            <div class="story-card">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">비문학 독해가 약점이었는데, 매주 지문 분석과 첨삭을 받으며 등급을 끌어올렸습니다.</p>
+            </div>
+            <div class="story-card">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">다른 곳에서 두 번이나 선생님이 안 맞아서 고생했는데, 여긴 처음부터 진단 상담을 꼼꼼히 해주셔서 한 번에 잘 맞는 선생님을 만났어요.</p>
+              <div class="review-foot"><span>고1 학부모 이**</span><b>경기 분당구</b></div>
+            </div>
+            <div class="story-card">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">연세대학교 합격</p>
+              <p class="story-quote">"수학 3등급에서 꾸준한 기출 분석 수업으로 1등급을 받고 목표 대학에 합격했습니다."</p>
+              <div class="review-foot"><span>박*현 회원</span></div>
+            </div>
+            <div class="story-card">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">내신 영어 서술형에 약했는데, 학교 시험 유형에 맞춘 연습으로 자신감을 얻었습니다.</p>
+            </div>
+            <div class="story-card">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">수학 내신이 12점이나 올랐어요. 양보다 밀도라는 말이 무슨 뜻인지 이제는 알 것 같습니다.</p>
+              <div class="review-foot"><span>중3 학부모 정**</span><b>서울 송파구</b></div>
+            </div>
+            <div class="story-card">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">고려대학교 합격</p>
+              <p class="story-quote">"국어·수학을 함께 관리해주셔서 내신과 수능을 동시에 잡을 수 있었습니다."</p>
+              <div class="review-foot"><span>최*영 회원</span></div>
+            </div>
+            <!-- 무한 루프용 복제 -->
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">고1 때 5등급이었던 수학을 1:1로 차근차근 다시 잡아, 목표했던 등급까지 끌어올렸습니다.</p>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">2028 개편 이야기를 듣고 막막했는데, 상담 선생님이 차근차근 짚어주셔서 무엇부터 채워야 할지 감이 잡혔어요.</p>
+              <div class="review-foot"><span>중2 학부모 김**</span><b>서울 강남구</b></div>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">서울대학교 합격</p>
+              <p class="story-quote">"막연했던 생기부 관리를 체계적으로 잡아주셔서 수시 준비에 자신감이 생겼습니다."</p>
+              <div class="review-foot"><span>김*진 회원</span></div>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">비문학 독해가 약점이었는데, 매주 지문 분석과 첨삭을 받으며 등급을 끌어올렸습니다.</p>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">다른 곳에서 두 번이나 선생님이 안 맞아서 고생했는데, 여긴 처음부터 진단 상담을 꼼꼼히 해주셔서 한 번에 잘 맞는 선생님을 만났어요.</p>
+              <div class="review-foot"><span>고1 학부모 이**</span><b>경기 분당구</b></div>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag pass">합격 사례</span>
+              <p class="story-title">연세대학교 합격</p>
+              <p class="story-quote">"수학 3등급에서 꾸준한 기출 분석 수업으로 1등급을 받고 목표 대학에 합격했습니다."</p>
+              <div class="review-foot"><span>박*현 회원</span></div>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag score">성적 향상</span>
+              <p class="story-quote">내신 영어 서술형에 약했는데, 학교 시험 유형에 맞춘 연습으로 자신감을 얻었습니다.</p>
+            </div>
+            <div class="story-card" aria-hidden="true">
+              <span class="story-tag review">학부모 후기</span>
+              <p class="story-quote">수학 내신이 12점이나 올랐어요. 양보다 밀도라는 말이 무슨 뜻인지 이제는 알 것 같습니다.</p>
+              <div class="review-foot"><span>중3 학부모 정**</span><b>서울 송파구</b></div>
             </div>
             <div class="story-card" aria-hidden="true">
               <span class="story-tag pass">합격 사례</span>
