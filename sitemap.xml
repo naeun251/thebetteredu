@@ -1,53 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 메인 -->
   <url>
     <loc>https://betteredu.kr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://betteredu.kr/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- 주요 페이지 -->
   <url>
     <loc>https://betteredu.kr/consulting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://betteredu.kr/blog/2028-daeip-gaepyeon.html</loc>
+    <loc>https://betteredu.kr/consulting/video.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/consulting/jinah.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/consulting/premium.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/premium-tutoring.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/teachers.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://betteredu.kr/blog/naesin-5deunggeupje.html</loc>
+    <loc>https://betteredu.kr/reviews.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- 블로그 목록 -->
   <url>
-    <loc>https://betteredu.kr/blog/hakwon-seongjeok.html</loc>
+    <loc>https://betteredu.kr/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 블로그: 지역별 과외 가이드 -->
+  <url>
+    <loc>https://betteredu.kr/blog/gangbuk-math-gwaoe.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/nowon-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://betteredu.kr/blog/seodaemun-math-gwaoe.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://betteredu.kr/blog/hakseongbu-jonghap.html</loc>
+    <loc>https://betteredu.kr/blog/mapo-math-gwaoe.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/yongsan-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/gwanak-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/dobong-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/eunpyeong-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/jongno-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/seongbuk-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/jungnang-math-gwaoe.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 블로그: 학습 정보 -->
+  <url>
+    <loc>https://betteredu.kr/blog/2028-daeip-gaepyeon.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/naesin-5deunggeupje.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/gocheol-hakjeonje.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/hakwon-seongjeok.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/hakwon-vs-gwaoe-5.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://betteredu.kr/blog/gwaoe-effect.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://betteredu.kr/blog/gangbuk-math-gwaoe.html</loc>
+    <loc>https://betteredu.kr/blog/gwaoebi-hwallyong.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://betteredu.kr/blog/hakseongbu-jonghap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/junghak-math-gaenyeom.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/guide-grade.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/blog/guide-region.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
