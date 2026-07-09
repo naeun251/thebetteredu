@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>중구 수학 과외 추천 — 중구 내 중학교 중심 | 더나은에듀</title>
-<meta name="description" content="중구 중학생 수학 과외를 알아보고 계신가요? 덕수중, 장충중, 한양중, 환일중 등 중구 주요 중학교별 특징과 중등 수학 학습 포인트를 정리했습니다.">
+<title>을지로 수학과외 — 중구 을지로 중학생 1:1 맞춤 안내 | 더나은에듀</title>
+<meta name="description" content="을지로 거주 중학생을 위한 수학 1:1 맞춤 과외 안내입니다. 다니는 학교의 내신 출제 경향에 맞춰 검증된 선생님을 매칭합니다.">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
@@ -39,8 +39,8 @@
   .article-head .tag{display:inline-flex;font-size:12px;font-weight:800;color:var(--coral);background:#FFF0EC;padding:5px 11px;border-radius:999px;margin-bottom:18px;}
   .article-head h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;line-height:1.45;margin:0 0 14px;word-break:keep-all;}
   .article-head .meta{font-size:13px;color:var(--text-gray);}
-  .article-cover{width:100%;background:var(--cream);}
-  .article-cover img{width:100%;max-height:420px;object-fit:cover;object-position:center 20%;display:block;}
+  .kw-pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;}
+  .kw-pill{display:inline-flex;font-size:12.5px;font-weight:700;color:var(--coral);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
   article{padding:48px 0 30px;}
   article h2{font-size:21px;font-weight:800;margin:42px 0 16px;line-height:1.4;}
   article h2:first-child{margin-top:0;}
@@ -52,28 +52,17 @@
   article .callout{background:var(--cream);border-radius:var(--radius);padding:22px 24px;margin:24px 0;}
   article .callout p{margin:0;color:var(--text-dark);}
   article .callout b{color:var(--coral);}
-  table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
-  th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
-  th{background:var(--cream);font-weight:800;}
-  .region-groups{margin:20px 0 8px;}
-  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
-  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
-  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
-  .region-pill:hover{background:var(--coral-2);}
-  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
-  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
-  .school-pill:hover{background:#FFE2DA;}
-  .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
-  .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
-  .grade-block ul{margin:0;}
-  .grade-block li{font-size:14px;color:var(--text-dark);padding-left:18px;margin-bottom:7px;}
-  .grade-block li::before{background:var(--coral);top:9px;}
+  .school-section-label{font-size:13px;font-weight:800;color:var(--text-gray);margin:26px 0 12px;}
+  .school-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 6px;}
+  .school-pill{display:inline-flex;align-items:center;font-size:14px;font-weight:700;color:var(--text-dark);background:var(--white);border:1.5px solid var(--line-light);padding:10px 16px;border-radius:999px;transition:border-color .15s,color .15s;}
+  .school-pill:hover{border-color:var(--coral);color:var(--coral);}
+  .note-src{font-size:12.5px;color:#B0AA98;margin-top:14px;}
   .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;}
   .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;}
   .cta-box p{color:rgba(255,255,255,0.7);font-size:14.5px;margin:0 0 22px;}
   .btn-coral{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:15px;background:var(--coral);color:var(--white);}
   .btn-coral:hover{background:var(--coral-2);}
-  .back-link{display:inline-block;margin:36px 0 0;font-size:14px;font-weight:700;color:var(--text-gray);}
+  .back-link{display:inline-block;margin:36px 8px 0 0;font-size:14px;font-weight:700;color:var(--text-gray);}
   .back-link:hover{color:var(--coral);}
   footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;margin-top:48px;}
   footer .inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
@@ -96,8 +85,6 @@
     .wrap{padding:0 20px;}
     article h2{font-size:18px;}
     article p,article li{font-size:14.5px;}
-    table{font-size:12.5px;}
-    th,td{padding:8px 10px;}
   }
 </style>
 </head>
@@ -144,116 +131,51 @@
 
 <div class="article-head">
   <div class="wrap">
-    <span class="tag">학년별/지역별 가이드</span>
-    <h1>중구 수학 과외 추천<br>— 중구 내 중학교 중심</h1>
-    <div class="meta">더나은에듀 · 2026.07.03 업데이트</div>
+    <span class="tag">동네별 가이드</span>
+    <h1>중구 을지로 수학 과외</h1>
+    <div class="meta">더나은에듀 · 2026.07.09 업데이트</div>
   </div>
-</div>
-<div class="article-cover">
-  <img src="/blog/images/서울중등전문/블로그배경.jpg" alt="중구 수학 과외 중학교">
 </div>
 
 <article class="wrap">
-  <p>중구는 서울의 도심 중심부로, 신당동·명동·을지로 등 역사적·상업적으로 중요한 지역이 집중된 곳입니다. 학교 수는 상대적으로 적지만, <b>소규모 학교 환경에서 1:1 맞춤 과외</b>로 내신 성적을 집중 관리하는 것이 효과적입니다. 이 글에서는 중구 주요 중학교 현황과 중학교 수학 학습 포인트를 정리합니다.</p>
+  <p>을지로은 중구 주요 생활권 중 하나로, 아래 중학교 학생들이 다니고 있습니다. 학원보다 <b>1:1 맞춤 과외로 학교 내신을 체계적으로 관리</b>하려는 을지로 학부모님들이 늘고 있습니다.</p>
 
-  <h2>1. 중구 주요 중학교 현황</h2>
-  <p>중구에는 서울 자치구 중 학교 수가 비교적 적지만, 각 학교의 특색이 뚜렷합니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
-
-    <div class="region-groups">
-    <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/jungu-sindangdong-gwaoe.html">신당동 수학과외</a></div>
-      <div class="school-pills">
-        <a class="school-pill" href="/blog/geumhoyeojajunghakgyo-gms-gwaoe.html">금호여자중학교</a>
-        <a class="school-pill" href="/blog/daegyeongjunghakgyo-ms-gwaoe.html">대경중학교</a>
-        <a class="school-pill" href="/blog/jangwonjunghakgyo-ms-gwaoe.html">장원중학교</a>
-        <a class="school-pill" href="/blog/jangchungjunghakgyo-ms-gwaoe.html">장충중학교</a>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/jungu-inhyeondong-gwaoe.html">인현동 수학과외</a></div>
-      <div class="school-pills">
-        <a class="school-pill" href="/blog/deoksujunghakgyo-ms-gwaoe.html">덕수중학교</a>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/jungu-jeongdong-gwaoe.html">정동 수학과외</a></div>
-      <div class="school-pills">
-        <a class="school-pill" href="/blog/changdeokyeojajunghakgyo-gms-gwaoe.html">창덕여자중학교</a>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/jungu-euljiro-gwaoe.html">을지로 수학과외</a></div>
-      <div class="school-pills">
-        <a class="school-pill" href="/blog/hanyangjunghakgyo-ms-gwaoe.html">한양중학교</a>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/jungu-manridong-gwaoe.html">만리동 수학과외</a></div>
-      <div class="school-pills">
-        <a class="school-pill" href="/blog/hwaniljunghakgyo-ms-gwaoe.html">환일중학교</a>
-      </div>
-    </div>
-  </div>
-  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
-
-  <p>중구는 학교 수가 적은 만큼 각 학교의 내신 기출 특성을 파악하는 것이 중요합니다. 과외 선생님이 해당 학교 기출을 보유하고 있는지 반드시 확인하세요.</p>
-
-  <h2>2. 중구 중학생 수학 학습 포인트</h2>
-  <p>중구 중학생들이 수학 과외를 받을 때 가장 많이 집중하는 시기와 내용을 학년별로 정리했습니다.</p>
-
-  <div class="grade-block">
-    <h4>중1 수학 핵심 내용</h4>
-    <ul>
-      <li>소인수분해와 최대공약수·최소공배수</li>
-      <li>정수와 유리수의 사칙연산</li>
-      <li>문자와 식 — 일차식의 계산</li>
-      <li>일차방정식 풀이와 활용</li>
-      <li>좌표평면과 그래프</li>
-      <li>기본 도형과 작도, 평면도형과 입체도형</li>
-    </ul>
+  <div class="kw-pills">
+    <span class="kw-pill">을지로 수학과외</span>
+    <span class="kw-pill">을지로 중학교 수학과외</span>
+    <span class="kw-pill">을지로 수학과외 선생님 추천</span>
+    <span class="kw-pill">을지로 중1 수학 1:1</span>
+    <span class="kw-pill">중구 수학 내신</span>
+    <span class="kw-pill">을지로 수학 방문과외</span>
+    <span class="kw-pill">을지로 수학 화상과외</span>
   </div>
 
-  <div class="grade-block">
-    <h4>중2 수학 핵심 내용</h4>
-    <ul>
-      <li>유리수와 순환소수</li>
-      <li>단항식·다항식의 계산</li>
-      <li>일차부등식과 연립일차방정식</li>
-      <li>일차함수와 그래프, 일차방정식과의 관계</li>
-      <li>삼각형·사각형의 성질</li>
-      <li>확률의 기초</li>
-    </ul>
+  <h2>을지로 학교별 과외</h2>
+  <p>을지로 인근 중학교로는 아래 학교들이 있으며, 다니는 학교의 내신 시험 범위와 출제 경향에 맞춰 1:1 수업을 설계합니다.</p>
+
+  <div class="school-section-label">을지로 중학교 과외</div>
+  <div class="school-pills">
+    <a class="school-pill" href="/blog/hanyangjunghakgyo-ms-gwaoe.html">한양중학교 과외</a>
   </div>
+  <p class="note-src">학교 정보는 중구 주요 중학교 현황을 기준으로 정리했습니다. 실제 학군 배정과 다를 수 있습니다.</p>
 
-  <div class="grade-block">
-    <h4>중3 수학 핵심 내용</h4>
-    <ul>
-      <li>제곱근과 실수 — 무리수 개념</li>
-      <li>인수분해와 이차방정식</li>
-      <li>이차함수와 그래프</li>
-      <li>삼각비와 피타고라스 정리 활용</li>
-      <li>원의 성질</li>
-      <li>대푯값과 산포도 (통계)</li>
-    </ul>
-  </div>
-
-  <div class="callout"><p><b>핵심:</b> 중1 수학에서 방정식과 좌표를 제대로 이해하지 못하면 중2 함수, 중3 이차방정식에서 큰 어려움이 생깁니다. 학년이 올라갈수록 결손이 쌓이므로, <b>현재 학년의 기초 개념을 완전히 잡는 것</b>이 먼저입니다.</p></div>
-
-  <h2>3. 중구에서 수학 과외를 선택할 때 고려할 점</h2>
+  <h2>을지로 중학생 수학 과외, 이렇게 진행됩니다</h2>
   <ul>
-    <li><b>학교 내신 기출 확보:</b> 중구는 학교 수가 적어 기출 자료 확보가 더욱 중요합니다. 과외 선생님이 해당 학교 기출을 분석할 수 있어야 합니다.</li>
-    <li><b>도심 지역 특성:</b> 중구는 상업지역이 많아 방문 과외 선생님 이동이 편리한 편입니다. 화상 과외를 병행하면 선택지가 더 넓어집니다.</li>
-    <li><b>현행 vs 선행:</b> 현재 학년 성적이 3등급 이하라면 선행보다 현행 개념을 완전히 잡는 것이 우선입니다.</li>
-    <li><b>중3 2학기:</b> 내신과 동시에 고등학교 준비를 시작해야 하는 시기입니다. 이 시기 수학 기초를 다져두면 고1 진입이 수월해집니다.</li>
+    <li><b>학교 내신 기출 분석:</b> 다니는 학교의 최근 시험 기출과 출제 스타일을 먼저 파악합니다.</li>
+    <li><b>학생 수준 맞춤 매칭:</b> 성적대와 학년에 맞는 선생님을 연결해드립니다.</li>
+    <li><b>방문·화상 선택 가능:</b> 을지로 자택 방문 또는 화상 수업 중 편한 방식을 선택할 수 있습니다.</li>
   </ul>
 
+  <div class="callout"><p><b>비용 안내:</b> 과외 비용은 학년, 수업 방식(방문/화상), 수업 횟수에 따라 달라지며 보통 시간당 3만~4만원대로 진행됩니다. 정확한 비용은 무료 상담 시 학생 상황에 맞춰 안내드립니다.</p></div>
+
   <div class="cta-box">
-    <h3>중구 중학생 수학 과외, 더나은에듀에서 시작하세요</h3>
-    <p>학교 내신 기출 분석부터 개념 정립까지, 중구 학생에게 맞는 선생님을 연결해드립니다. 첫 수업은 무료입니다.</p>
+    <h3>을지로 중학생 수학 과외, 더나은에듀에서 시작하세요</h3>
+    <p>학교 내신 기출 분석부터 개념 정립까지, 을지로 학생에게 맞는 선생님을 연결해드립니다. 첫 수업은 무료입니다.</p>
     <a href="/#apply" class="btn-coral">30분 무료 수업 신청하기 →</a>
   </div>
 
-  <a class="back-link" href="/blog/">← 학습 정보 목록으로</a>
+  <a class="back-link" href="/blog/jungu-math-gwaoe.html">← 중구 가이드로 돌아가기</a>
+  <a class="back-link" href="/blog/">학습 정보 목록으로</a>
 </article>
 
 <footer>
