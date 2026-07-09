@@ -55,10 +55,18 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
-  .grade-block{background:var(--ink);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
-  .grade-block h4{color:var(--white);font-size:15px;font-weight:800;margin:0 0 12px;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
+  .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
+  .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
-  .grade-block li{font-size:14px;color:rgba(255,255,255,0.82);padding-left:18px;margin-bottom:7px;}
+  .grade-block li{font-size:14px;color:var(--text-dark);padding-left:18px;margin-bottom:7px;}
   .grade-block li::before{background:var(--coral);top:9px;}
   .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;}
   .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;}
@@ -151,17 +159,58 @@
   <h2>1. 종로구 주요 중학교 현황</h2>
   <p>종로구에는 공립·사립·대학부속 학교를 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>혜화동</td><td>경신중학교, 동성중학교</td></tr>
-    <tr><td>행촌동</td><td>대신중학교</td></tr>
-    <tr><td>송현동</td><td>덕성여자중학교</td></tr>
-    <tr><td>필운동</td><td>배화여자중학교</td></tr>
-    <tr><td>홍지동</td><td>상명대학교사범대학부속여자중학교</td></tr>
-    <tr><td>동숭동</td><td>서울대학교사범대학부설여자중학교</td></tr>
-    <tr><td>계동</td><td>중앙중학교</td></tr>
-    <tr><td>청운동</td><td>청운중학교</td></tr>
-  </table>
+  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-hyehwadong-gwaoe.html">혜화동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gyeongsin-ms-gwaoe.html">경신중학교</a>
+        <a class="school-pill" href="/blog/dongseong-ms-gwaoe.html">동성중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-haengchondong-gwaoe.html">행촌동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/daesin-ms-gwaoe.html">대신중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-songhyeondong-gwaoe.html">송현동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/deoksung-gms-gwaoe.html">덕성여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-pilundong-gwaoe.html">필운동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/baewha-gms-gwaoe.html">배화여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-hongjidong-gwaoe.html">홍지동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/sangmyeongdae-gms-gwaoe.html">상명대학교사범대학부속여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-dongsungdong-gwaoe.html">동숭동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seouldae-gms-gwaoe.html">서울대학교사범대학부설여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-gyedong-gwaoe.html">계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/jungang-ms-gwaoe.html">중앙중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jongno-cheongundong-gwaoe.html">청운동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/cheongun-ms-gwaoe.html">청운중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>종로구는 대학 부설·부속 학교와 역사 깊은 사립 학교가 많아 학교별 교육 특색이 뚜렷합니다. 과외 선생님을 선정할 때 해당 학교 기출 분석 경험 여부를 반드시 확인하세요.</p>
 

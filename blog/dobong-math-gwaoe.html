@@ -55,10 +55,18 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
-  .grade-block{background:var(--ink);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
-  .grade-block h4{color:var(--white);font-size:15px;font-weight:800;margin:0 0 12px;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
+  .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
+  .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
-  .grade-block li{font-size:14px;color:rgba(255,255,255,0.82);padding-left:18px;margin-bottom:7px;}
+  .grade-block li{font-size:14px;color:var(--text-dark);padding-left:18px;margin-bottom:7px;}
   .grade-block li::before{background:var(--coral);top:9px;}
   .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;}
   .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;}
@@ -151,13 +159,45 @@
   <h2>1. 도봉구 주요 중학교 현황</h2>
   <p>도봉구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>창동</td><td>노곡중학교, 창북중학교, 창일중학교</td></tr>
-    <tr><td>도봉동·도봉2동</td><td>도봉중학교, 북서울중학교</td></tr>
-    <tr><td>방학동</td><td>방학중학교, 신방학중학교, 창동중학교</td></tr>
-    <tr><td>쌍문동</td><td>백운중학교, 선덕중학교, 신도봉중학교, 정의여자중학교, 효문중학교</td></tr>
-  </table>
+  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-changdong-gwaoe.html">창동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/nogok-ms-gwaoe.html">노곡중학교</a>
+        <a class="school-pill" href="/blog/changbuk-ms-gwaoe.html">창북중학교</a>
+        <a class="school-pill" href="/blog/changil-ms-gwaoe.html">창일중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills">
+        <a class="region-pill" href="/blog/dobong-dobongdong-gwaoe.html">도봉동 수학과외</a>
+        <a class="region-pill" href="/blog/dobong-dobong2dong-gwaoe.html">도봉2동 수학과외</a>
+      </div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dobong-ms-gwaoe.html">도봉중학교</a>
+        <a class="school-pill" href="/blog/bukseoul-ms-gwaoe.html">북서울중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-banghakdong-gwaoe.html">방학동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/banghak-ms-gwaoe.html">방학중학교</a>
+        <a class="school-pill" href="/blog/sinbanghak-ms-gwaoe.html">신방학중학교</a>
+        <a class="school-pill" href="/blog/changdong-ms-gwaoe.html">창동중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-ssangmundong-gwaoe.html">쌍문동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/baekun-ms-gwaoe.html">백운중학교</a>
+        <a class="school-pill" href="/blog/seondeok-ms-gwaoe.html">선덕중학교</a>
+        <a class="school-pill" href="/blog/sindobong-ms-gwaoe.html">신도봉중학교</a>
+        <a class="school-pill" href="/blog/jeongui-gms-gwaoe.html">정의여자중학교</a>
+        <a class="school-pill" href="/blog/hyomun-ms-gwaoe.html">효문중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>도봉구는 학교별 내신 출제 경향이 다르며, 같은 동 안에서도 학교마다 시험 스타일이 다를 수 있습니다. 과외 시작 전 해당 학교 기출 자료를 확보하고 분석하는 것이 중요합니다.</p>
 

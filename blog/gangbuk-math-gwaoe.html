@@ -55,14 +55,22 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .school-card{border:1.5px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 16px;}
   .school-card h4{font-size:16px;font-weight:800;margin:0 0 6px;}
   .school-card .school-loc{font-size:12.5px;font-weight:700;color:var(--coral);background:#FFF0EC;padding:3px 10px;border-radius:999px;display:inline-flex;margin-bottom:12px;}
   .school-card p{font-size:14.5px;color:var(--text-gray);margin:0;line-height:1.75;}
-  .grade-block{background:var(--ink);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
-  .grade-block h4{color:var(--white);font-size:15px;font-weight:800;margin:0 0 12px;}
+  .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
+  .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
-  .grade-block li{font-size:14px;color:rgba(255,255,255,0.82);padding-left:18px;margin-bottom:7px;}
+  .grade-block li{font-size:14px;color:var(--text-dark);padding-left:18px;margin-bottom:7px;}
   .grade-block li::before{background:var(--coral);top:9px;}
   .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;}
   .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;}
@@ -158,13 +166,43 @@
   <h2>1. 강북구 주요 중학교 현황</h2>
   <p>강북구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>수유동</td><td>강북중학교, 수유중학교, 인수중학교, 화계중학교</td></tr>
-    <tr><td>번동</td><td>번동중학교, 수송중학교</td></tr>
-    <tr><td>미아동</td><td>삼각산중학교, 성암여자중학교, 솔샘중학교, 미양중학교, 신일중학교, 영훈국제중학교, 창문여자중학교</td></tr>
-    <tr><td>우이동</td><td>서라벌중학교</td></tr>
-  </table>
+  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangbuk-suyudong-gwaoe.html">수유동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gangbuk-ms-gwaoe.html">강북중학교</a>
+        <a class="school-pill" href="/blog/suyu-ms-gwaoe.html">수유중학교</a>
+        <a class="school-pill" href="/blog/insu-ms-gwaoe.html">인수중학교</a>
+        <a class="school-pill" href="/blog/hwagye-ms-gwaoe.html">화계중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangbuk-beondong-gwaoe.html">번동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/beondong-ms-gwaoe.html">번동중학교</a>
+        <a class="school-pill" href="/blog/susong-ms-gwaoe.html">수송중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangbuk-miadong-gwaoe.html">미아동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/samgaksan-ms-gwaoe.html">삼각산중학교</a>
+        <a class="school-pill" href="/blog/seongam-gms-gwaoe.html">성암여자중학교</a>
+        <a class="school-pill" href="/blog/solsaem-ms-gwaoe.html">솔샘중학교</a>
+        <a class="school-pill" href="/blog/miyang-ms-gwaoe.html">미양중학교</a>
+        <a class="school-pill" href="/blog/sinil-ms-gwaoe.html">신일중학교</a>
+        <a class="school-pill" href="/blog/yeonghun-ms-gwaoe.html">영훈국제중학교</a>
+        <a class="school-pill" href="/blog/changmun-gms-gwaoe.html">창문여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangbuk-uidong-gwaoe.html">우이동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seorabeol-ms-gwaoe.html">서라벌중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>각 학교는 위치한 생활권에 따라 학부모와 학생의 이동 반경이 다르므로, 과외 선생님 선정 시 방문 가능 지역을 먼저 고려해야 합니다. 내신 시험은 학교별 출제 경향이 뚜렷하므로, 과외 시작 전 기출 자료를 확보하는 것이 중요합니다.</p>
 

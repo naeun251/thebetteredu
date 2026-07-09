@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .item-card{border:1.5px solid var(--line-light);border-radius:var(--radius);padding:22px 24px;margin:0 0 16px;}
   .item-card h4{font-size:15px;font-weight:800;margin:0 0 8px;color:var(--text-dark);}
   .item-card p{font-size:14.5px;color:var(--text-gray);margin:0;line-height:1.7;}
@@ -150,14 +158,60 @@
   <h2>1. 노원구 주요 중학교 현황</h2>
   <p>노원구에는 25개 이상의 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>상계동</td><td>노원중학교, 노일중학교, 상경중학교, 상계중학교, 상계제일중학교, 상원중학교, 수락중학교, 신상중학교, 온곡중학교, 청원중학교</td></tr>
-    <tr><td>중계동</td><td>불암중학교, 상명중학교, 을지중학교, 재현중학교, 중계중학교, 중원중학교, 중평중학교</td></tr>
-    <tr><td>월계동</td><td>광운중학교, 녹천중학교, 신창중학교, 염광중학교, 월계중학교</td></tr>
-    <tr><td>공릉동</td><td>공릉중학교, 태랑중학교, 한천중학교</td></tr>
-    <tr><td>하계동</td><td>하계중학교</td></tr>
-  </table>
+  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/nowon-sanggyedong-gwaoe.html">상계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/nowon-ms-gwaoe.html">노원중학교</a>
+        <a class="school-pill" href="/blog/noil-ms-gwaoe.html">노일중학교</a>
+        <a class="school-pill" href="/blog/sanggyeong-ms-gwaoe.html">상경중학교</a>
+        <a class="school-pill" href="/blog/sanggye-ms-gwaoe.html">상계중학교</a>
+        <a class="school-pill" href="/blog/sanggyejeil-ms-gwaoe.html">상계제일중학교</a>
+        <a class="school-pill" href="/blog/sangwon-ms-gwaoe.html">상원중학교</a>
+        <a class="school-pill" href="/blog/surak-ms-gwaoe.html">수락중학교</a>
+        <a class="school-pill" href="/blog/sinsang-ms-gwaoe.html">신상중학교</a>
+        <a class="school-pill" href="/blog/ongok-ms-gwaoe.html">온곡중학교</a>
+        <a class="school-pill" href="/blog/cheongwon-ms-gwaoe.html">청원중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/nowon-junggyedong-gwaoe.html">중계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/buram-ms-gwaoe.html">불암중학교</a>
+        <a class="school-pill" href="/blog/sangmyeong-ms-gwaoe.html">상명중학교</a>
+        <a class="school-pill" href="/blog/eulji-ms-gwaoe.html">을지중학교</a>
+        <a class="school-pill" href="/blog/jaehyeon-ms-gwaoe.html">재현중학교</a>
+        <a class="school-pill" href="/blog/junggye-ms-gwaoe.html">중계중학교</a>
+        <a class="school-pill" href="/blog/jungwon-ms-gwaoe.html">중원중학교</a>
+        <a class="school-pill" href="/blog/jungpyeong-ms-gwaoe.html">중평중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/nowon-wolgyedong-gwaoe.html">월계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gwangwoon-ms-gwaoe.html">광운중학교</a>
+        <a class="school-pill" href="/blog/nokcheon-ms-gwaoe.html">녹천중학교</a>
+        <a class="school-pill" href="/blog/sinchang-ms-gwaoe.html">신창중학교</a>
+        <a class="school-pill" href="/blog/yeomgwang-ms-gwaoe.html">염광중학교</a>
+        <a class="school-pill" href="/blog/wolgye-ms-gwaoe.html">월계중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/nowon-gongneungdong-gwaoe.html">공릉동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gongneung-ms-gwaoe.html">공릉중학교</a>
+        <a class="school-pill" href="/blog/taerang-ms-gwaoe.html">태랑중학교</a>
+        <a class="school-pill" href="/blog/hancheon-ms-gwaoe.html">한천중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/nowon-hagyedong-gwaoe.html">하계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hagye-ms-gwaoe.html">하계중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>노원구 중학교는 대부분 일반 공립 중학교입니다. 내신 시험은 학교별로 출제되므로 <b>학교 교과서와 수업 내용 중심의 공부</b>가 기본입니다. 시험 범위, 기출 경향, 서술형 비중은 학교마다 다르므로 해당 학교 출신 선생님이나 지역 경험이 있는 선생님이 유리할 수 있습니다.</p>
 

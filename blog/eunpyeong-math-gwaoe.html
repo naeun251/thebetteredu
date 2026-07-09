@@ -55,10 +55,18 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
-  .grade-block{background:var(--ink);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
-  .grade-block h4{color:var(--white);font-size:15px;font-weight:800;margin:0 0 12px;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
+  .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
+  .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
-  .grade-block li{font-size:14px;color:rgba(255,255,255,0.82);padding-left:18px;margin-bottom:7px;}
+  .grade-block li{font-size:14px;color:var(--text-dark);padding-left:18px;margin-bottom:7px;}
   .grade-block li::before{background:var(--coral);top:9px;}
   .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;}
   .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;}
@@ -151,16 +159,62 @@
   <h2>1. 은평구 주요 중학교 현황</h2>
   <p>은평구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>갈현동</td><td>대성중학교, 선일여자중학교, 선정중학교</td></tr>
-    <tr><td>구산동</td><td>구산중학교, 예일여자중학교, 은평중학교</td></tr>
-    <tr><td>불광동</td><td>불광중학교, 연신중학교, 연천중학교</td></tr>
-    <tr><td>신사동</td><td>덕산중학교, 상신중학교, 숭실중학교</td></tr>
-    <tr><td>응암동</td><td>영락중학교, 충암중학교</td></tr>
-    <tr><td>증산동</td><td>연서중학교, 증산중학교</td></tr>
-    <tr><td>진관동</td><td>신도중학교, 진관중학교</td></tr>
-  </table>
+  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-galhyeondong-gwaoe.html">갈현동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/daeseong-ms-gwaoe.html">대성중학교</a>
+        <a class="school-pill" href="/blog/seonil-gms-gwaoe.html">선일여자중학교</a>
+        <a class="school-pill" href="/blog/seonjeong-ms-gwaoe.html">선정중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-gusandong-gwaoe.html">구산동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gusan-ms-gwaoe.html">구산중학교</a>
+        <a class="school-pill" href="/blog/yeil-gms-gwaoe.html">예일여자중학교</a>
+        <a class="school-pill" href="/blog/eunpyeong-ms-gwaoe.html">은평중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-bulgwangdong-gwaoe.html">불광동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/bulgwang-ms-gwaoe.html">불광중학교</a>
+        <a class="school-pill" href="/blog/yeonsin-ms-gwaoe.html">연신중학교</a>
+        <a class="school-pill" href="/blog/yeoncheon-ms-gwaoe.html">연천중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-sinsadong-gwaoe.html">신사동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/deoksan-ms-gwaoe.html">덕산중학교</a>
+        <a class="school-pill" href="/blog/sangsin-ms-gwaoe.html">상신중학교</a>
+        <a class="school-pill" href="/blog/sungsil-ms-gwaoe.html">숭실중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-eungamdong-gwaoe.html">응암동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yeongnak-ms-gwaoe.html">영락중학교</a>
+        <a class="school-pill" href="/blog/chungam-ms-gwaoe.html">충암중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-jeungsandong-gwaoe.html">증산동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yeonseo-ms-gwaoe.html">연서중학교</a>
+        <a class="school-pill" href="/blog/jeungsan-ms-gwaoe.html">증산중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/eunpyeong-jingwandong-gwaoe.html">진관동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/sindo-ms-gwaoe.html">신도중학교</a>
+        <a class="school-pill" href="/blog/jingwan-ms-gwaoe.html">진관중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>은평구는 각 동마다 학교 수가 고르게 분포해 있습니다. 학교별 내신 출제 경향이 다르므로, 과외 선생님이 해당 학교 기출을 분석한 경험이 있는지 반드시 확인하세요.</p>
 
