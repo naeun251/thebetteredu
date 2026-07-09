@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,17 +159,71 @@
   <h2>1. 강서구 주요 중학교 현황</h2>
   <p>강서구에는 공립·사립을 합해 서울에서도 손꼽힐 만큼 많은 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>가양동</td><td>경서중학교, 성재중학교</td></tr>
-    <tr><td>공항동</td><td>공항중학교, 송정중학교</td></tr>
-    <tr><td>내발산동</td><td>덕원중학교, 명덕여자중학교, 수명중학교, 화곡중학교</td></tr>
-    <tr><td>등촌동</td><td>등명중학교, 등원중학교, 등촌중학교, 백석중학교, 신정여자중학교, 마포중학교</td></tr>
-    <tr><td>마곡동</td><td>마곡중학교, 마곡하늬중학교</td></tr>
-    <tr><td>방화동</td><td>방원중학교, 방화중학교, 삼정중학교</td></tr>
-    <tr><td>염창동</td><td>염경중학교, 염창중학교</td></tr>
-    <tr><td>화곡동</td><td>화원중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-gayangdong-gwaoe.html">가양동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gyeongseojunghakgyo-ms-gwaoe.html">경서중학교</a>
+        <a class="school-pill" href="/blog/seongjaejunghakgyo-ms-gwaoe.html">성재중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-gonghangdong-gwaoe.html">공항동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gonghangjunghakgyo-ms-gwaoe.html">공항중학교</a>
+        <a class="school-pill" href="/blog/songjeongjunghakgyo-ms-gwaoe.html">송정중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-naebalsandong-gwaoe.html">내발산동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/deokwonjunghakgyo-ms-gwaoe.html">덕원중학교</a>
+        <a class="school-pill" href="/blog/myeongdeokyeojajunghakgyo-gms-gwaoe.html">명덕여자중학교</a>
+        <a class="school-pill" href="/blog/sumyeongjunghakgyo-ms-gwaoe.html">수명중학교</a>
+        <a class="school-pill" href="/blog/hwagokjunghakgyo-ms-gwaoe.html">화곡중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-deungchondong-gwaoe.html">등촌동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/deungmyeongjunghakgyo-ms-gwaoe.html">등명중학교</a>
+        <a class="school-pill" href="/blog/deungwonjunghakgyo-ms-gwaoe.html">등원중학교</a>
+        <a class="school-pill" href="/blog/deungchonjunghakgyo-ms-gwaoe.html">등촌중학교</a>
+        <a class="school-pill" href="/blog/baekseokjunghakgyo-ms-gwaoe.html">백석중학교</a>
+        <a class="school-pill" href="/blog/sinjeongyeojajunghakgyo-gms-gwaoe.html">신정여자중학교</a>
+        <a class="school-pill" href="/blog/mapojunghakgyo-ms-gwaoe.html">마포중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-magokdong-gwaoe.html">마곡동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/magokjunghakgyo-ms-gwaoe.html">마곡중학교</a>
+        <a class="school-pill" href="/blog/magokhanuijunghakgyo-ms-gwaoe.html">마곡하늬중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-banghwadong-gwaoe.html">방화동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/bangwonjunghakgyo-ms-gwaoe.html">방원중학교</a>
+        <a class="school-pill" href="/blog/banghwajunghakgyo-ms-gwaoe.html">방화중학교</a>
+        <a class="school-pill" href="/blog/samjeongjunghakgyo-ms-gwaoe.html">삼정중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-yeomchangdong-gwaoe.html">염창동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yeomgyeongjunghakgyo-ms-gwaoe.html">염경중학교</a>
+        <a class="school-pill" href="/blog/yeomchangjunghakgyo-ms-gwaoe.html">염창중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/gangseo-hwagokdong-gwaoe.html">화곡동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hwawonjunghakgyo-ms-gwaoe.html">화원중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>강서구는 중학교 수가 많아 학교별 내신 출제 경향의 차이가 큽니다. 과외 선생님이 해당 학교 기출을 분석한 경험이 있는지 반드시 확인하세요.</p>
 

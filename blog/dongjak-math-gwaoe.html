@@ -33,6 +33,14 @@
   .article-head .meta{font-size:13px;color:var(--text-gray);} .article-cover{width:100%;background:var(--cream);}
   .article-cover img{width:100%;max-height:420px;object-fit:cover;object-position:center 20%;display:block;}
   article{padding:48px 0 30px;} article h2{font-size:21px;font-weight:800;margin:42px 0 16px;line-height:1.4;} article h2:first-child{margin-top:0;} article h3{font-size:16.5px;font-weight:800;margin:28px 0 10px;} article p{font-size:15.5px;color:var(--text-dark);margin:0 0 18px;} article ul{margin:0 0 18px;} article li{font-size:15.5px;color:var(--text-dark);padding-left:20px;position:relative;margin-bottom:10px;} article li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--coral);} .callout{background:var(--cream);border-radius:var(--radius);padding:22px 24px;margin:24px 0;} .callout p{margin:0;color:var(--text-dark);} .callout b{color:var(--coral);} table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;} th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;} th{background:var(--cream);font-weight:800;} .school-card{border:1.5px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 16px;} .school-card h4{font-size:16px;font-weight:800;margin:0 0 6px;} .school-card .school-loc{font-size:12.5px;font-weight:700;color:var(--coral);background:#FFF0EC;padding:3px 10px;border-radius:999px;display:inline-flex;margin-bottom:12px;} .school-card p{font-size:14.5px;color:var(--text-gray);margin:0;line-height:1.75;} .cta-box{background:var(--ink);color:var(--white);border-radius:var(--radius);padding:36px 32px;margin:48px 0 0;text-align:center;} .cta-box h3{color:var(--white);font-size:20px;font-weight:800;margin:0 0 10px;} .cta-box p{color:rgba(255,255,255,0.7);font-size:14.5px;margin:0 0 22px;} .btn-coral{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:15px;background:var(--coral);color:var(--white);} .btn-coral:hover{background:var(--coral-2);} .back-link{display:inline-block;margin:36px 0 0;font-size:14px;font-weight:700;color:var(--text-gray);} .back-link:hover{color:var(--coral);} footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:40px 0;margin-top:48px;} footer .inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;} footer a{color:rgba(255,255,255,0.78);} .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex:none;} .menu-toggle span{display:block;width:22px;height:2px;background:var(--white);margin:5px 0;border-radius:2px;} @media(max-width:720px){.menu-toggle{display:block;}.nav-links{display:none;position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--ink);flex-direction:column;align-items:flex-start;padding:26px 28px;gap:18px;overflow-y:auto;z-index:99;}.nav-links.open{display:flex;animation:navFadeIn .25s ease both;}@keyframes navFadeIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}.nav-links .nav-item{flex-direction:column;align-items:flex-start;width:100%;}.nav-links .nav-item>a{font-size:17px;padding:4px 0;}.nav-links .nav-item>a::after{display:none;}.nav-links .nav-dropdown{position:static;opacity:1;pointer-events:auto;transform:none;background:transparent;border:none;padding:8px 0 0 16px;min-width:auto;display:flex;flex-direction:column;gap:4px;transition:none;}.nav-links .nav-item:hover .nav-dropdown{position:static;transform:none;transition:none;opacity:1;pointer-events:auto;}.nav-links .nav-dropdown a{font-size:14px;padding:12px 0;color:rgba(255,255,255,0.6);}.nav-links>a{font-size:17px;}.nav-cta{font-size:15px;padding:12px 22px;margin-top:4px;}.wrap{padding:0 20px;}article h2{font-size:18px;}article p,article li{font-size:14.5px;}table{font-size:12.5px;}th,td{padding:8px 10px;}}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
 </style>
 </head>
 <body>
@@ -41,7 +49,60 @@
 <div class="article-cover"><img src="/blog/images/서울중등전문/블로그배경.jpg" alt="동작구 수학 과외 중학교"></div>
 <article class="wrap">
   <p>동작구는 사당·상도·대방·흑석 등 생활권이 뚜렷하고, 중학생 수학 과외 수요가 꾸준히 있는 지역입니다. 특히 <b>학교별 시험 난이도와 학습 분위기 차이</b>가 분명하기 때문에, 학생의 학교를 기준으로 과외를 찾는 것이 좋습니다. 이 글에서는 동작구 주요 중학교와 과외 선택 포인트를 정리해드립니다.</p>
-  <h2>1. 동작구 주요 중학교 분포</h2><p>동작구는 동네마다 학교 수와 학습 분위기가 다르게 나타나므로, 방문 거리를 함께 고려하는 것이 좋습니다.</p><table><tr><th>지역</th><th>주요 중학교</th></tr><tr><td>노량진동</td><td>영등포중</td></tr><tr><td>대방동</td><td>대방중, 성남중, 숭의여자중</td></tr><tr><td>동작동</td><td>동작중</td></tr><tr><td>본동</td><td>동양중</td></tr><tr><td>사당동</td><td>남성중, 사당중, 상도중</td></tr><tr><td>상도동</td><td>강남중, 강현중, 국사봉중, 문창중, 상현중, 장승중</td></tr><tr><td>흑석동</td><td>중앙대학교사범대학부속중</td></tr></table>
+  <h2>1. 동작구 주요 중학교 분포</h2><p>동작구는 동네마다 학교 수와 학습 분위기가 다르게 나타나므로, 방문 거리를 함께 고려하는 것이 좋습니다.</p>  <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-noryangjindong-gwaoe.html">노량진동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yeongdeungpojung-ms-gwaoe.html">영등포중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-daebangdong-gwaoe.html">대방동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/daebangjung-ms-gwaoe.html">대방중</a>
+        <a class="school-pill" href="/blog/seongnamjung-ms-gwaoe.html">성남중</a>
+        <a class="school-pill" href="/blog/sunguiyeojajung-gms-gwaoe.html">숭의여자중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-dongjakdong-gwaoe.html">동작동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongjakjung-ms-gwaoe.html">동작중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-bondong-gwaoe.html">본동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongyangjung-ms-gwaoe.html">동양중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-sadangdong-gwaoe.html">사당동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/namseongjung-ms-gwaoe.html">남성중</a>
+        <a class="school-pill" href="/blog/sadangjung-ms-gwaoe.html">사당중</a>
+        <a class="school-pill" href="/blog/sangdojung-ms-gwaoe.html">상도중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-sangdodong-gwaoe.html">상도동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gangnamjung-ms-gwaoe.html">강남중</a>
+        <a class="school-pill" href="/blog/ganghyeonjung-ms-gwaoe.html">강현중</a>
+        <a class="school-pill" href="/blog/guksabongjung-ms-gwaoe.html">국사봉중</a>
+        <a class="school-pill" href="/blog/munchangjung-ms-gwaoe.html">문창중</a>
+        <a class="school-pill" href="/blog/sanghyeonjung-ms-gwaoe.html">상현중</a>
+        <a class="school-pill" href="/blog/jangseungjung-ms-gwaoe.html">장승중</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/dongjak-heukseokdong-gwaoe.html">흑석동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/jungangdaehakgyosabeomdaehakbusokjung-ms-gwaoe.html">중앙대학교사범대학부속중</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
   <p>동작구는 중학교별로 시험 접근 방식이 다르고, 학생의 학습 패턴도 달라지므로 과외 수업은 학교 특성을 반영해 맞춤형으로 구성하는 것이 효과적입니다.</p>
   <h2>2. 동작구 중학생 수학 과외에서 자주 보는 포인트</h2>
   <div class="school-card"><span class="school-loc">사당·상도권</span><h4>개념 복습과 유형 반복이 중요한 지역</h4><p>문제 풀이량이 많은 학생이 많아, 자신의 취약 단원을 짚어주는 수업이 더 잘 맞습니다.</p></div>
