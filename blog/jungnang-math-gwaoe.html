@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,14 +159,48 @@
   <h2>1. 중랑구 주요 중학교 현황</h2>
   <p>중랑구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>망우동</td><td>동원중학교, 봉화중학교, 송곡중학교, 영란여자중학교, 혜원여자중학교</td></tr>
-    <tr><td>면목동</td><td>면목중학교, 용마중학교, 중화중학교</td></tr>
-    <tr><td>상봉동</td><td>상봉중학교, 신현중학교</td></tr>
-    <tr><td>묵동</td><td>원묵중학교, 태릉중학교</td></tr>
-    <tr><td>중화동</td><td>장안중학교, 중랑중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungnang-mangudong-gwaoe.html">망우동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongwonjunghakgyo-ms-gwaoe.html">동원중학교</a>
+        <a class="school-pill" href="/blog/bonghwajunghakgyo-ms-gwaoe.html">봉화중학교</a>
+        <a class="school-pill" href="/blog/songgokjunghakgyo-ms-gwaoe.html">송곡중학교</a>
+        <a class="school-pill" href="/blog/yeongranyeojajunghakgyo-gms-gwaoe.html">영란여자중학교</a>
+        <a class="school-pill" href="/blog/hyewonyeojajunghakgyo-gms-gwaoe.html">혜원여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungnang-myeonmokdong-gwaoe.html">면목동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/myeonmokjunghakgyo-ms-gwaoe.html">면목중학교</a>
+        <a class="school-pill" href="/blog/yongmajunghakgyo-ms-gwaoe.html">용마중학교</a>
+        <a class="school-pill" href="/blog/junghwajunghakgyo-ms-gwaoe.html">중화중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungnang-sangbongdong-gwaoe.html">상봉동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/sangbongjunghakgyo-ms-gwaoe.html">상봉중학교</a>
+        <a class="school-pill" href="/blog/sinhyeonjunghakgyo-ms-gwaoe.html">신현중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungnang-mukdong-gwaoe.html">묵동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/wonmukjunghakgyo-ms-gwaoe.html">원묵중학교</a>
+        <a class="school-pill" href="/blog/taereungjunghakgyo-ms-gwaoe.html">태릉중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungnang-junghwadong-gwaoe.html">중화동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/janganjunghakgyo-ms-gwaoe.html">장안중학교</a>
+        <a class="school-pill" href="/blog/jungrangjunghakgyo-ms-gwaoe.html">중랑중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>중랑구는 망우동에만 5개 학교가 있을 만큼 학교 밀도가 높습니다. 학교별 내신 출제 경향이 다르므로 과외 선생님이 해당 학교 기출을 충분히 분석할 수 있어야 합니다.</p>
 

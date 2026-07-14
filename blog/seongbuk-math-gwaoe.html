@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,21 +159,87 @@
   <h2>1. 성북구 주요 중학교 현황</h2>
   <p>성북구에는 공립·사립·대학부속 학교를 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>돈암동</td><td>개운중학교, 고명중학교, 성신여자중학교</td></tr>
-    <tr><td>정릉동</td><td>고려대학교사범대학부속중학교, 북악중학교</td></tr>
-    <tr><td>길음동</td><td>길음중학교</td></tr>
-    <tr><td>장위동</td><td>남대문중학교, 장위중학교</td></tr>
-    <tr><td>성북동</td><td>동구여자중학교, 홍익대학교사범대학부속중학교</td></tr>
-    <tr><td>동소문동4가</td><td>삼선중학교</td></tr>
-    <tr><td>종암동</td><td>서울대학교사범대학부설중학교, 종암중학교</td></tr>
-    <tr><td>석관동</td><td>석관중학교</td></tr>
-    <tr><td>하월곡동</td><td>숭곡중학교</td></tr>
-    <tr><td>안암동2가</td><td>용문중학교</td></tr>
-    <tr><td>상월곡동</td><td>월곡중학교</td></tr>
-    <tr><td>삼선동2가</td><td>한성여자중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-donamdong-gwaoe.html">돈암동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gaeunjunghakgyo-ms-gwaoe.html">개운중학교</a>
+        <a class="school-pill" href="/blog/gomyeongjunghakgyo-ms-gwaoe.html">고명중학교</a>
+        <a class="school-pill" href="/blog/seongsinyeojajunghakgyo-gms-gwaoe.html">성신여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-jeongreungdong-gwaoe.html">정릉동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/goryeodaehakgyosabeomdaehakbusokjunghakgyo-ms-gwaoe.html">고려대학교사범대학부속중학교</a>
+        <a class="school-pill" href="/blog/bukakjunghakgyo-ms-gwaoe.html">북악중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-gileumdong-gwaoe.html">길음동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gileumjunghakgyo-ms-gwaoe.html">길음중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-jangwidong-gwaoe.html">장위동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/namdaemunjunghakgyo-ms-gwaoe.html">남대문중학교</a>
+        <a class="school-pill" href="/blog/jangwijunghakgyo-ms-gwaoe.html">장위중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-seongbukdong-gwaoe.html">성북동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongguyeojajunghakgyo-gms-gwaoe.html">동구여자중학교</a>
+        <a class="school-pill" href="/blog/hongikdaehakgyosabeomdaehakbusokjunghakgyo-ms-gwaoe.html">홍익대학교사범대학부속중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-dongsomundong4ga-gwaoe.html">동소문동4가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/samseonjunghakgyo-ms-gwaoe.html">삼선중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-jongamdong-gwaoe.html">종암동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seouldaehakgyosabeomdaehakbuseoljunghakgyo-ms-gwaoe.html">서울대학교사범대학부설중학교</a>
+        <a class="school-pill" href="/blog/jongamjunghakgyo-ms-gwaoe.html">종암중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-seokgwandong-gwaoe.html">석관동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seokgwanjunghakgyo-ms-gwaoe.html">석관중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-hawolgokdong-gwaoe.html">하월곡동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/sunggokjunghakgyo-ms-gwaoe.html">숭곡중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-anamdong2ga-gwaoe.html">안암동2가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yongmunjunghakgyo-ms-gwaoe.html">용문중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-sangwolgokdong-gwaoe.html">상월곡동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/wolgokjunghakgyo-ms-gwaoe.html">월곡중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongbuk-samseondong2ga-gwaoe.html">삼선동2가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hanseongyeojajunghakgyo-gms-gwaoe.html">한성여자중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>성북구는 대학 부설·부속 학교부터 일반 공립 학교까지 다양한 유형의 중학교가 있습니다. 학교별 수준 차이가 있으므로 과외 선생님이 해당 학교 기출을 충분히 분석할 수 있어야 합니다.</p>
 

@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,14 +159,42 @@
   <h2>1. 중구 주요 중학교 현황</h2>
   <p>중구에는 서울 자치구 중 학교 수가 비교적 적지만, 각 학교의 특색이 뚜렷합니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>신당동</td><td>금호여자중학교, 대경중학교, 장원중학교, 장충중학교</td></tr>
-    <tr><td>인현동</td><td>덕수중학교</td></tr>
-    <tr><td>정동</td><td>창덕여자중학교</td></tr>
-    <tr><td>을지로</td><td>한양중학교</td></tr>
-    <tr><td>만리동</td><td>환일중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungu-sindangdong-gwaoe.html">신당동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/geumhoyeojajunghakgyo-gms-gwaoe.html">금호여자중학교</a>
+        <a class="school-pill" href="/blog/daegyeongjunghakgyo-ms-gwaoe.html">대경중학교</a>
+        <a class="school-pill" href="/blog/jangwonjunghakgyo-ms-gwaoe.html">장원중학교</a>
+        <a class="school-pill" href="/blog/jangchungjunghakgyo-ms-gwaoe.html">장충중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungu-inhyeondong-gwaoe.html">인현동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/deoksujunghakgyo-ms-gwaoe.html">덕수중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungu-jeongdong-gwaoe.html">정동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/changdeokyeojajunghakgyo-gms-gwaoe.html">창덕여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungu-euljiro-gwaoe.html">을지로 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hanyangjunghakgyo-ms-gwaoe.html">한양중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/jungu-manridong-gwaoe.html">만리동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hwaniljunghakgyo-ms-gwaoe.html">환일중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>중구는 학교 수가 적은 만큼 각 학교의 내신 기출 특성을 파악하는 것이 중요합니다. 과외 선생님이 해당 학교 기출을 보유하고 있는지 반드시 확인하세요.</p>
 

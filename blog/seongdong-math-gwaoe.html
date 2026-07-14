@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,16 +159,55 @@
   <h2>1. 성동구 주요 중학교 현황</h2>
   <p>성동구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>성수동1가</td><td>경일중학교, 성원중학교</td></tr>
-    <tr><td>성수동2가</td><td>경수중학교, 성수중학교</td></tr>
-    <tr><td>응봉동</td><td>광희중학교</td></tr>
-    <tr><td>마장동</td><td>동마중학교, 마장중학교</td></tr>
-    <tr><td>행당동</td><td>무학중학교, 행당중학교</td></tr>
-    <tr><td>옥수동</td><td>옥정중학교</td></tr>
-    <tr><td>사근동</td><td>한양사대부속중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-seongsudong1ga-gwaoe.html">성수동1가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gyeongiljunghakgyo-ms-gwaoe.html">경일중학교</a>
+        <a class="school-pill" href="/blog/seongwonjunghakgyo-ms-gwaoe.html">성원중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-seongsudong2ga-gwaoe.html">성수동2가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gyeongsujunghakgyo-ms-gwaoe.html">경수중학교</a>
+        <a class="school-pill" href="/blog/seongsujunghakgyo-ms-gwaoe.html">성수중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-eungbongdong-gwaoe.html">응봉동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gwanghuijunghakgyo-ms-gwaoe.html">광희중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-majangdong-gwaoe.html">마장동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongmajunghakgyo-ms-gwaoe.html">동마중학교</a>
+        <a class="school-pill" href="/blog/majangjunghakgyo-ms-gwaoe.html">마장중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-haengdangdong-gwaoe.html">행당동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/muhakjunghakgyo-ms-gwaoe.html">무학중학교</a>
+        <a class="school-pill" href="/blog/haengdangjunghakgyo-ms-gwaoe.html">행당중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-oksudong-gwaoe.html">옥수동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/okjeongjunghakgyo-ms-gwaoe.html">옥정중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seongdong-sageundong-gwaoe.html">사근동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hanyangsadaebusokjunghakgyo-ms-gwaoe.html">한양사대부속중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>성동구는 한양사대부속중 등 사범대 부속학교가 있어 학교별 출제 특성이 다양합니다. 과외 선생님이 해당 학교 기출을 분석한 경험이 있는지 반드시 확인하세요.</p>
 

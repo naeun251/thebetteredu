@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;vertical-align:top;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .grade-block{background:var(--cream);border:1px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 14px;}
   .grade-block h4{color:var(--coral);font-size:15px;font-weight:800;margin:0 0 12px;}
   .grade-block ul{margin:0;}
@@ -151,16 +159,53 @@
   <h2>1. 용산구 주요 중학교 현황</h2>
   <p>용산구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>서계동</td><td>배문중학교</td></tr>
-    <tr><td>용산동2가</td><td>보성여자중학교, 용산중학교</td></tr>
-    <tr><td>청파동3가</td><td>선린중학교, 신광여자중학교</td></tr>
-    <tr><td>원효로4가</td><td>성심여자중학교</td></tr>
-    <tr><td>보광동</td><td>오산중학교</td></tr>
-    <tr><td>이촌동</td><td>용강중학교</td></tr>
-    <tr><td>서빙고동</td><td>한강중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-seogyedong-gwaoe.html">서계동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/baemunjunghakgyo-ms-gwaoe.html">배문중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-yongsandong2ga-gwaoe.html">용산동2가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/boseongyeojajunghakgyo-gms-gwaoe.html">보성여자중학교</a>
+        <a class="school-pill" href="/blog/yongsanjunghakgyo-ms-gwaoe.html">용산중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-cheongpadong3ga-gwaoe.html">청파동3가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seonrinjunghakgyo-ms-gwaoe.html">선린중학교</a>
+        <a class="school-pill" href="/blog/singwangyeojajunghakgyo-gms-gwaoe.html">신광여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-wonhyoro4ga-gwaoe.html">원효로4가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seongsimyeojajunghakgyo-gms-gwaoe.html">성심여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-bogwangdong-gwaoe.html">보광동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/osanjunghakgyo-ms-gwaoe.html">오산중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-ichondong-gwaoe.html">이촌동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yonggangjunghakgyo-ms-gwaoe.html">용강중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/yongsan-seobinggodong-gwaoe.html">서빙고동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/hangangjunghakgyo-ms-gwaoe.html">한강중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>용산구는 각 동마다 생활권이 독립적으로 형성되어 있어, 과외 선생님 선정 시 이동 접근성을 먼저 확인하는 것이 좋습니다. 내신 시험은 학교별 출제 경향이 뚜렷하므로, 과외 시작 전 기출 자료를 확보하는 것이 중요합니다.</p>
 

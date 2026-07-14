@@ -55,6 +55,14 @@
   table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14.5px;}
   th,td{border:1px solid var(--line-light);padding:12px 14px;text-align:left;}
   th{background:var(--cream);font-weight:800;}
+  .region-groups{margin:20px 0 8px;}
+  .region-block{border:1px solid var(--line-light);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;}
+  .region-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .region-pill{display:inline-flex;font-size:14px;font-weight:800;color:var(--white);background:var(--coral);padding:8px 16px;border-radius:999px;}
+  .region-pill:hover{background:var(--coral-2);}
+  .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
+  .school-pill:hover{background:#FFE2DA;}
   .school-card{border:1.5px solid var(--line-light);border-radius:var(--radius);padding:24px 26px;margin:0 0 16px;}
   .school-type{font-size:12px;font-weight:800;color:var(--coral);margin-bottom:6px;letter-spacing:0.04em;}
   .school-name{font-size:17px;font-weight:800;margin:0 0 10px;}
@@ -160,18 +168,68 @@
   <h2>서대문구 주요 중학교 현황</h2>
   <p>서대문구에는 홍제동·홍은동·연희동·가좌동 등 동별로 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
 
-  <table>
-    <tr><th>지역</th><th>주요 중학교</th></tr>
-    <tr><td>북가좌동</td><td>가재울중학교</td></tr>
-    <tr><td>천연동</td><td>동명여자중학교</td></tr>
-    <tr><td>홍은동</td><td>명지중학교, 정원여자중학교, 홍은중학교</td></tr>
-    <tr><td>연희동</td><td>서연중학교, 신연중학교, 연북중학교</td></tr>
-    <tr><td>남가좌동</td><td>연희중학교</td></tr>
-    <tr><td>대신동</td><td>이화여자대학교사범대학부속 이화·금란중학교</td></tr>
-    <tr><td>홍제동</td><td>인왕중학교</td></tr>
-    <tr><td>충정로2가</td><td>인창중학교</td></tr>
-    <tr><td>북아현동</td><td>중앙여자중학교, 한성중학교</td></tr>
-  </table>
+    <div class="region-groups">
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-bukgajwadong-gwaoe.html">북가좌동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/gajaeuljunghakgyo-ms-gwaoe.html">가재울중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-cheonyeondong-gwaoe.html">천연동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/dongmyeongyeojajunghakgyo-gms-gwaoe.html">동명여자중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-hongeundong-gwaoe.html">홍은동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/myeongjijunghakgyo-ms-gwaoe.html">명지중학교</a>
+        <a class="school-pill" href="/blog/jeongwonyeojajunghakgyo-gms-gwaoe.html">정원여자중학교</a>
+        <a class="school-pill" href="/blog/hongeunjunghakgyo-ms-gwaoe.html">홍은중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-yeonhuidong-gwaoe.html">연희동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/seoyeonjunghakgyo-ms-gwaoe.html">서연중학교</a>
+        <a class="school-pill" href="/blog/sinyeonjunghakgyo-ms-gwaoe.html">신연중학교</a>
+        <a class="school-pill" href="/blog/yeonbukjunghakgyo-ms-gwaoe.html">연북중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-namgajwadong-gwaoe.html">남가좌동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/yeonhuijunghakgyo-ms-gwaoe.html">연희중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-daesindong-gwaoe.html">대신동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/ihwageumranjunghakgyo-ms-gwaoe.html">이화·금란중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-hongjedong-gwaoe.html">홍제동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/inwangjunghakgyo-ms-gwaoe.html">인왕중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-chungjeongro2ga-gwaoe.html">충정로2가 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/inchangjunghakgyo-ms-gwaoe.html">인창중학교</a>
+      </div>
+    </div>
+    <div class="region-block">
+      <div class="region-pills"><a class="region-pill" href="/blog/seodaemun-bukahyeondong-gwaoe.html">북아현동 수학과외</a></div>
+      <div class="school-pills">
+        <a class="school-pill" href="/blog/jungangyeojajunghakgyo-gms-gwaoe.html">중앙여자중학교</a>
+        <a class="school-pill" href="/blog/hanseongjunghakgyo-ms-gwaoe.html">한성중학교</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(지역명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
 
   <p>학교마다 내신 난이도와 분위기가 조금씩 다릅니다. 수학 내신은 계산 능력보다 개념 이해 기반의 서술형 문제 비중이 있는 학교가 많아, 단순 반복 풀이보다 <b>개념을 설명하는 연습</b>이 중요합니다.</p>
 
