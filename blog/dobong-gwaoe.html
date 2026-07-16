@@ -60,6 +60,15 @@
   .school-pills{display:flex;flex-wrap:wrap;gap:8px;}
   .school-pill{display:inline-flex;font-size:13.5px;font-weight:700;color:var(--text-dark);background:#FFF0EC;padding:7px 14px;border-radius:999px;}
   .school-pill:hover{background:#FFE2DA;}
+  .region-pill.active{background:var(--coral-2);}
+  .school-pill.active{background:#FFE2DA;}
+  .subject-picker{background:var(--cream);border:1px solid var(--line-light);border-radius:12px;padding:14px 16px;margin-top:12px;}
+  .subject-picker .sp-label{font-size:13px;font-weight:800;color:var(--text-dark);margin-bottom:8px;}
+  .subject-picker .sp-options{display:flex;flex-wrap:wrap;gap:8px;}
+  .sp-btn{display:inline-flex;font-size:13px;font-weight:800;padding:7px 14px;border-radius:999px;}
+  a.sp-btn{background:var(--coral);color:var(--white);}
+  a.sp-btn:hover{background:var(--coral-2);}
+  .sp-btn.soon{background:#fff;color:var(--text-gray);border:1px solid var(--line-light);cursor:default;}
   .subject-grid{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px;}
   .subject-card{flex:1 1 160px;border:1px solid var(--line-light);border-radius:var(--radius);padding:20px 18px;}
   .subject-card h4{margin:0 0 6px;font-size:15.5px;font-weight:800;}
@@ -155,47 +164,79 @@
   <p>도봉구는 창동·도봉동·방학동·쌍문동 등으로 이루어진 서울 북부의 주요 주거지역입니다. 인근 노원 학원가와 함께 생활권을 형성하며, 학원보다 <b>1:1 맞춤 과외로 내신을 체계적으로 관리</b>하려는 학부모가 늘고 있는 지역입니다. 아래에서 우리 동네·우리 학교에 맞는 과외 안내를 확인해보세요.</p>
 
   <h2>1. 도봉구 동네별 학교 안내</h2>
-  <p>도봉구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다.</p>
+  <p>도봉구에는 공립·사립을 합해 여러 중학교가 있습니다. 동별로 대표적인 학교는 다음과 같습니다. 배지를 클릭하면 원하는 과목을 선택할 수 있어요.</p>
 
   <div class="region-groups">
     <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/dobong-changdong-gwaoe.html">창동 과외</a></div>
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-changdong-gwaoe.html" data-name="창동">창동 과외</a></div>
       <div class="school-pills">
-        <a class="school-pill" href="/blog/nogok-ms-gwaoe.html">노곡중학교</a>
-        <a class="school-pill" href="/blog/changbuk-ms-gwaoe.html">창북중학교</a>
-        <a class="school-pill" href="/blog/changil-ms-gwaoe.html">창일중학교</a>
+        <a class="school-pill" href="/blog/nogok-ms-gwaoe.html" data-name="노곡중학교">노곡중학교</a>
+        <a class="school-pill" href="/blog/changbuk-ms-gwaoe.html" data-name="창북중학교">창북중학교</a>
+        <a class="school-pill" href="/blog/changil-ms-gwaoe.html" data-name="창일중학교">창일중학교</a>
+      </div>
+      <div class="subject-picker" hidden>
+        <div class="sp-label"></div>
+        <div class="sp-options">
+          <a class="sp-btn" data-role="math" href="#">수학 과외 보기 →</a>
+          <span class="sp-btn soon">영어 과외 · 준비중</span>
+          <span class="sp-btn soon">국어 과외 · 준비중</span>
+        </div>
       </div>
     </div>
     <div class="region-block">
       <div class="region-pills">
-        <a class="region-pill" href="/blog/dobong-dobongdong-gwaoe.html">도봉동 과외</a>
-        <a class="region-pill" href="/blog/dobong-dobong2dong-gwaoe.html">도봉2동 과외</a>
+        <a class="region-pill" href="/blog/dobong-dobongdong-gwaoe.html" data-name="도봉동">도봉동 과외</a>
+        <a class="region-pill" href="/blog/dobong-dobong2dong-gwaoe.html" data-name="도봉2동">도봉2동 과외</a>
       </div>
       <div class="school-pills">
-        <a class="school-pill" href="/blog/dobong-ms-gwaoe.html">도봉중학교</a>
-        <a class="school-pill" href="/blog/bukseoul-ms-gwaoe.html">북서울중학교</a>
+        <a class="school-pill" href="/blog/dobong-ms-gwaoe.html" data-name="도봉중학교">도봉중학교</a>
+        <a class="school-pill" href="/blog/bukseoul-ms-gwaoe.html" data-name="북서울중학교">북서울중학교</a>
+      </div>
+      <div class="subject-picker" hidden>
+        <div class="sp-label"></div>
+        <div class="sp-options">
+          <a class="sp-btn" data-role="math" href="#">수학 과외 보기 →</a>
+          <span class="sp-btn soon">영어 과외 · 준비중</span>
+          <span class="sp-btn soon">국어 과외 · 준비중</span>
+        </div>
       </div>
     </div>
     <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/dobong-banghakdong-gwaoe.html">방학동 과외</a></div>
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-banghakdong-gwaoe.html" data-name="방학동">방학동 과외</a></div>
       <div class="school-pills">
-        <a class="school-pill" href="/blog/banghak-ms-gwaoe.html">방학중학교</a>
-        <a class="school-pill" href="/blog/sinbanghak-ms-gwaoe.html">신방학중학교</a>
-        <a class="school-pill" href="/blog/changdong-ms-gwaoe.html">창동중학교</a>
+        <a class="school-pill" href="/blog/banghak-ms-gwaoe.html" data-name="방학중학교">방학중학교</a>
+        <a class="school-pill" href="/blog/sinbanghak-ms-gwaoe.html" data-name="신방학중학교">신방학중학교</a>
+        <a class="school-pill" href="/blog/changdong-ms-gwaoe.html" data-name="창동중학교">창동중학교</a>
+      </div>
+      <div class="subject-picker" hidden>
+        <div class="sp-label"></div>
+        <div class="sp-options">
+          <a class="sp-btn" data-role="math" href="#">수학 과외 보기 →</a>
+          <span class="sp-btn soon">영어 과외 · 준비중</span>
+          <span class="sp-btn soon">국어 과외 · 준비중</span>
+        </div>
       </div>
     </div>
     <div class="region-block">
-      <div class="region-pills"><a class="region-pill" href="/blog/dobong-ssangmundong-gwaoe.html">쌍문동 과외</a></div>
+      <div class="region-pills"><a class="region-pill" href="/blog/dobong-ssangmundong-gwaoe.html" data-name="쌍문동">쌍문동 과외</a></div>
       <div class="school-pills">
-        <a class="school-pill" href="/blog/baekun-ms-gwaoe.html">백운중학교</a>
-        <a class="school-pill" href="/blog/seondeok-ms-gwaoe.html">선덕중학교</a>
-        <a class="school-pill" href="/blog/sindobong-ms-gwaoe.html">신도봉중학교</a>
-        <a class="school-pill" href="/blog/jeongui-gms-gwaoe.html">정의여자중학교</a>
-        <a class="school-pill" href="/blog/hyomun-ms-gwaoe.html">효문중학교</a>
+        <a class="school-pill" href="/blog/baekun-ms-gwaoe.html" data-name="백운중학교">백운중학교</a>
+        <a class="school-pill" href="/blog/seondeok-ms-gwaoe.html" data-name="선덕중학교">선덕중학교</a>
+        <a class="school-pill" href="/blog/sindobong-ms-gwaoe.html" data-name="신도봉중학교">신도봉중학교</a>
+        <a class="school-pill" href="/blog/jeongui-gms-gwaoe.html" data-name="정의여자중학교">정의여자중학교</a>
+        <a class="school-pill" href="/blog/hyomun-ms-gwaoe.html" data-name="효문중학교">효문중학교</a>
+      </div>
+      <div class="subject-picker" hidden>
+        <div class="sp-label"></div>
+        <div class="sp-options">
+          <a class="sp-btn" data-role="math" href="#">수학 과외 보기 →</a>
+          <span class="sp-btn soon">영어 과외 · 준비중</span>
+          <span class="sp-btn soon">국어 과외 · 준비중</span>
+        </div>
       </div>
     </div>
   </div>
-  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(동네명)와 연한 배지(학교명)를 클릭하면 동네별·학교별 상세 과외 안내를 볼 수 있습니다.</p>
+  <p style="font-size:12.5px;color:#B0AA98;margin:-8px 0 18px;">진한 배지(동네명)와 연한 배지(학교명)를 클릭하면 과목(수학/영어/국어)을 선택할 수 있습니다.</p>
 
   <h2>2. 과목별 과외 안내</h2>
   <p>과목마다 내신 대비 포인트가 다릅니다. 원하는 과목을 선택해 자세한 안내를 확인해보세요.</p>
@@ -250,6 +291,20 @@
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
   }
+
+  document.querySelectorAll('.region-pill, .school-pill').forEach(pill => {
+    pill.addEventListener('click', (e) => {
+      e.preventDefault();
+      const block = pill.closest('.region-block');
+      const picker = block.querySelector('.subject-picker');
+      block.querySelectorAll('.region-pill, .school-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      picker.querySelector('.sp-label').textContent = pill.dataset.name + ' 과외 — 원하는 과목을 선택하세요';
+      picker.querySelector('[data-role="math"]').href = pill.getAttribute('href');
+      picker.hidden = false;
+      picker.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
 </script>
 <script src="/floating-cta.js"></script>
 </body>
