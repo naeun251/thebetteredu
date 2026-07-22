@@ -73,7 +73,7 @@
     <a href="/#apply" class="fcta-btn fcta-apply">
       <span class="fcta-icon">✨</span> 무료체험 신청
     </a>
-    <a href="tel:010-5824-7789" class="fcta-btn fcta-tel">
+    <a href="tel:010-6832-1994" class="fcta-btn fcta-tel">
       <span class="fcta-icon">📞</span> 전화상담
     </a>
   `;
