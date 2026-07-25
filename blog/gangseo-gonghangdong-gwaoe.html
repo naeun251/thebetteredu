@@ -90,11 +90,15 @@
   .subj-card{background:var(--cream);border-radius:14px;padding:18px 20px;}
   .subj-card .subj-name{font-weight:800;font-size:16px;margin-bottom:6px;}
   .subj-card p{font-size:14px;color:var(--text-gray);margin:0;line-height:1.65;}
-  .review-list{display:flex;flex-direction:column;gap:14px;margin:18px 0 6px;}
-  .review-item{border:1px solid var(--line-light);border-left:3px solid var(--coral);border-radius:12px;padding:16px 20px;}
-  .review-item .review-date{font-size:12.5px;font-weight:700;color:var(--coral);margin-bottom:4px;}
-  .review-item .review-title{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--text-dark);}
-  .review-item .review-text{font-size:14.5px;color:var(--text-gray);margin:0;}
+    .review-list{margin:14px 0 6px;border-top:1px solid var(--line-light);}
+  .review-row{border-bottom:1px solid var(--line-light);}
+  .review-row a{display:flex;align-items:baseline;gap:14px;padding:16px 6px;transition:background .15s;}
+  .review-row a:hover{background:var(--cream);}
+  .review-row a:hover .review-title{color:var(--coral);}
+  .review-date{font-size:13px;font-weight:700;color:var(--coral);flex:none;min-width:82px;}
+  .review-title{font-size:15.5px;font-weight:700;color:var(--text-dark);line-height:1.5;}
+  .review-empty{padding:18px 6px;color:var(--text-gray);font-size:14.5px;}
+  @media(max-width:720px){.review-row a{flex-direction:column;gap:3px;}}
   @media(max-width:720px){.subj-grid{grid-template-columns:1fr;}}</style>
 </head>
 <body>
@@ -203,17 +207,11 @@
        ============================================================ -->
   <h2 id="reviews">공항동 과외 이야기 · 후기</h2>
   <p>공항동에서 진행하는 과목별 특강·수업 소식과 학습 팁을 기록합니다. 새 소식은 위쪽에 계속 추가됩니다.</p>
-  <div class="review-list">
-    <!-- REVIEW-ITEMS-START -->
-    <div class="review-item">
-      <div class="review-date">2026.07.25</div>
-      <div class="review-title">공항동 과외 안내 페이지가 새로 열렸어요</div>
-      <p class="review-text">공항동 국어·영어·수학·사회·과학 1:1 맞춤 과외를 시작합니다. 앞으로 이곳에 수업 이야기와 특강 소식을 계속 업데이트할게요.</p>
-    </div>
+    <ul class="review-list">
+    <!-- REVIEW-ITEMS-START (새 글: 이 줄 바로 아래에 review-row 한 개 추가, 최신글이 맨 위) -->
+    <li class="review-empty">공항동 과외 첫 소식을 준비 중입니다. 곧 특강·수업 이야기를 올릴게요.</li>
     <!-- REVIEW-ITEMS-END -->
-  </div>
-
-  <a class="back-link" href="/blog/gangseo-gwaoe.html">← 강서구 가이드로 돌아가기</a>
+  </ul><a class="back-link" href="/blog/gangseo-gwaoe.html">← 강서구 가이드로 돌아가기</a>
   <a class="back-link" href="/blog/">학습 정보 목록으로</a>
 </article>
 
