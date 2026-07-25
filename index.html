@@ -716,7 +716,7 @@
       <div class="nav-item">
         <a href="#why">1:1 맞춤 과외</a>
         <div class="nav-dropdown">
-          <a href="#region" class="nav-link-desktop">지역별 가이드</a>
+          <a href="#region" class="nav-link-desktop">거주지역</a>
           <a href="/blog/?tab=지역별 가이드" class="nav-link-mobile">지역별 과외</a>
           <a href="#teachers">선생님 안내</a>
           <a href="#stories">후기 사례</a>
@@ -876,10 +876,19 @@
   </section>
 
 <!-- 지역별 가이드 -->
+  <style>
+    .district-dongs{margin:2px 0 10px;}
+    .dong-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+    .dong-chip{display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:var(--white);border:1px solid var(--line-light);font-size:13.5px;font-weight:600;color:var(--text-dark);transition:background .15s,color .15s,border-color .15s;}
+    .dong-chip:hover{background:var(--coral);color:#fff;border-color:var(--coral);}
+    .district-empty-box{background:var(--white);border:1px solid var(--line-light);border-radius:14px;padding:20px 22px;margin:6px 0 14px;}
+    .district-empty-box p{margin:0 0 6px;font-size:14.5px;color:var(--text-dark);line-height:1.65;}
+    .district-empty-box p.sub{font-size:13px;color:var(--text-gray);margin:0;}
+  </style>
   <section id="region" style="background:var(--cream);">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="badge">지역별 가이드</div>
+        <div class="badge">거주지역</div>
         <h2>우리 동네 학생들은<br>어떻게 공부하고 있을까요?</h2>
         <p>지역을 선택하면 그 지역 학생들을 위한 학습 가이드를 확인할 수 있습니다.</p>
       </div>
@@ -941,6 +950,13 @@
             <button type="button" class="metro-btn" data-metro="전라남도">전라남도</button>
             <button type="button" class="metro-btn" data-metro="경상북도">경상북도</button>
             <button type="button" class="metro-btn" data-metro="경상남도">경상남도</button>
+            <button type="button" class="metro-btn" data-metro="부산광역시">부산광역시</button>
+            <button type="button" class="metro-btn" data-metro="대구광역시">대구광역시</button>
+            <button type="button" class="metro-btn" data-metro="대전광역시">대전광역시</button>
+            <button type="button" class="metro-btn" data-metro="광주광역시">광주광역시</button>
+            <button type="button" class="metro-btn" data-metro="울산광역시">울산광역시</button>
+            <button type="button" class="metro-btn" data-metro="세종특별자치시">세종특별자치시</button>
+            <button type="button" class="metro-btn" data-metro="제주특별자치도">제주특별자치도</button>
           </div>
 
           <div class="region-map-grid" id="seoulMapGrid"></div>
@@ -1731,6 +1747,13 @@
       '전라남도': ['목포시','여수시','순천시','나주시','광양시','담양군','곡성군','구례군','고흥군','보성군','화순군','장흥군','강진군','해남군','영암군','무안군','함평군','영광군','장성군','완도군','진도군','신안군'],
       '경상북도': ['포항시','경주시','김천시','안동시','구미시','영주시','영천시','상주시','문경시','경산시','군위군','의성군','청송군','영양군','영덕군','청도군','고령군','성주군','칠곡군','예천군','봉화군','울진군','울릉군'],
       '경상남도': ['창원시','진주시','통영시','사천시','김해시','밀양시','거제시','양산시','의령군','함안군','창녕군','고성군','남해군','하동군','산청군','함양군','거창군','합천군'],
+      '부산광역시': ['중구','서구','동구','영도구','부산진구','동래구','남구','북구','해운대구','사하구','금정구','강서구','연제구','수영구','사상구','기장군'],
+      '대구광역시': ['중구','동구','서구','남구','북구','수성구','달서구','달성군','군위군'],
+      '대전광역시': ['동구','중구','서구','유성구','대덕구'],
+      '광주광역시': ['동구','서구','남구','북구','광산구'],
+      '울산광역시': ['중구','남구','동구','북구','울주군'],
+      '세종특별자치시': ['세종시'],
+      '제주특별자치도': ['제주시','서귀포시'],
     };
     const metroTitles = {
       '서울특별시': '서울특별시 구별 1:1 과외 가이드',
@@ -1743,6 +1766,13 @@
       '전라남도': '전라남도 시·군별 1:1 과외 가이드',
       '경상북도': '경상북도 시·군별 1:1 과외 가이드',
       '경상남도': '경상남도 시·군별 1:1 과외 가이드',
+      '부산광역시': '부산광역시 구·군별 1:1 과외 가이드',
+      '대구광역시': '대구광역시 구·군별 1:1 과외 가이드',
+      '대전광역시': '대전광역시 구별 1:1 과외 가이드',
+      '광주광역시': '광주광역시 구별 1:1 과외 가이드',
+      '울산광역시': '울산광역시 구·군별 1:1 과외 가이드',
+      '세종특별자치시': '세종특별자치시 1:1 과외 가이드',
+      '제주특별자치도': '제주특별자치도 시별 1:1 과외 가이드',
     };
     const districtPosts = {
       '강북구': { 중학교: [{
@@ -2021,6 +2051,33 @@
         date: '2026.07.20'
       }] },
     };
+    const districtDongs = {
+      "도봉구": [{n:"창동",u:"/blog/dobong-changdong-gwaoe.html"},{n:"도봉동",u:"/blog/dobong-dobongdong-gwaoe.html"},{n:"도봉2동",u:"/blog/dobong-dobong2dong-gwaoe.html"},{n:"방학동",u:"/blog/dobong-banghakdong-gwaoe.html"},{n:"쌍문동",u:"/blog/dobong-ssangmundong-gwaoe.html"}],
+      "동대문구": [{n:"회기동",u:"/blog/dongdaemun-hoegidong-gwaoe.html"},{n:"신설동",u:"/blog/dongdaemun-sinseoldong-gwaoe.html"},{n:"장안동",u:"/blog/dongdaemun-jangandong-gwaoe.html"},{n:"답십리동",u:"/blog/dongdaemun-dapsipridong-gwaoe.html"},{n:"전농동",u:"/blog/dongdaemun-jeonnongdong-gwaoe.html"},{n:"제기동",u:"/blog/dongdaemun-jegidong-gwaoe.html"},{n:"청량리동",u:"/blog/dongdaemun-cheongryangridong-gwaoe.html"},{n:"휘경동",u:"/blog/dongdaemun-hwigyeongdong-gwaoe.html"}],
+      "동작구": [{n:"노량진동",u:"/blog/dongjak-noryangjindong-gwaoe.html"},{n:"대방동",u:"/blog/dongjak-daebangdong-gwaoe.html"},{n:"동작동",u:"/blog/dongjak-dongjakdong-gwaoe.html"},{n:"본동",u:"/blog/dongjak-bondong-gwaoe.html"},{n:"사당동",u:"/blog/dongjak-sadangdong-gwaoe.html"},{n:"상도동",u:"/blog/dongjak-sangdodong-gwaoe.html"},{n:"흑석동",u:"/blog/dongjak-heukseokdong-gwaoe.html"}],
+      "은평구": [{n:"갈현동",u:"/blog/eunpyeong-galhyeondong-gwaoe.html"},{n:"구산동",u:"/blog/eunpyeong-gusandong-gwaoe.html"},{n:"불광동",u:"/blog/eunpyeong-bulgwangdong-gwaoe.html"},{n:"신사동",u:"/blog/eunpyeong-sinsadong-gwaoe.html"},{n:"응암동",u:"/blog/eunpyeong-eungamdong-gwaoe.html"},{n:"증산동",u:"/blog/eunpyeong-jeungsandong-gwaoe.html"},{n:"진관동",u:"/blog/eunpyeong-jingwandong-gwaoe.html"}],
+      "강북구": [{n:"수유동",u:"/blog/gangbuk-suyudong-gwaoe.html"},{n:"번동",u:"/blog/gangbuk-beondong-gwaoe.html"},{n:"미아동",u:"/blog/gangbuk-miadong-gwaoe.html"},{n:"우이동",u:"/blog/gangbuk-uidong-gwaoe.html"}],
+      "강동구": [{n:"강일동",u:"/blog/gangdong-gangildong-gwaoe.html"},{n:"암사동",u:"/blog/gangdong-amsadong-gwaoe.html"},{n:"고덕동",u:"/blog/gangdong-godeokdong-gwaoe.html"},{n:"둔촌동",u:"/blog/gangdong-dunchondong-gwaoe.html"},{n:"천호동",u:"/blog/gangdong-cheonhodong-gwaoe.html"},{n:"상일동",u:"/blog/gangdong-sangildong-gwaoe.html"},{n:"성내동",u:"/blog/gangdong-seongnaedong-gwaoe.html"},{n:"길동",u:"/blog/gangdong-gildong-gwaoe.html"},{n:"명일동",u:"/blog/gangdong-myeongildong-gwaoe.html"}],
+      "강남구": [{n:"개포동",u:"/blog/gangnam-gaepodong-gwaoe.html"},{n:"대치동",u:"/blog/gangnam-daechidong-gwaoe.html"},{n:"도곡동",u:"/blog/gangnam-dogokdong-gwaoe.html"},{n:"삼성동",u:"/blog/gangnam-samseongdong-gwaoe.html"},{n:"수서동",u:"/blog/gangnam-suseodong-gwaoe.html"},{n:"자곡동",u:"/blog/gangnam-jagokdong-gwaoe.html"},{n:"신사동",u:"/blog/gangnam-sinsadong-gwaoe.html"},{n:"압구정동",u:"/blog/gangnam-apgujeongdong-gwaoe.html"},{n:"논현동",u:"/blog/gangnam-nonhyeondong-gwaoe.html"},{n:"역삼동",u:"/blog/gangnam-yeoksamdong-gwaoe.html"},{n:"일원동",u:"/blog/gangnam-ilwondong-gwaoe.html"},{n:"청담동",u:"/blog/gangnam-cheongdamdong-gwaoe.html"}],
+      "강서구": [{n:"가양동",u:"/blog/gangseo-gayangdong-gwaoe.html"},{n:"공항동",u:"/blog/gangseo-gonghangdong-gwaoe.html"},{n:"내발산동",u:"/blog/gangseo-naebalsandong-gwaoe.html"},{n:"등촌동",u:"/blog/gangseo-deungchondong-gwaoe.html"},{n:"마곡동",u:"/blog/gangseo-magokdong-gwaoe.html"},{n:"방화동",u:"/blog/gangseo-banghwadong-gwaoe.html"},{n:"염창동",u:"/blog/gangseo-yeomchangdong-gwaoe.html"},{n:"화곡동",u:"/blog/gangseo-hwagokdong-gwaoe.html"}],
+      "금천구": [{n:"가산동",u:"/blog/geumcheon-gasandong-gwaoe.html"},{n:"시흥동",u:"/blog/geumcheon-siheungdong-gwaoe.html"}],
+      "구로구": [{n:"개봉동",u:"/blog/guro-gaebongdong-gwaoe.html"},{n:"고척동",u:"/blog/guro-gocheokdong-gwaoe.html"},{n:"구로동",u:"/blog/guro-gurodong-gwaoe.html"},{n:"신도림동",u:"/blog/guro-sindorimdong-gwaoe.html"},{n:"오류동",u:"/blog/guro-oryudong-gwaoe.html"},{n:"궁동",u:"/blog/guro-gungdong-gwaoe.html"},{n:"천왕동",u:"/blog/guro-cheonwangdong-gwaoe.html"},{n:"항동",u:"/blog/guro-hangdong-gwaoe.html"}],
+      "관악구": [{n:"봉천동",u:"/blog/gwanak-bongcheondong-gwaoe.html"},{n:"신림동",u:"/blog/gwanak-sinrimdong-gwaoe.html"}],
+      "광진구": [{n:"광장동",u:"/blog/gwangjin-gwangjangdong-gwaoe.html"},{n:"자양동",u:"/blog/gwangjin-jayangdong-gwaoe.html"},{n:"구의동",u:"/blog/gwangjin-guuidong-gwaoe.html"},{n:"중곡동",u:"/blog/gwangjin-junggokdong-gwaoe.html"}],
+      "종로구": [{n:"혜화동",u:"/blog/jongno-hyehwadong-gwaoe.html"},{n:"행촌동",u:"/blog/jongno-haengchondong-gwaoe.html"},{n:"송현동",u:"/blog/jongno-songhyeondong-gwaoe.html"},{n:"필운동",u:"/blog/jongno-pilundong-gwaoe.html"},{n:"홍지동",u:"/blog/jongno-hongjidong-gwaoe.html"},{n:"동숭동",u:"/blog/jongno-dongsungdong-gwaoe.html"},{n:"계동",u:"/blog/jongno-gyedong-gwaoe.html"},{n:"청운동",u:"/blog/jongno-cheongundong-gwaoe.html"}],
+      "중랑구": [{n:"망우동",u:"/blog/jungnang-mangudong-gwaoe.html"},{n:"면목동",u:"/blog/jungnang-myeonmokdong-gwaoe.html"},{n:"상봉동",u:"/blog/jungnang-sangbongdong-gwaoe.html"},{n:"묵동",u:"/blog/jungnang-mukdong-gwaoe.html"},{n:"중화동",u:"/blog/jungnang-junghwadong-gwaoe.html"}],
+      "중구": [{n:"신당동",u:"/blog/jungu-sindangdong-gwaoe.html"},{n:"인현동",u:"/blog/jungu-inhyeondong-gwaoe.html"},{n:"정동",u:"/blog/jungu-jeongdong-gwaoe.html"},{n:"을지로",u:"/blog/jungu-euljiro-gwaoe.html"},{n:"만리동",u:"/blog/jungu-manridong-gwaoe.html"}],
+      "마포구": [{n:"연남동",u:"/blog/mapo-yeonnamdong-gwaoe.html"},{n:"신수동",u:"/blog/mapo-sinsudong-gwaoe.html"},{n:"염리동",u:"/blog/mapo-yeomridong-gwaoe.html"},{n:"상암동",u:"/blog/mapo-sangamdong-gwaoe.html"},{n:"성산동",u:"/blog/mapo-seongsandong-gwaoe.html"},{n:"합정동",u:"/blog/mapo-hapjeongdong-gwaoe.html"},{n:"대흥동",u:"/blog/mapo-daeheungdong-gwaoe.html"},{n:"아현동",u:"/blog/mapo-ahyeondong-gwaoe.html"},{n:"중동",u:"/blog/mapo-jungdong-gwaoe.html"},{n:"노고산동",u:"/blog/mapo-nogosandong-gwaoe.html"}],
+      "노원구": [{n:"상계동",u:"/blog/nowon-sanggyedong-gwaoe.html"},{n:"중계동",u:"/blog/nowon-junggyedong-gwaoe.html"},{n:"월계동",u:"/blog/nowon-wolgyedong-gwaoe.html"},{n:"공릉동",u:"/blog/nowon-gongneungdong-gwaoe.html"},{n:"하계동",u:"/blog/nowon-hagyedong-gwaoe.html"}],
+      "서초구": [{n:"잠원동",u:"/blog/seocho-jamwondong-gwaoe.html"},{n:"반포동",u:"/blog/seocho-banpodong-gwaoe.html"},{n:"방배동",u:"/blog/seocho-bangbaedong-gwaoe.html"},{n:"서초동",u:"/blog/seocho-seochodong-gwaoe.html"},{n:"양재동",u:"/blog/seocho-yangjaedong-gwaoe.html"},{n:"우면동",u:"/blog/seocho-umyeondong-gwaoe.html"},{n:"내곡동",u:"/blog/seocho-naegokdong-gwaoe.html"}],
+      "서대문구": [{n:"북가좌동",u:"/blog/seodaemun-bukgajwadong-gwaoe.html"},{n:"천연동",u:"/blog/seodaemun-cheonyeondong-gwaoe.html"},{n:"홍은동",u:"/blog/seodaemun-hongeundong-gwaoe.html"},{n:"연희동",u:"/blog/seodaemun-yeonhuidong-gwaoe.html"},{n:"남가좌동",u:"/blog/seodaemun-namgajwadong-gwaoe.html"},{n:"대신동",u:"/blog/seodaemun-daesindong-gwaoe.html"},{n:"홍제동",u:"/blog/seodaemun-hongjedong-gwaoe.html"},{n:"충정로2가",u:"/blog/seodaemun-chungjeongro2ga-gwaoe.html"},{n:"북아현동",u:"/blog/seodaemun-bukahyeondong-gwaoe.html"}],
+      "성북구": [{n:"돈암동",u:"/blog/seongbuk-donamdong-gwaoe.html"},{n:"정릉동",u:"/blog/seongbuk-jeongreungdong-gwaoe.html"},{n:"길음동",u:"/blog/seongbuk-gileumdong-gwaoe.html"},{n:"장위동",u:"/blog/seongbuk-jangwidong-gwaoe.html"},{n:"성북동",u:"/blog/seongbuk-seongbukdong-gwaoe.html"},{n:"동소문동4가",u:"/blog/seongbuk-dongsomundong4ga-gwaoe.html"},{n:"종암동",u:"/blog/seongbuk-jongamdong-gwaoe.html"},{n:"석관동",u:"/blog/seongbuk-seokgwandong-gwaoe.html"},{n:"하월곡동",u:"/blog/seongbuk-hawolgokdong-gwaoe.html"},{n:"안암동2가",u:"/blog/seongbuk-anamdong2ga-gwaoe.html"},{n:"상월곡동",u:"/blog/seongbuk-sangwolgokdong-gwaoe.html"},{n:"삼선동2가",u:"/blog/seongbuk-samseondong2ga-gwaoe.html"}],
+      "성동구": [{n:"성수동1가",u:"/blog/seongdong-seongsudong1ga-gwaoe.html"},{n:"성수동2가",u:"/blog/seongdong-seongsudong2ga-gwaoe.html"},{n:"응봉동",u:"/blog/seongdong-eungbongdong-gwaoe.html"},{n:"마장동",u:"/blog/seongdong-majangdong-gwaoe.html"},{n:"행당동",u:"/blog/seongdong-haengdangdong-gwaoe.html"},{n:"옥수동",u:"/blog/seongdong-oksudong-gwaoe.html"},{n:"사근동",u:"/blog/seongdong-sageundong-gwaoe.html"}],
+      "송파구": [{n:"가락동",u:"/blog/songpa-garakdong-gwaoe.html"},{n:"거여동",u:"/blog/songpa-geoyeodong-gwaoe.html"},{n:"문정동",u:"/blog/songpa-munjeongdong-gwaoe.html"},{n:"장지동",u:"/blog/songpa-jangjidong-gwaoe.html"},{n:"방이동",u:"/blog/songpa-bangidong-gwaoe.html"},{n:"삼전동",u:"/blog/songpa-samjeondong-gwaoe.html"},{n:"오금동",u:"/blog/songpa-ogeumdong-gwaoe.html"},{n:"송파동",u:"/blog/songpa-songpadong-gwaoe.html"},{n:"잠실동",u:"/blog/songpa-jamsildong-gwaoe.html"},{n:"신천동",u:"/blog/songpa-sincheondong-gwaoe.html"},{n:"풍납동",u:"/blog/songpa-pungnapdong-gwaoe.html"}],
+      "양천구": [{n:"목동",u:"/blog/yangcheon-mokdong-gwaoe.html"},{n:"신정동",u:"/blog/yangcheon-sinjeongdong-gwaoe.html"},{n:"신월동",u:"/blog/yangcheon-sinwoldong-gwaoe.html"}],
+      "영등포구": [{n:"영등포동",u:"/blog/yeongdeungpo-yeongdeungpodong-gwaoe.html"},{n:"여의도동",u:"/blog/yeongdeungpo-yeouidodong-gwaoe.html"},{n:"당산동",u:"/blog/yeongdeungpo-dangsandong-gwaoe.html"},{n:"문래동",u:"/blog/yeongdeungpo-munraedong-gwaoe.html"},{n:"양평동",u:"/blog/yeongdeungpo-yangpyeongdong-gwaoe.html"},{n:"신길동",u:"/blog/yeongdeungpo-singildong-gwaoe.html"},{n:"대림동",u:"/blog/yeongdeungpo-daerimdong-gwaoe.html"}],
+      "용산구": [{n:"서계동",u:"/blog/yongsan-seogyedong-gwaoe.html"},{n:"용산동2가",u:"/blog/yongsan-yongsandong2ga-gwaoe.html"},{n:"청파동3가",u:"/blog/yongsan-cheongpadong3ga-gwaoe.html"},{n:"원효로4가",u:"/blog/yongsan-wonhyoro4ga-gwaoe.html"},{n:"보광동",u:"/blog/yongsan-bogwangdong-gwaoe.html"},{n:"이촌동",u:"/blog/yongsan-ichondong-gwaoe.html"},{n:"서빙고동",u:"/blog/yongsan-seobinggodong-gwaoe.html"}],
+    };
     const schoolLevels = ['초등학교', '중학교', '고등학교'];
 
     const regionMapTitle = document.getElementById('regionMapTitle');
@@ -2046,19 +2103,35 @@
       </a>`;
     }
 
-    function renderDistrictPanel(gu) {
-      const data = districtPosts[gu] || {};
+    function renderDistrictPanel(gu, metro) {
+      const isSeoul = metro === '서울특별시';
+      const data = isSeoul ? (districtPosts[gu] || {}) : {};
+      const dongs = isSeoul ? districtDongs[gu] : null;
+      const hasAnyPost = schoolLevels.some(l => data[l] && data[l].length);
       let html = `<div class="district-panel-title">${gu} 1:1 과외 가이드</div>`;
-      schoolLevels.forEach(level => {
-        const posts = data[level];
-        html += `<div class="district-level"><div class="dl-label">${level}</div>`;
-        if (posts && posts.length) {
+
+      // 동네(洞)별 바로가기
+      if (dongs && dongs.length) {
+        html += `<div class="district-dongs"><div class="dl-label">📍 동네별 과외 가이드</div><div class="dong-chips">`;
+        dongs.forEach(d => { html += `<a class="dong-chip" href="${d.u}">${d.n}</a>`; });
+        html += `</div></div>`;
+      }
+
+      if (hasAnyPost) {
+        schoolLevels.forEach(level => {
+          const posts = data[level];
+          if (!posts || !posts.length) return; // 글 없는 학년은 생략
+          html += `<div class="district-level"><div class="dl-label">${level}</div>`;
           posts.forEach(p => { html += renderPostCard(p); });
-        } else {
-          html += `<div class="dl-empty">아직 등록된 글이 없어요. <a href="#apply">무료 상담 신청하기 →</a></div>`;
-        }
-        html += `</div>`;
-      });
+          html += `</div>`;
+        });
+      } else {
+        html += `<div class="district-empty-box">
+          <p><b>${gu}</b>에서도 방문·화상 <b>1:1 맞춤 과외</b>를 신청하실 수 있어요.</p>
+          <p class="sub">이 지역의 동네·학교별 가이드는 순차적으로 준비하고 있어요. 지금은 30분 무료 수업으로 먼저 상담받아 보세요.</p>
+        </div>`;
+      }
+
       html += `<a href="#apply" class="btn btn-coral" style="width:100%;justify-content:center;margin-top:6px;">30분 무료 수업 신청하기 →</a>`;
       districtPanel.innerHTML = html;
       districtPanel.classList.add('show');
@@ -2078,7 +2151,7 @@
         btn.addEventListener('click', () => {
           seoulMapGrid.querySelectorAll('.region-cell').forEach(c => c.classList.remove('active'));
           btn.classList.add('active');
-          renderDistrictPanel(gu);
+          renderDistrictPanel(gu, metro);
         });
         seoulMapGrid.appendChild(btn);
       });
