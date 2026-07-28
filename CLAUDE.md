@@ -59,6 +59,32 @@ GitHub Pages로 자동 배포됨. 노트북과 집 컴퓨터를 오가며 작업
 
 ## 작업 로그
 
+### 2026-07-28 (검정고시 코너 리뉴얼 — 새 소유자 인수 후 첫 작업)
+- 저장소가 naeun251 → **x26589334-cpu**로 소유권 이전됨(새 소유자 인수). 로컬
+  ~/thebetteredu에 clone. 기존 과외 사이트(blog/ 1000여 파일 등)는 **그대로 유지**.
+- 전화번호 전체 010-5824-7789 → **010-6832-1994**로 교체(index.html·blog/index.html·
+  floating-cta.js). 네이버 서치어드바이저 인증 메타를 새 계정 코드
+  (3f5d716f...)로 교체(전 주인 b8050f... 대체).
+- **`/geomjeong/` 검정고시 코너를 "다시 시작하는 새벽" 컨셉으로 전면 리뉴얼**. 기존
+  단일 랜딩(379줄)을 다음 구조의 미니사이트로 교체:
+  - `geomjeong/style.css` · `geomjeong/app.js` — 공용 디자인시스템/스크립트(Pretendard
+    CDN + 라이트/다크 토큰, 새벽 그라데이션 히어로, 합격 도장 모티프). 이 코너 전용이며
+    기존 과외 사이트 CSS와 분리됨.
+  - `geomjeong/index.html` — 메인(왜 검정고시+대상별[청소년/성인]+실적+커리큘럼+후기
+    티저+상담폼 한 페이지).
+  - `geomjeong/reviews.html` — 합격후기(전체/청소년/성인 필터 탭).
+  - `geomjeong/news/index.html` + 글 6개(exam-schedule-2026-2, math-study-order,
+    success-jatoe, weekend-class, korean-history-tip, subject-pass-system) — 블로그식
+    뉴스. **앞으로 여기에 글을 계속 추가**(카드는 news/index.html에, 새 글은
+    news/{slug}.html로, sitemap도 같이 갱신). 카테고리: 시험일정/학습팁/합격수기/소식/시험정보.
+- 수치(합격률 94% 등)·후기·뉴스 내용은 **전부 예시(placeholder)** — 실제 데이터 받으면
+  교체 필요. 검정고시 일반 사실(연 2회, 평균 60점 합격, 과목 합격제)만 실제 정보.
+- sitemap.xml에 geomjeong 신규 8개 URL 추가(reviews, news/, 글 6개). /geomjeong/는
+  이미 등록돼 있어 changefreq만 weekly로 상향.
+- 참고: 이 컴퓨터엔 node 미설치(생성 스크립트 대신 Write로 직접 파일 작성함).
+- 다음에 이어서: 실제 합격 수치·후기·강사 정보 반영, "검정고시 뉴스 N개 올려줘" 요청 시
+  news/에 글 추가하는 워크플로우 운영.
+
 ### 2026-07-20
 - 고등학교용 블로그 콘텐츠를 5개 구 추가 제작: 영등포·용산·강남·송파·구로. 사용자가
   동네별 고등학교 목록을 줘서, 기존 15개 구 패턴(허브+동네+학교 3단 구조, 어제
