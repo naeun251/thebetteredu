@@ -16,6 +16,42 @@
   }else{
     document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
   }
+  // 모바일 메뉴 (네비 카테고리를 상담신청 옆 ☰ 버튼으로)
+  var links=document.querySelector('nav.links');
+  var bar=document.querySelector('header .bar');
+  if(links&&bar&&!document.querySelector('.nav-toggle')){
+    var toggle=document.createElement('button');
+    toggle.className='nav-toggle';
+    toggle.setAttribute('aria-label','메뉴 열기');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.innerHTML='☰';
+    var cta=bar.querySelector('.btn');
+    if(cta){bar.insertBefore(toggle,cta);}else{bar.appendChild(toggle);}
+    var menu=document.createElement('nav');
+    menu.className='mobile-menu';
+    links.querySelectorAll('a').forEach(function(a){
+      var c=document.createElement('a');
+      c.href=a.getAttribute('href');
+      c.textContent=a.textContent;
+      menu.appendChild(c);
+    });
+    var applyBtn=document.createElement('a');
+    applyBtn.href=(cta?cta.getAttribute('href'):'/#apply');
+    applyBtn.className='mm-cta';
+    applyBtn.textContent='무료 상담 신청';
+    menu.appendChild(applyBtn);
+    hd.appendChild(menu);
+    toggle.addEventListener('click',function(){
+      var open=menu.classList.toggle('open');
+      toggle.classList.toggle('on',open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.innerHTML=open?'✕':'☰';
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){menu.classList.remove('open');toggle.classList.remove('on');toggle.innerHTML='☰';toggle.setAttribute('aria-expanded','false');});
+    });
+  }
+
   // 합격후기 필터 탭
   var grid=document.getElementById('revGrid');
   if(grid){

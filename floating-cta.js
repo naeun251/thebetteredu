@@ -48,17 +48,22 @@
     }
     @media (max-width: 720px) {
       .fcta-wrap {
-        bottom: 16px;
-        right: 14px;
-        gap: 8px;
+        bottom: 14px;
+        right: 12px;
+        gap: 9px;
       }
+      /* 모바일: 화면을 벗어나지 않게 아이콘 원형 버튼으로 컴팩트하게 */
       .fcta-btn {
-        font-size: 13.5px;
-        padding: 11px 16px;
-        gap: 7px;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        gap: 0;
+        border-radius: 50%;
+        justify-content: center;
+        font-size: 0;
       }
       .fcta-icon {
-        font-size: 15px;
+        font-size: 23px;
       }
     }
   `;

@@ -30,6 +30,7 @@
   <div class="wrap bar">
     <a class="brand" href="/"><span class="mark"></span>더나은에듀<small>검정고시</small></a>
     <nav class="links">
+      <a href="/geomjeong/region/">지역검색</a>
       <a href="#why">왜 검정고시</a>
       <a href="#who">대상별 안내</a>
       <a href="#course">커리큘럼</a>
@@ -56,6 +57,12 @@
           </div>
           <div class="trust">
             <span><b>고졸·중졸</b> 검정고시 대비</span><span>· <b>연 2회</b> 시험</span><span>· <b>평균 60점</b>이면 합격</span>
+          </div>
+          <div class="hero-search">
+            <form onsubmit="event.preventDefault();var v=this.q.value.trim();location.href='/geomjeong/region/'+(v?('?q='+encodeURIComponent(v)):'');">
+              <input name="q" type="text" placeholder="우리 동네·자퇴한 학교로 지역 검색 (예: 강남구, 수원시)" aria-label="지역 검색">
+              <button type="submit">🔍 지역 검색</button>
+            </form>
           </div>
         </div>
         <aside class="hero-card">
