@@ -356,6 +356,17 @@ header.scrolled .nav-toggle{border-color:var(--line-strong);color:var(--text)}
   .split,.courses,.cta-final,.rev-grid,.news-feat,.news-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr 1fr;gap:1.8rem 1rem}.howrow{grid-template-columns:1fr}
   .rteaser{grid-template-columns:1fr;text-align:center;justify-items:center}
+  /* 모바일 상담 신청란(CTA/폼) 컴팩트하게 — 한눈에 들어오도록 */
+  .cta-final{padding:1.5rem 1.2rem;gap:1.3rem}
+  .cta-final h2{font-size:1.4rem}
+  .cta-final .copy p{font-size:.94rem}
+  .cta-final .phone{font-size:1.35rem;margin-top:.9rem}
+  form.apply{padding:1.1rem;gap:.55rem;border-radius:14px}
+  form.apply label{font-size:.78rem}
+  form.apply input,form.apply select,form.apply textarea{padding:.62rem .8rem;font-size:.92rem;border-radius:9px}
+  form.apply textarea{min-height:52px}
+  form.apply .btn-primary{padding:.75rem;font-size:.95rem}
+  .hero-search input{font-size:.92rem}
 }
 @media (max-width:460px){body{font-size:16px}.journey{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){
