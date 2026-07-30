@@ -52,6 +52,35 @@
     });
   }
 
+  // 히어로 지역 검색 — 입력 시 자동완성 목록
+  var hs=document.querySelector('.hero-search');
+  if(hs&&window.REGION_INDEX&&window.REGION_INDEX.length){
+    var hinput=hs.querySelector('input');
+    var sug=document.createElement('div'); sug.className='hs-suggest'; hs.appendChild(sug);
+    function draw(q){
+      q=(q||'').trim().toLowerCase();
+      sug.innerHTML='';
+      if(!q){sug.classList.remove('open');return;}
+      var m=window.REGION_INDEX.filter(function(r){return r.a.toLowerCase().indexOf(q)>-1});
+      if(!m.length){sug.classList.remove('open');return;}
+      m.slice(0,8).forEach(function(r){
+        var a=document.createElement('a');
+        a.href='/geomjeong/region/'+r.s+'.html';
+        a.innerHTML='<span><b>'+r.n+'</b> 검정고시 과외</span><span class="g">'+r.g+'</span>';
+        sug.appendChild(a);
+      });
+      if(m.length>8){
+        var more=document.createElement('div'); more.className='hs-more';
+        more.textContent='그 외 '+(m.length-8)+'곳 더… 지역 검색을 눌러 전체 보기';
+        sug.appendChild(more);
+      }
+      sug.classList.add('open');
+    }
+    hinput.addEventListener('input',function(){draw(hinput.value)});
+    hinput.addEventListener('focus',function(){draw(hinput.value)});
+    document.addEventListener('click',function(e){if(!hs.contains(e.target))sug.classList.remove('open')});
+  }
+
   // 합격후기 필터 탭
   var grid=document.getElementById('revGrid');
   if(grid){

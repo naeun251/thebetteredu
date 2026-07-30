@@ -303,7 +303,17 @@ a.course:hover{transform:translateY(-3px);box-shadow:0 16px 36px -16px rgba(22,3
 .course .more{margin-top:1.1rem;font-weight:700;font-size:.92rem;color:var(--amber);display:inline-flex;align-items:center;gap:.3rem}
 
 /* 히어로 지역 검색란 */
-.hero-search{margin-top:1.9rem;max-width:560px}
+.hero-search{margin-top:1.9rem;max-width:560px;position:relative}
+.hs-suggest{position:absolute;left:0;right:0;top:calc(100% + .5rem);z-index:30;display:none;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--card-shadow);overflow:hidden}
+.hs-suggest.open{display:block}
+.hs-suggest a{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.72rem 1.05rem;color:var(--text);font-size:.96rem;border-bottom:1px solid var(--line)}
+.hs-suggest a:last-child{border-bottom:none}
+.hs-suggest a:hover,.hs-suggest a.on{background:var(--surface-2)}
+.hs-suggest a b{font-weight:700}
+.hs-suggest a .g{color:var(--muted);font-size:.83rem;flex:none}
+.hs-suggest .hs-more{color:var(--muted);font-size:.86rem;padding:.6rem 1.05rem;background:var(--surface-2)}
 .hero-search form{display:flex;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   border-radius:999px;padding:.4rem .4rem .4rem 1.2rem;backdrop-filter:blur(6px)}
 .hero-search input{flex:1;min-width:0;background:transparent;border:none;color:var(--hero-text);font-size:1rem;font-family:var(--font-sans);outline:none}
