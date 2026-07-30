@@ -304,7 +304,7 @@ a.course:hover{transform:translateY(-3px);box-shadow:0 16px 36px -16px rgba(22,3
 
 /* 히어로 지역 검색란 */
 .hero-search{margin-top:1.9rem;max-width:560px;position:relative}
-.hs-suggest{position:absolute;left:0;right:0;top:calc(100% + .5rem);z-index:30;display:none;
+.hs-suggest{position:fixed;z-index:60;display:none;
   background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--card-shadow);overflow:hidden}
 .hs-suggest.open{display:block}
 .hs-suggest a{display:flex;align-items:center;justify-content:space-between;gap:.6rem;

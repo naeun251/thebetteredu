@@ -56,7 +56,8 @@
   var hs=document.querySelector('.hero-search');
   if(hs&&window.REGION_INDEX&&window.REGION_INDEX.length){
     var hinput=hs.querySelector('input');
-    var sug=document.createElement('div'); sug.className='hs-suggest'; hs.appendChild(sug);
+    var sug=document.createElement('div'); sug.className='hs-suggest'; document.body.appendChild(sug);
+    function place(){var r=hinput.getBoundingClientRect();sug.style.left=r.left+'px';sug.style.top=(r.bottom+8)+'px';sug.style.width=r.width+'px';}
     function draw(q){
       q=(q||'').trim().toLowerCase();
       sug.innerHTML='';
@@ -74,11 +75,13 @@
         more.textContent='그 외 '+(m.length-8)+'곳 더… 지역 검색을 눌러 전체 보기';
         sug.appendChild(more);
       }
-      sug.classList.add('open');
+      place(); sug.classList.add('open');
     }
     hinput.addEventListener('input',function(){draw(hinput.value)});
     hinput.addEventListener('focus',function(){draw(hinput.value)});
-    document.addEventListener('click',function(e){if(!hs.contains(e.target))sug.classList.remove('open')});
+    addEventListener('scroll',function(){sug.classList.remove('open')},{passive:true});
+    addEventListener('resize',function(){if(sug.classList.contains('open'))place()});
+    document.addEventListener('click',function(e){if(!hs.contains(e.target)&&!sug.contains(e.target))sug.classList.remove('open')});
   }
 
   // 합격후기 필터 탭
