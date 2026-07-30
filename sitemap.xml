@@ -63,6 +63,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://betteredu.kr/geomjeong/news/pass-criteria.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://betteredu.kr/geomjeong/news/2026-geomjeong-schedule.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
