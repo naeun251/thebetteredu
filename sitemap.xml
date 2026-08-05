@@ -63,6 +63,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://betteredu.kr/geomjeong/news/success-40s-office.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/geomjeong/news/past-papers.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://betteredu.kr/geomjeong/news/eligibility-age.html</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
