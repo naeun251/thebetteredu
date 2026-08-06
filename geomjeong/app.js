@@ -84,6 +84,33 @@
     document.addEventListener('click',function(e){if(!hs.contains(e.target)&&!sug.contains(e.target))sug.classList.remove('open')});
   }
 
+  // 상담 신청 폼 → 구글시트(웹문의: 검정고시 탭)
+  var applyForm=document.querySelector('form.apply');
+  if(applyForm){
+    var APPLY_URL='https://script.google.com/macros/s/AKfycbxd3w_TsZHqUNvtEFh5pXAiI8s9kyB7YlqiSiKUPUp20mV3p1bZyQTPD4hypoqk69U0/exec';
+    applyForm.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var btn=applyForm.querySelector('.btn-primary');
+      if(btn.getAttribute('data-done'))return;
+      var orig=btn.textContent; btn.disabled=true; btn.textContent='접수 중…';
+      function v(id){var el=document.getElementById(id);return el?el.value:'';}
+      var body=new URLSearchParams();
+      body.append('이름',v('nm'));
+      body.append('연락처',v('ph'));
+      body.append('상담대상',v('tg'));
+      body.append('문의내용',v('ms'));
+      body.append('신청페이지',location.pathname||'/');
+      body.append('_form','검정고시');
+      fetch(APPLY_URL,{method:'POST',mode:'no-cors',body:body}).then(function(){
+        btn.setAttribute('data-done','1'); btn.disabled=false; btn.textContent='신청이 접수됐어요 ✓';
+        applyForm.reset();
+      }).catch(function(){
+        btn.disabled=false; btn.textContent=orig;
+        alert('전송에 실패했어요. 전화(010-6832-1994)로 문의해 주세요.');
+      });
+    });
+  }
+
   // 합격후기 필터 탭
   var grid=document.getElementById('revGrid');
   if(grid){
