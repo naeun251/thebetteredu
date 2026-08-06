@@ -231,6 +231,12 @@ section.block{padding:clamp(3.5rem,8vh,6rem) 0}
 .ncard.c4 .thumb .ov{background:linear-gradient(135deg,var(--ink),var(--dawnblue))}
 .ncard .thumb .dot2{position:absolute;right:-20px;bottom:-24px;width:100px;height:100px;border-radius:50%;
   background:radial-gradient(circle,var(--sun-core),transparent 68%);opacity:.7}
+/* 뉴스 썸네일/기사 상단 — 공부(책·해) 일러스트 */
+.ncard .thumb::after,.news-feat .thumb::after,.article .hero-img::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.85;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M60 55c-6-6-18-9-31-9v35c13 0 25 3 31 9"/><path d="M60 55c6-6 18-9 31-9v35c-13 0-25 3-31 9"/><path d="M60 55v35"/><path d="M36 60h14M36 67h14M70 60h14M70 67h14" opacity="0.55"/><circle cx="97" cy="24" r="6"/><path d="M97 12v3M97 33v3M85 24h3M109 24h3M88.6 15.6l2.1 2.1M105.3 30.3l2.1 2.1"/></svg>') center/auto 56% no-repeat;
+}
+.article .hero-img::after{background-size:auto 40%}
 .ncard .b{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
 .ncard .cat{font-size:.74rem;font-weight:700;color:var(--amber);letter-spacing:.04em}
 .ncard h3{font-size:1.08rem;font-weight:700;line-height:1.4;letter-spacing:-.01em}
