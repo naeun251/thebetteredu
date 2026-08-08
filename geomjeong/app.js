@@ -59,10 +59,10 @@
     var sug=document.createElement('div'); sug.className='hs-suggest'; document.body.appendChild(sug);
     function place(){var r=hinput.getBoundingClientRect();sug.style.left=r.left+'px';sug.style.top=(r.bottom+8)+'px';sug.style.width=r.width+'px';}
     function draw(q){
-      q=(q||'').trim().toLowerCase();
+      q=(q||'').trim().toLowerCase().replace(/\s+/g,'');
       sug.innerHTML='';
       if(!q){sug.classList.remove('open');return;}
-      var m=window.REGION_INDEX.filter(function(r){return r.a.toLowerCase().indexOf(q)>-1});
+      var m=window.REGION_INDEX.filter(function(r){return (r.a+' '+r.n).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
       if(!m.length){sug.classList.remove('open');return;}
       m.slice(0,8).forEach(function(r){
         var a=document.createElement('a');
