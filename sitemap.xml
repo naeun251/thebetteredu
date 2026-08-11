@@ -87,6 +87,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://betteredu.kr/geomjeong/news/social-study.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/geomjeong/news/certificate-issue.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://betteredu.kr/geomjeong/news/career-after.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://betteredu.kr/geomjeong/news/exam-2027-1-guide.html</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
