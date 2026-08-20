@@ -173,6 +173,8 @@ section.block{padding:clamp(3.5rem,8vh,6rem) 0}
 .course p{color:var(--muted);font-size:.94rem;margin-bottom:1rem}
 .subjects{display:flex;flex-wrap:wrap;gap:.5rem}
 .chip{font-size:.85rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text)}
+a.chip{text-decoration:none;cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+a.chip:hover{border-color:var(--sun-core);background:var(--surface);transform:translateY(-1px)}
 .howrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:.4rem}
 .how{border-left:2px solid var(--amber);padding-left:1rem}
 .how h5{margin:0 0 .3rem;font-size:1rem;font-weight:700}

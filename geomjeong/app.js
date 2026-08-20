@@ -62,17 +62,28 @@
       q=(q||'').trim().toLowerCase().replace(/\s+/g,'');
       sug.innerHTML='';
       if(!q){sug.classList.remove('open');return;}
+      // 동(洞) 매칭 — 더 구체적이라 위에 노출
+      var dm=(window.DONG_INDEX||[]).filter(function(d){return (d.a+' '+d.d).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
+      // 구/시 매칭
       var m=window.REGION_INDEX.filter(function(r){return (r.a+' '+r.n).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
-      if(!m.length){sug.classList.remove('open');return;}
-      m.slice(0,8).forEach(function(r){
+      if(!dm.length && !m.length){sug.classList.remove('open');return;}
+      var shown=0, cap=8;
+      dm.slice(0,cap).forEach(function(d){
+        var a=document.createElement('a');
+        a.href='/geomjeong/region/'+d.s+'.html';
+        a.innerHTML='<span><b>'+d.d+'</b> 검정고시 과외</span><span class="g">'+d.gu+'</span>';
+        sug.appendChild(a); shown++;
+      });
+      m.slice(0,Math.max(0,cap-shown)).forEach(function(r){
         var a=document.createElement('a');
         a.href='/geomjeong/region/'+r.s+'.html';
         a.innerHTML='<span><b>'+r.n+'</b> 검정고시 과외</span><span class="g">'+r.g+'</span>';
-        sug.appendChild(a);
+        sug.appendChild(a); shown++;
       });
-      if(m.length>8){
+      var total=dm.length+m.length;
+      if(total>shown){
         var more=document.createElement('div'); more.className='hs-more';
-        more.textContent='그 외 '+(m.length-8)+'곳 더… 지역 검색을 눌러 전체 보기';
+        more.textContent='그 외 '+(total-shown)+'곳 더… 지역 검색을 눌러 전체 보기';
         sug.appendChild(more);
       }
       place(); sug.classList.add('open');
