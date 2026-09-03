@@ -59,6 +59,19 @@ GitHub Pages로 자동 배포됨. 노트북과 집 컴퓨터를 오가며 작업
 
 ## 작업 로그
 
+### 2026-09-03 — 합격률 뉴스 1편 + 새 PC로 저장소 이전
+- 새 컴퓨터에 `~/Projects/thebetteredu`로 clone (이전 경로 ~/thebetteredu 아님).
+- 뉴스 1편 발행: `geomjeong/news/pass-rate-up.html` —
+  "검정고시 합격률 높이는 방법 — 중졸·고졸 전과목 1:1 과외로 평균 60점 만들기".
+  합격률/평균60점/과목합격제/기출/노베이스/학원·인강 비교 등 SEO 키워드를 넓게 넣고,
+  국어·영어·수학·사회·과학·한국사·선택과목(도덕) **전과목** 득점 전략 표 + 기존
+  과목별 글(korean-study, english-nobase, math-study-order, social-study,
+  science-study, korean-history-tip, elective-subjects, pass-criteria,
+  subject-pass-system, past-papers)로 내부링크. 구체적 합격률 통계 수치는
+  공식 확인 전이라 넣지 않음(원하면 나중에 교육청 발표 수치로 보강).
+- news/index.html 카드 최상단 추가, sitemap.xml 등록.
+- 참고: 2026-08~09에 발행한 지역 검정고시 뉴스들은 이 로그에 항목이 없음(커밋 로그로만 확인 가능).
+
 ### 2026-07-28 (검정고시 코너 리뉴얼 — 새 소유자 인수 후 첫 작업)
 - 저장소가 naeun251 → **x26589334-cpu**로 소유권 이전됨(새 소유자 인수). 로컬
   ~/thebetteredu에 clone. 기존 과외 사이트(blog/ 1000여 파일 등)는 **그대로 유지**.
