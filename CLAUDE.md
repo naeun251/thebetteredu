@@ -96,6 +96,17 @@ GitHub Pages로 자동 배포됨. 노트북과 집 컴퓨터를 오가며 작업
 - CC0·Public domain 은 표기 의무가 없지만 `사진 CC0` 정도는 남긴다.
 - PNG·SVG 는 썸네일이 JPG 로 안 나와서 스크립트가 건너뛴다(용량 문제).
 
+
+### 목록 카드는 날짜 순서 자리에 넣는다 (2026-09-04)
+`news/index.html` 의 카드는 **무조건 맨 위가 아니라 날짜 내림차순 위치**에 넣는다.
+9/2 글을 맨 위에 넣는 바람에 9/4 글이 그 아래로 밀린 적이 있다.
+순서가 흐트러졌으면 아래 한 줄로 되돌린다(같은 날짜는 원래 순서 유지, 여러 번 돌려도 안전):
+```
+awk -f tools/sort_news.awk geomjeong/news/index.html > /tmp/x && mv /tmp/x geomjeong/news/index.html
+```
+맨 위 대표글(`news-feat`)은 그리드 밖이라 이 정렬과 무관하다. 지금은 2026.07.29
+"2026 검정고시 시험일정" 이 고정돼 있다 — 바꾸려면 직접 교체할 것.
+
 ### CSS
 `geomjeong/style.css` 맨 아래 `.article .hero-photo` / `.ncard .thumb img` 추가됨.
 **주의: geomjeong 페이지 339개는 `style.css` 를 캐시버전(`?v=`) 없이 부른다.**
