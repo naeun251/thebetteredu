@@ -57,6 +57,45 @@ GitHub Pages로 자동 배포됨. 노트북과 집 컴퓨터를 오가며 작업
 서울시 학군이 중학교처럼 동네 단위가 아니라 더 넓은 학군 단위로 배정되는 경우가 많아서,
 중학교와 동일한 "동네별 학교" 구조가 그대로 맞지 않을 수 있음 — 실제 데이터 확인 필요.
 
+## 지역 뉴스 사진 넣기 (위키미디어 공용, 2026-09-04 도입)
+
+티칭코칭(`~/gwaoe-page`)의 선생님 추천 글에서 쓰던 방법을 그대로 가져온 것.
+**API 키가 필요 없고 무료**이며, 상업적 재사용이 가능한 라이선스만 골라 쓴다.
+
+### 절차 (글 1편당 2분)
+1. **후보 찾기** — 저장소의 `tools/find_photo.ps1` 실행. 도시 이름으로 검색하면
+   상업적 사용 가능한 JPG 후보만 라이선스·작가와 함께 나온다.
+   ```
+   powershell -File tools/find_photo.ps1 "광명시" 12
+   ```
+   검색어는 `{도시}시` → 없으면 `{도시} landmark` / 영문명(`Gwangmyeong`) 순으로 시도.
+2. **고르기** — Read 도구로 썸네일 URL을 열어 눈으로 확인한다. **제외 대상:**
+   밤거리·유흥가·얼굴이 알아볼 만큼 나온 사진·실내 잡다한 사진·지도/도표.
+   검정고시 글이므로 **학교 건물보다 도시 전경·랜드마크**가 더 맞다
+   (검정고시는 학교를 안 다니는 사람이 보는 글이라 학교 사진은 정서적으로 안 맞음).
+3. **내려받기 + HTML 생성** — `get_photo.ps1` 이 960px JPG를 
+   `geomjeong/news/images/{slug}.jpg` 로 저장하고 붙여넣을 HTML까지 출력한다.
+   ```
+   powershell -File tools/get_photo.ps1 -File "Gwangmyeong Station and skyline.jpg" -Slug gwangmyeong -Alt "광명역 주변 전경 — 광명 검정고시 과외"
+   ```
+4. **붙여넣기** — 기사의 `<div class="hero-img"><span class="s"></span></div>` 줄을
+   출력된 `<figure class="hero-photo">` 로 교체. `og:image` 도 그 사진으로 바꾼다.
+   news/index.html 카드에도 넣으려면 `<div class="ov"></div>` 를 `<img>` 로 교체.
+
+### 반드시 지킬 것 (라이선스)
+- **CC0 / Public domain / CC BY / CC BY-SA 만 사용.** 스크립트가 이 목록으로 걸러내며,
+  목록에 없는 라이선스(NC, ND, Fair use 등)는 아예 결과에 안 나온다.
+- **CC BY·CC BY-SA 는 `<figcaption>` 에 작가 이름 + 라이선스 + 원본 링크가 반드시 있어야 한다.**
+  `get_photo.ps1` 이 자동으로 넣어주므로 그 문구를 지우지 말 것. 지우면 라이선스 위반이다.
+- CC0·Public domain 은 표기 의무가 없지만 `사진 CC0` 정도는 남긴다.
+- PNG·SVG 는 썸네일이 JPG 로 안 나와서 스크립트가 건너뛴다(용량 문제).
+
+### CSS
+`geomjeong/style.css` 맨 아래 `.article .hero-photo` / `.ncard .thumb img` 추가됨.
+**주의: geomjeong 페이지 339개는 `style.css` 를 캐시버전(`?v=`) 없이 부른다.**
+지금 추가한 건 새 클래스뿐이라 캐시가 남아도 사진은 보이지만(모양만 밋밋),
+나중에 기존 스타일을 고칠 일이 있으면 그때 339개 전부에 `?v=1` 을 붙이는 작업이 필요하다.
+
 ## 작업 로그
 
 ### 2026-09-03 — 합격률 뉴스 1편 + 새 PC로 저장소 이전
