@@ -58,15 +58,33 @@
     var hinput=hs.querySelector('input');
     var sug=document.createElement('div'); sug.className='hs-suggest'; document.body.appendChild(sug);
     function place(){var r=hinput.getBoundingClientRect();sug.style.left=r.left+'px';sug.style.top=(r.bottom+8)+'px';sug.style.width=r.width+'px';}
+    // 띄어쓰기 무시 매칭 + 연관 검색어 (search-kit.js)
+    SearchKit.style();
+    var dHay=SearchKit.indexer(function(d){return d.s+'|'+d.d;}, function(d){return d.a+' '+d.d+' '+(d.gu||'');});
+    var rHay=SearchKit.indexer(function(r){return r.s;}, function(r){return r.a+' '+r.n+' '+(r.g||'');});
+    function relRow(items,label){
+      if(!items.length) return null;
+      var box=document.createElement('div');
+      box.className='sk-rel';
+      box.style.padding='10px 14px 12px';
+      box.innerHTML='<span class="sk-rel-label">'+SearchKit.esc(label)+'</span>'
+        +items.map(function(it){return '<button type="button" class="sk-chip" data-term="'+SearchKit.esc(it.term)+'">'+SearchKit.esc(it.label)+'</button>';}).join('');
+      return box;
+    }
     function draw(q){
-      q=(q||'').trim().toLowerCase().replace(/\s+/g,'');
+      q=(q||'').trim();
       sug.innerHTML='';
       if(!q){sug.classList.remove('open');return;}
       // 동(洞) 매칭 — 더 구체적이라 위에 노출
-      var dm=(window.DONG_INDEX||[]).filter(function(d){return (d.a+' '+d.d).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
+      var dm=(window.DONG_INDEX||[]).filter(function(d){return SearchKit.match(dHay(d),q)});
       // 구/시 매칭
-      var m=window.REGION_INDEX.filter(function(r){return (r.a+' '+r.n).toLowerCase().replace(/\s+/g,'').indexOf(q)>-1});
-      if(!dm.length && !m.length){sug.classList.remove('open');return;}
+      var m=window.REGION_INDEX.filter(function(r){return SearchKit.match(rHay(r),q)});
+      if(!dm.length && !m.length){
+        var s0=SearchKit.suggest(window.REGION_INDEX, rHay, q, ['n','g'], {limit:5});
+        var row0=relRow(s0,'이렇게 찾아보세요');
+        if(!row0){sug.classList.remove('open');return;}
+        sug.appendChild(row0); place(); sug.classList.add('open'); return;
+      }
       var shown=0, cap=8;
       dm.slice(0,cap).forEach(function(d){
         var a=document.createElement('a');
@@ -86,8 +104,15 @@
         more.textContent='그 외 '+(total-shown)+'곳 더… 지역 검색을 눌러 전체 보기';
         sug.appendChild(more);
       }
+      var row=relRow(SearchKit.related(m.concat(dm.map(function(d){return {n:d.d,g:d.gu};})), q, ['n','g'], {limit:5}),'연관 검색어');
+      if(row) sug.appendChild(row);
       place(); sug.classList.add('open');
     }
+    sug.addEventListener('click',function(e){
+      var c=e.target.closest&&e.target.closest('.sk-chip');
+      if(!c)return; e.preventDefault();
+      hinput.value=c.getAttribute('data-term'); hinput.focus(); draw(hinput.value);
+    });
     hinput.addEventListener('input',function(){draw(hinput.value)});
     hinput.addEventListener('focus',function(){draw(hinput.value)});
     addEventListener('scroll',function(){sug.classList.remove('open')},{passive:true});

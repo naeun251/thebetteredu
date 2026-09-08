@@ -612,6 +612,7 @@
   </div>
 </footer>
 
+<script src="/search-kit.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
   const urlTab = new URLSearchParams(location.search).get('tab');
@@ -1460,26 +1461,55 @@
     '시흥중': { post: '/blog/geumcheon-gwaoe.html', district: '금천구' },
   };
 
+  // 학교 목록을 배열로 펼쳐 둔다 (띄어쓰기 무시 검색 + 연관 검색어용)
+  const SCHOOL_ROWS = Object.keys(schoolPostMap).map(k => ({
+    name: k, district: schoolPostMap[k].district, post: schoolPostMap[k].post
+  }));
+  const schoolHay = SearchKit.indexer(s => s.name, s => s.name + ' ' + s.district);
+
   function searchSchool() {
     const input = document.getElementById('schoolSearchInput');
     const resultBox = document.getElementById('schoolSearchResult');
     const raw = input.value.trim();
     if (!raw) { resultBox.innerHTML = ''; return; }
-    const norm = raw.replace(/학교$/, '').trim();
-    let match = schoolPostMap[norm] || schoolPostMap[raw];
-    if (!match) {
-      const key = Object.keys(schoolPostMap).find(k => k.startsWith(norm) || norm.startsWith(k));
-      if (key) match = schoolPostMap[key];
-    }
-    if (match) {
-      resultBox.innerHTML = `<a class="dl-post" href="${match.post}">"${raw}" 관련 글 보기 — ${match.district} →</a>`;
+
+    // 띄어쓰기 무시 + 학교/중학교 약칭 통일은 search-kit.js 가 처리
+    const hits = SCHOOL_ROWS.filter(s => SearchKit.match(schoolHay(s), raw));
+    const items = hits.length
+      ? SearchKit.related(hits, raw, ['district'], { limit: 6 })
+      : SearchKit.suggest(SCHOOL_ROWS, schoolHay, raw, ['district', 'name'], { limit: 6 });
+    const relHtml = items.length
+      ? '<div class="sk-rel"><span class="sk-rel-label">' + SearchKit.esc(hits.length ? '연관 검색어' : '이렇게 찾아보세요') + '</span>'
+        + items.map(it => '<button type="button" class="sk-chip" data-term="' + SearchKit.esc(it.term) + '">' + SearchKit.esc(it.label) + '</button>').join('')
+        + '</div>'
+      : '';
+
+    if (hits.length) {
+      // 같은 글로 이어지는 학교는 하나로 묶어 보여 준다
+      const seen = new Set();
+      const links = hits.filter(s => { if (seen.has(s.post)) return false; seen.add(s.post); return true; })
+        .slice(0, 5)
+        .map(s => `<a class="dl-post" href="${s.post}">"${s.name}" 관련 글 보기 — ${s.district} →</a>`).join('');
+      resultBox.innerHTML = links + relHtml;
     } else {
-      resultBox.innerHTML = `<div class="dl-empty">아직 등록된 학교 정보가 없어요. <a href="/#apply">무료 상담 신청하기 →</a></div>`;
+      resultBox.innerHTML = `<div class="dl-empty">아직 등록된 학교 정보가 없어요. <a href="/#apply">무료 상담 신청하기 →</a></div>` + relHtml;
     }
   }
   const schoolSearchInput = document.getElementById('schoolSearchInput');
   if (schoolSearchInput) {
+    SearchKit.style();
     schoolSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); searchSchool(); } });
+    // 입력하는 동안에도 바로 찾아 준다 (전에는 엔터·버튼만 동작)
+    schoolSearchInput.addEventListener('input', searchSchool);
+    const rb = document.getElementById('schoolSearchResult');
+    if (rb) rb.addEventListener('click', e => {
+      const c = e.target.closest('.sk-chip');
+      if (!c) return;
+      e.preventDefault();
+      schoolSearchInput.value = c.getAttribute('data-term');
+      schoolSearchInput.focus();
+      searchSchool();
+    });
   }
 
   // 커스텀 멀티셀렉트

@@ -334,6 +334,7 @@
   </div>
 </footer>
 
+<script src="/search-kit.js"></script>
 <script src="/geomjeong/app.js"></script>
 <script src="/floating-cta.js"></script>
 <script>
@@ -341,24 +342,44 @@
   var input=document.getElementById('rq');
   var groups=[].slice.call(document.querySelectorAll('.region-group'));
   var empty=document.getElementById('rEmpty');
+  var relEl=document.createElement('div'); relEl.hidden=true;
+  input.parentNode.insertAdjacentElement('afterend', relEl);
+  // 지역 버튼의 별칭(data-alias)을 그대로 검색 대상으로 쓴다
+  var btns=[].slice.call(document.querySelectorAll('.region-btn'));
+  var bHay=SearchKit.indexer(function(b){return b.getAttribute('data-alias');}, function(b){return b.getAttribute('data-alias');});
+  function renderRelated(q, hitBtns){
+    if(!q){ SearchKit.chips(relEl, [], null); return; }
+    var rows=(hitBtns.length?hitBtns:btns).map(function(b){
+      var g=b.closest('.region-group'), h=g&&g.querySelector('.rg-head');
+      // 그룹 머리글은 "서울25" 처럼 개수 뱃지가 붙어 있어 숫자를 떼고 쓴다
+      return { n:(b.textContent||'').trim(), g:h?(h.textContent||'').trim().replace(/[\s\d]+$/,''):'' };
+    });
+    var found=hitBtns.length>0;
+    var items=SearchKit.related(rows, found?q:'', ['n','g'], {limit:6});
+    SearchKit.chips(relEl, items, function(term){
+      input.value=term; input.focus(); apply(term);
+    }, found?'연관 검색어':'이렇게 찾아보세요');
+  }
   groups.forEach(function(g){
     var h=g.querySelector('.rg-head');
     if(h)h.addEventListener('click',function(){g.classList.toggle('open')});
   });
   function apply(q){
-    q=(q||'').trim().toLowerCase().replace(/\s+/g,'');
-    var any=false;
+    q=(q||'').trim();
+    var any=false, hitBtns=[];
     groups.forEach(function(g){
       var gv=false;
       g.querySelectorAll('.region-btn').forEach(function(b){
-        var hit=!q || b.getAttribute('data-alias').toLowerCase().replace(/\s+/g,'').indexOf(q)>-1;
-        b.style.display=hit?'':'none'; if(hit)gv=true;
+        // 띄어쓰기 무시 매칭 (search-kit.js) — "서울강남구" 처럼 붙여 쳐도 찾는다
+        var hit=!q || SearchKit.match(bHay(b), q);
+        b.style.display=hit?'':'none'; if(hit){gv=true; hitBtns.push(b);}
       });
       g.style.display=gv?'':'none';
       if(q){ g.classList.toggle('open',gv); } else { g.classList.remove('open'); }
       if(gv)any=true;
     });
     empty.style.display=any?'none':'block';
+    renderRelated(q, hitBtns);
   }
   input.addEventListener('input',function(){apply(input.value)});
   var p=new URLSearchParams(location.search).get('q');
